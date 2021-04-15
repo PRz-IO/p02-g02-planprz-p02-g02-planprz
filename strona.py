@@ -1,0 +1,1 @@
+print("tak było nie kłamie")
