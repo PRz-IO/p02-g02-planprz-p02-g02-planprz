@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<h1> {{obiekt_user}}</h1>
+{% load static %}
+<link rel="stylesheet"  href="{% static 'budynki.css' %}">
+<h1> {{obiekt_user.nazwa}}</h1>
 <table id="pierwsza">
     <tr>
         <th>Nazwa</th>

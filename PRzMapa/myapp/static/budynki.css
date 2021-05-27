@@ -2,6 +2,17 @@ h1{
     text-align: center
 }
 
+#pierwsza {
+    top:20%
+}
+
+#druga {
+    top:50%
+}
+#nagłówek {
+background-color: #d59321;
+}
+
 table {
     position: absolute;
     z-index: 2;
