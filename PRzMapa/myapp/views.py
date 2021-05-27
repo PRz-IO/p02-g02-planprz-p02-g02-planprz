@@ -11,3 +11,6 @@ def index(request):
 
 def budynki(request):
     return render(request, "budynki.html")
+
+def punkty(request):
+    return render(request, "punkty.html")

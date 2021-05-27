@@ -34,20 +34,8 @@ body, html {
     z-index: 2;
 }
 
-#rightBar {
-    background-color: white;
-    width: 30%;
-    height: calc(100% - 32px);
-    position: relative;
-    box-shadow: rgba(0, 0, 0, 0.15) -2.95px 1.95px 2.6px;
-    z-index: 1;
-    float: right;
-    top: 32px;
-
-}
-
 #map {
-    width: 70%;
+    width: 100%;
     height: calc(100% - 32px);
     top: 32px;
     position: relative;
