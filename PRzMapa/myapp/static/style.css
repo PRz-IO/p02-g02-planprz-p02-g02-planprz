@@ -1,5 +1,8 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-	font-family: Comic Sans MS;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -7,31 +10,103 @@ body {
 }
 
 body, html {
+    font-family: "Courier New";
     margin: 0;
     padding: 0;
 	height: 100%;
 }
 
-.topBar {
+    /* DOŁĄCZENIE PLIKÓW CSS */
+{% include 'budynki.css' %}
+{% include 'punkty.css' %}
+{% include 'pracownicy.css' %}
+{% include 'administratorzy.css' %}
+{% include 'jezyki.css' %}
+{% include 'logowanie.css' %}
+
+    /* STRONA GŁÓWNA */
+#topBar {
     background-color: white;
     width: 100%;
-    height: 10%;
+    height: auto;
     position: absolute;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     z-index: 2;
 }
 
-.map {
+#map {
     width: 100%;
-    height: 90%;
+    height: calc(100% - 32px);
+    top: 32px;
     position: relative;
-    top: 10%;
     border: 0;
     z-index: 1;
 }
 
-.button {
-    width: 16%;
-    height: 100%;
-    float: left;
+    /* LISTA ROZWIJANA */
+ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #FFF;
+    font-size: 18px;
+    height: 2em;
+    line-height: 2em;
+    text-align: center;
 }
+
+ol a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    padding: 0 5px;
+}
+
+ol > li {
+    float: left;
+    width: calc((100% - 5px) / 6);
+    margin-left: 1px;
+    height: 2em;
+}
+
+ol > li:first-child {
+    margin-left: 0;
+}
+
+ol > li:hover {
+    background-color: #EEE;
+}
+
+ol > li:hover > a {
+    color: #09C;
+}
+
+ol > li:hover > ul {
+    display: block;
+}
+
+ol > li > ul {
+    display: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ol > li > ul > li {
+    position: relative;
+    background-color: #EEE;
+    box-shadow: rgba(0, 0, 0, 0.15) 0 0 5px;
+}
+
+ol > li > ul > li:first-child {
+    background-color: black;
+}
+
+ol > li > ul > li:hover {
+    background-color: #DDD;
+}
+
+ol > li > ul > li:hover > a {
+    color: #09C;
+}
+

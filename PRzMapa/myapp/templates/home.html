@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-    <div class="topBar">
-        {% include 'budynki.html' %}
-        {% include 'punkty.html' %}
-        {% include 'pracownicy.html' %}
-        {% include 'administratorzy.html' %}
-        {% include 'jezyki.html' %}
-        {% include 'logowanie.html' %}
+    <div id="topBar">
+        <ol class="menu">
+            <li><a href="#">{% include 'budynki.html' %}</a></li>
+            <li><a href="#">{% include 'punkty.html' %}</a></li>
+            <li><a href="#">{% include 'pracownicy.html' %}</a></li>
+            <li><a href="#">{% include 'administratorzy.html' %}</a></li>
+            <li><a href="#">{% include 'jezyki.html' %}</a></li>
+            <li><a href="#">{% include 'logowanie.html' %}</a></li>
+        </ol>
     </div>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2563.583197258202!2d21.987060290401!3d50.0191669751682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473cfbae554b096b%3A0xfb1f78d1a4df278d!2sPolitechnika%20Rzeszowska%20im.%20Ignacego%20%C5%81ukasiewicza!5e0!3m2!1spl!2spl!4v1621681106715!5m2!1spl!2spl" class="map"></iframe>
-
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2563.583197258202!2d21.987060290401!3d50.0191669751682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473cfbae554b096b%3A0xfb1f78d1a4df278d!2sPolitechnika%20Rzeszowska%20im.%20Ignacego%20%C5%81ukasiewicza!5e0!3m2!1spl!2spl!4v1621681106715!5m2!1spl!2spl" id="map"></iframe>
 {% endblock content %}
