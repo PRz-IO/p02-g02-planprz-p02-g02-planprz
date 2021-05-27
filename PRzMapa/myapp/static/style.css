@@ -34,8 +34,20 @@ body, html {
     z-index: 2;
 }
 
+#rightBar {
+    background-color: white;
+    width: 30%;
+    height: calc(100% - 32px);
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.15) -2.95px 1.95px 2.6px;
+    z-index: 1;
+    float: right;
+    top: 32px;
+
+}
+
 #map {
-    width: 100%;
+    width: 70%;
     height: calc(100% - 32px);
     top: 32px;
     position: relative;
@@ -64,7 +76,7 @@ ol a {
 
 ol > li {
     float: left;
-    width: calc((100% - 5px) / 6);
+    width: calc((100% - 3px) / 4);
     margin-left: 1px;
     height: 2em;
 }
@@ -96,10 +108,6 @@ ol > li > ul > li {
     position: relative;
     background-color: #EEE;
     box-shadow: rgba(0, 0, 0, 0.15) 0 0 5px;
-}
-
-ol > li > ul > li:first-child {
-    background-color: black;
 }
 
 ol > li > ul > li:hover {
