@@ -2,6 +2,31 @@
 
 {% block content %}
 
-tutaj punkty
+<div id="topBar">
+    <ol class="menu">
+        <li><a href="{%url 'budynki'%}">
+            BUDYNKI
+        </a></li>
+        <li><a href="{%url 'punkty'%}">
+            PUNKT
+        </a></li>
+        <li><a href="#">
+            LOGOWANIE
+            <ul>
+                <li><a href="admin">Administrator</a></li>
+                <li><a href="admin">Pracownik</a></li>
+            </ul>
+        </a></li>
+        <li><a href="#">
+            JĘZYKI
+            <ul>
+                <li><a href="#">Polski</a></li>
+                <li><a href="#">Angielski</a></li>
+                <li><a href="#">Ukraiński</a></li>
+            </ul>
+        </a></li>
+
+    </ol>
+</div>
 
 {% endblock content %}
