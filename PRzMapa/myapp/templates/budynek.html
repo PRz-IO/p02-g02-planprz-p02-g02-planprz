@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>{{obiekt_user.nazwa}}</title>
+  <style>
+    h1{
+    text-align: center
+    }
+    #pierwsza {
+    top:20%
+}
+#druga {
+    top:50%
+}
+#nagłówek {
+background-color: #d59321;
+}
+       table {
+    position: absolute;
+ z-index: 2;
+ left: 50%;
+ top: 30%;
+ transform: translate(-50%,-50%);
+ width: 60%;
+ border-collapse: collapse;
+ border-spacing: 0;
+ box-shadow: 0 2px 15px rgba(64,64,64,.7);
+ border-radius: 12px 12px 0 0;
+ overflow: hidden;
+}
+th,td{
+padding: 15px 20px;
+ text-align: center;
+}
+th{
+    background-color: #e9a631;
+ color: #fafafa;
+ font-weight: 200;
+ text-transform: uppercase;
+}
+tr{
+width: 100%;
+ background-color: #fafafa;
+}
+tr:nth-child(even){
+ background-color: #eeeeee;
+}
+  </style>
+</head>
+<body>
+<h1> {{obiekt_user}}</h1>
+<table id="pierwsza">
+    <tr><th>Nazwa</th><th>Adres</th><th>Ułatwienia dla niepełnosprawnych</th></tr>
+<tr><td>{{obiekt_user.nazwa}}</td><td>{{obiekt_user.adres}} </td><td>{{obiekt_user.ułatwienia_dla_niepełnosprawnych}}</td><tr>
+</table>
+<table id="druga">
+            <tr><th colspan="2" id="nagłówek">Lista punktów</th></tr>
+            <tr><th>Nazwa</th><th>Kategoria</th></tr>
+             {% for pun in punkty_budynek %}
+                <tr><td>{{pun.nazwa}}</td><td>{{pun.kategoria_id_kategorii}}</td></tr>
+             {% endfor %}
+        </table>
+</body>
+</html>
