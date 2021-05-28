@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
+{% include 'bar.html' %}
 {% load static %}
 <link rel="stylesheet"  href="{% static 'budynki.css' %}">
+<link rel="stylesheet"  href="{% static 'style.css' %}">
+<div class="kontenerBudynki">
 <h1> {{obiekt_user.nazwa}}</h1>
 <table id="pierwsza">
     <tr>
@@ -34,5 +37,5 @@
     </tr>
     {% endfor %}
 </table>
-
+</div>
 {% endblock content %}

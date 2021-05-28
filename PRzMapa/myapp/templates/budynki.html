@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
+{% include 'bar.html' %}
 {% load static %}
 <link rel="stylesheet"  href="{% static 'budynki.css' %}">
+<link rel="stylesheet"  href="{% static 'style.css' %}">
+<div class="kontenerBudynki">
 <h1>Budynki</h1>
 <form action="{%url 'budynki' %}" method="get">
 <input type="text" id="szukaj" name="q" placeholder="wpisz nazwę lub adres">
@@ -25,6 +28,6 @@
     </tr>
     {% endfor %}
 </table>
-
+</div>
 {% endblock content %}
 

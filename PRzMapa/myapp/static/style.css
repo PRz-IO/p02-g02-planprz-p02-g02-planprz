@@ -10,7 +10,7 @@ body {
 }
 
 body, html {
-    font-family: "Courier New";
+    font-family: "Roboto";
     margin: 0;
     padding: 0;
 	height: 100%;
@@ -25,7 +25,7 @@ body, html {
 {% include 'logowanie.css' %}
 
     /* STRONA GŁÓWNA */
-#topBar {
+.topBar {
     background-color: white;
     width: 100%;
     height: auto;
@@ -44,7 +44,7 @@ body, html {
 }
 
     /* LISTA ROZWIJANA */
-ol {
+.topBar ol {
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -55,53 +55,53 @@ ol {
     text-align: center;
 }
 
-ol a {
+.topBar ol a {
     display: block;
     text-decoration: none;
     color: #000;
     padding: 0 5px;
 }
 
-ol > li {
+.topBar ol > li {
     float: left;
     width: calc((100% - 3px) / 4);
     margin-left: 1px;
     height: 2em;
 }
 
-ol > li:first-child {
+.topBar ol > li:first-child {
     margin-left: 0;
 }
 
-ol > li:hover {
+.topBar ol > li:hover {
     background-color: #EEE;
 }
 
-ol > li:hover > a {
+.topBar ol > li:hover > a {
     color: #09C;
 }
 
-ol > li:hover > ul {
+.topBar ol > li:hover > ul {
     display: block;
 }
 
-ol > li > ul {
+.topBar ol > li > ul {
     display: none;
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-ol > li > ul > li {
+.topBar ol > li > ul > li {
     position: relative;
     background-color: #EEE;
     box-shadow: rgba(0, 0, 0, 0.15) 0 0 5px;
 }
 
-ol > li > ul > li:hover {
+.topBar ol > li > ul > li:hover {
     background-color: #DDD;
 }
 
-ol > li > ul > li:hover > a {
+.topBar ol > li > ul > li:hover > a {
     color: #09C;
 }

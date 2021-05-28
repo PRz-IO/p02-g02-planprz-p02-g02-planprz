@@ -1,19 +1,28 @@
-h1{
-    text-align: center
+
+.kontenerBudynki h1{
+    position: absolute;
+    top: 5%;
+    width: 100%;
+    text-align: center;
+    color: #444444;
+    background: #FFFFFF;
+    text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 7px 6px 1px #CCCCCC;
+
+
 }
 
-#pierwsza {
+.kontenerBudynki #pierwsza {
     top:20%
 }
 
-#druga {
+.kontenerBudynki #druga {
     top:50%
 }
-#nagłówek {
-background-color: #d59321;
+.kontenerBudynki #nagłówek {
+background-color: #02244b;
 }
 
-table {
+.kontenerBudynki table {
     position: absolute;
     z-index: 2;
     left: 50%;
@@ -25,30 +34,31 @@ table {
     box-shadow: 0 2px 15px rgba(64,64,64,.7);
     border-radius: 12px 12px 0 0;
     overflow: hidden;
+
 }
 
-th,td {
+.kontenerBudynki th,td {
     padding: 15px 20px;
     text-align: center;
 }
 
-th {
-    background-color: #e9a631;
+.kontenerBudynki th {
+    background-color: #003C82;
     color: #fafafa;
     font-weight: 200;
     text-transform: uppercase;
 }
 
-tr {
+.kontenerBudynki tr {
     width: 100%;
     background-color: #fafafa;
 }
 
-tr:nth-child(even){
+.kontenerBudynki tr:nth-child(even){
     background-color: #eeeeee;
 }
 
-a {
+.kontenerBudynki a {
     position: relative;
     display: inline-block;
     padding: 15px 20px;
@@ -57,10 +67,10 @@ a {
     text-transform: uppercase;
     font-size: 12px;
     border-radius: 40px;
-    background: linear-gradient(90deg,#de9411,#ffb107);
+    background: linear-gradient(90deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
 }
 
-#szukaj {
+.kontenerBudynki #szukaj {
     position: absolute;
     width: 20%;
     left: 20%;
@@ -74,7 +84,7 @@ a {
     transition:0.3s;
 }
 
-#szukaj:focus {
+.kontenerBudynki #szukaj:focus {
     border-color:dodgerBlue;
     box-shadow: 0 0 8px 0 dodgerBlue;
 }
