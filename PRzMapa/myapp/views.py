@@ -5,13 +5,26 @@ from django.db.models import Q
 # Create your views here.
 
 def index(request):
-    punkty = Punkt.objects.values('nazwa')
-    context = {'nazwa':punkty}
+    kategorie = Kategoria.objects.all()
+    context = {'kategorie':kategorie}
     return render(request, "home.html", context)
 
 
-def punkty(request):
-    return render(request, "punkty.html")
+def punkty(request, id):
+    if id is not 0:
+        kategorie = Kategoria.objects.get(pk=id)
+        punkty = Punkt.objects.filter(kategoria_id_kategorii=id)
+    else:
+        kategorie = {'nazwa_kategorii': 'Wszystko'}
+        punkty = Punkt.objects.all()
+    context = {'kategorie': kategorie,
+               'punkty': punkty}
+    return render(request, "punkty.html", context)
+
+def punkt(request , id):
+    punkt = Kategoria.objects.get(pk=id)
+    context = {'punkt': punkt}
+    return render(request, "punkt.html", context)
 
 def obiekty(request):
     query=request.GET.get('q')

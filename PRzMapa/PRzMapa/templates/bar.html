@@ -1,0 +1,31 @@
+<div id="topBar">
+    <ol class="menu">
+        <li><a href="budynki/?q=">
+            BUDYNKI
+        </a></li>
+        <li><a href="#">
+            PUNKT
+            <ul>
+                <li><a href="{% url 'punkty' 0 %}">Wszystko</a></li>
+            {% for i in kategorie %}
+                <li><a href="{% url 'punkty' i.id_kategorii %}">{{ i.nazwa_kategorii }}</a></li>
+            {% endfor %}
+            </ul>
+        </a></li>
+        <li><a href="#">
+            LOGOWANIE
+            <ul>
+                <li><a href="admin">Administrator</a></li>
+                <li><a href="admin">Pracownik</a></li>
+            </ul>
+        </a></li>
+        <li><a href="#">
+            JĘZYKI
+            <ul>
+                <li><a href="#">Polski</a></li>
+                <li><a href="#">Angielski</a></li>
+                <li><a href="#">Ukraiński</a></li>
+            </ul>
+        </a></li>
+    </ol>
+</div>

@@ -1,0 +1,80 @@
+h1{
+    text-align: center
+}
+
+#pierwsza {
+    top:20%
+}
+
+#druga {
+    top:50%
+}
+#nagłówek {
+background-color: #d59321;
+}
+
+table {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%,-50%);
+    width: 60%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-shadow: 0 2px 15px rgba(64,64,64,.7);
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+}
+
+th,td {
+    padding: 15px 20px;
+    text-align: center;
+}
+
+th {
+    background-color: #e9a631;
+    color: #fafafa;
+    font-weight: 200;
+    text-transform: uppercase;
+}
+
+tr {
+    width: 100%;
+    background-color: #fafafa;
+}
+
+tr:nth-child(even){
+    background-color: #eeeeee;
+}
+
+a {
+    position: relative;
+    display: inline-block;
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    border-radius: 40px;
+    background: linear-gradient(90deg,#de9411,#ffb107);
+}
+
+#szukaj {
+    position: absolute;
+    width: 20%;
+    left: 20%;
+    top: 15%;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    margin: 8px 0;
+    outline:none;
+    padding: 8px;
+    box-sizing:border-box;
+    transition:0.3s;
+}
+
+#szukaj:focus {
+    border-color:dodgerBlue;
+    box-shadow: 0 0 8px 0 dodgerBlue;
+}
