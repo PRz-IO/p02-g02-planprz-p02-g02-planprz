@@ -16,14 +16,6 @@ body, html {
 	height: 100%;
 }
 
-    /* DOŁĄCZENIE PLIKÓW CSS */
-{% include 'budynki.css' %}
-{% include 'punkty.css' %}
-{% include 'pracownicy.css' %}
-{% include 'administratorzy.css' %}
-{% include 'jezyki.css' %}
-{% include 'logowanie.css' %}
-
     /* STRONA GŁÓWNA */
 .topBar {
     background-color: white;
@@ -62,15 +54,23 @@ body, html {
     padding: 0 5px;
 }
 
+.topBar ol > li > a:first-child {
+    padding: 0;
+    height: 2em;
+}
+
 .topBar ol > li {
     float: left;
-    width: calc((100% - 3px) / 4);
+    width: calc((100% - 36px) / 4);
     margin-left: 1px;
     height: 2em;
 }
 
 .topBar ol > li:first-child {
     margin-left: 0;
+    left: 32px;
+    width: 32px;
+    padding: 0;
 }
 
 .topBar ol > li:hover {

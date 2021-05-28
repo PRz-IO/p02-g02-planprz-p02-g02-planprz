@@ -1,5 +1,9 @@
+{% load static %}
 <div class="topBar">
     <ol class="menu">
+        <li><a href="{% url 'index' %}">
+            <img src="{% static 'domek.png' %}" width="32" height="32">
+        </a></li>
         <li><a href="/budynki/?q=">
             BUDYNKI
         </a></li>
