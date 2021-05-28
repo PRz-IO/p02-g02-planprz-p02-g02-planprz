@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load static %}
+<link rel="stylesheet"  href="{% static 'punkty.css' %}">
+
+<h1>{{ kategorie.nazwa_kategorii }}</h1>
+<input type="text" id="szukaj" name="q" placeholder="wpisz nazwę">
+</form>
+    <table>
+    <tr>
+        <th>Nazwa</th>
+        <th>Obiekt</th>
+        <th>Kontakt</th>
+        <th></th>
+    </tr>
+    {% for i in punkty %}
+    <tr>
+        <td>{{i.nazwa}}</td>
+        <td>{{i.obiekt_id_obiektu}}</td>
+        <td>{{i.nr_telefonu}}</td>
+        <td><a href = "{% url 'punkt' i.id_punktu%}" > Szczegóły </a></td>
+    </tr>
+        {% empty %}
+    <tr>
+            <td colspan="3">Brak punktów</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock content %}
+
