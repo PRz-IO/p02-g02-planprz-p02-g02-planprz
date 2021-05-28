@@ -4,8 +4,10 @@
 {% load static %}
 <link rel="stylesheet"  href="{% static 'budynki.css' %}">
 <h1>Budynki</h1>
-<input type="text" id="szukaj" placeholder="wpisz nazwę lub adres">
-<table>
+<form action="{%url 'budynki' %}" method="get">
+<input type="text" id="szukaj" name="q" placeholder="wpisz nazwę lub adres">
+</form>
+    <table>
     <tr>
         <th>Nazwa</th>
         <th>Adres</th>
@@ -16,6 +18,10 @@
         <td>{{ob.nazwa}}</td>
         <td>{{ob.adres}}</td>
         <td><a href = "{{ob.id_obiektu}}" > Szczegóły </a></td>
+    </tr>
+        {% empty %}
+    <tr>
+            <td colspan="3">Brak budynków</td>
     </tr>
     {% endfor %}
 </table>

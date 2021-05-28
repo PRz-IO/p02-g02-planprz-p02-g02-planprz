@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import *
+from django.db.models import Q
 
 # Create your views here.
 
@@ -13,7 +14,8 @@ def punkty(request):
     return render(request, "punkty.html")
 
 def obiekty(request):
-    obiekty_user = Obiekt.objects.all()
+    query=request.GET.get('q')
+    obiekty_user=Obiekt.objects.filter(Q(nazwa__icontains=query) | Q(adres__icontains=query))
     dane= {'obiekty_user': obiekty_user}
     return render(request,'budynki.html',dane)
 

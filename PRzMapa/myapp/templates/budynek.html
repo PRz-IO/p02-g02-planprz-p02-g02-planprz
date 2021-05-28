@@ -12,7 +12,7 @@
     <tr>
         <td>{{obiekt_user.nazwa}}</td>
         <td>{{obiekt_user.adres}} </td>
-        <td>{{obiekt_user.ułatwienia_dla_niepełnosprawnych}}</td>
+        <td>{% if obiekt_user.ułatwienia_dla_niepełnosprawnych == "1" %} Tak {% else %} Nie {% endif %}</td>
     <tr>
 </table>
 <table id="druga">
@@ -26,8 +26,12 @@
     {% for pun in punkty_budynek %}
         <tr>
             <td>{{pun.nazwa}}</td>
-            <td>{{pun.kategoria_id_kategorii}}</td>
+            <td>{{pun.kategoria_id_kategorii.nazwa_kategorii}}</td>
         </tr>
+    {% empty %}
+    <tr>
+            <td colspan="2">Brak punktów w budynku</td>
+    </tr>
     {% endfor %}
 </table>
 
