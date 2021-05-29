@@ -1,14 +1,16 @@
 @media only screen and (min-width:801px){
     #stopka{
-        display:none;
+        display: none;
     }
 }
+
 @media only screen and (max-width: 800px)
 {
-        .topBar{
+    .topBar{
         position: relative !important;
         display:none;
     }
+
     #stopka{
         display:initial;
     }
@@ -68,13 +70,11 @@
     }
 
     .kontenerBudynki th,td {
-
         padding: 15px 20px;
         text-align: center;
     }
 
     .kontenerBudynki th {
-
         background-color: #003C82;
         color: #fafafa;
         font-weight: 200;
@@ -82,18 +82,15 @@
     }
 
     .kontenerBudynki tr {
-
         width: 100%;
         background-color: #fafafa;
     }
 
     .kontenerBudynki tr:nth-child(even){
-
-        background-color: #eeeeee;
+       background-color: #eeeeee;
     }
 
     .kontenerBudynki a {
-
         position: relative;
         display: inline-block;
         padding: 15px 20px;
@@ -105,10 +102,7 @@
         background: linear-gradient(90deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
     }
 
-
-
     .kontenerBudynki #szukaj:focus {
-
         border-color:dodgerBlue;
         box-shadow: 0 0 8px 0 dodgerBlue;
     }

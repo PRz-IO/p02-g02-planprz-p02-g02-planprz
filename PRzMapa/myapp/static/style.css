@@ -124,7 +124,6 @@ body, html {
 
 .goog-te-gadget {
     font-family: 'Roboto', sans-serif;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .topBar .goog-te-gadget-simple{
@@ -142,6 +141,7 @@ body, html {
 }
 
 .topBar .goog-te-menu-value:hover{
+    height: 2em;
     background: rgb(0,37,79);
     background: linear-gradient(180deg, rgba(0,37,79,1) 0%, rgba(0,60,130,1) 100%);
 
