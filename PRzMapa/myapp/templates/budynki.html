@@ -9,10 +9,10 @@
 
 <div class="kontenerBudynki">
     <div id="liniaGorna">
-        <form action="{%url 'budynki' %}" method="get">
-        <input type="text" id="szukaj" name="q" placeholder="Wpisz nazwę lub adres">
-        </form>
         <h1>Budynki</h1>
+        <form action="{%url 'budynki' %}" method="get">
+        <input type="text" id="szukaj" name="q" placeholder="Wpisz nazwę lub adres" autocomplete="off">
+        </form>
     </div>
     <div id="tabelka">
         <table>
