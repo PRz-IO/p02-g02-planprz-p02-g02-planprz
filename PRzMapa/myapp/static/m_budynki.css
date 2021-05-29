@@ -1,7 +1,16 @@
-@media only screen and (max-weight: 800px)
+@media only screen and (min-width:801px){
+    #stopka{
+        display:none;
+    }
+}
+@media only screen and (max-width: 800px)
 {
         .topBar{
         position: relative !important;
+        display:none;
+    }
+    #stopka{
+        display:initial;
     }
 
     .kontenerBudynki h1{

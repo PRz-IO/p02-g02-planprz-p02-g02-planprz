@@ -19,7 +19,7 @@ body, html {
 }
 
     /* STRONA GŁÓWNA */
-.topBar {
+.topBar #stopka{
     background-color: white;
     width: 100%;
     height: auto;
@@ -38,7 +38,7 @@ body, html {
 }
 
     /* LISTA ROZWIJANA */
-.topBar ol {
+.topBar ol ,#stopka ol{
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -48,7 +48,7 @@ body, html {
     text-align: center;
 }
 
-.topBar ol a {
+.topBar ol a , #stopka ol a{
     display: block;
     text-decoration: none;
     color: #fafafa;
@@ -56,62 +56,62 @@ body, html {
     text-transform: uppercase;
 }
 
-.topBar ol > li > a:first-child {
+.topBar ol > li > a:first-child ,#stopka ol > li > a:first-child{
     padding: 0;
     height: 2em;
 }
 
-.topBar ol > li {
+.topBar ol > li, #stopka ol > li{
     float: left;
     width: calc((100% - 36px) / 4);
     margin-left: 1px;
     height: 2em;
 }
 
-.topBar ol > li:first-child {
+.topBar ol > li:first-child, #stopka ol > li:first-child{
     margin-left: 0;
     left: 32px;
     width: 32px;
     padding: 0;
 }
 
-.topBar ol > li:hover {
+.topBar ol > li:hover, #stopka  ol > li:hover{
     background-color: #EEE;
 }
 
-.topBar ol > li:hover > a {
+.topBar ol > li:hover > a, #stopka ol > li:hover > a {
     background: rgb(0,37,79);
     background: linear-gradient(180deg, rgba(0,37,79,1) 0%, rgba(0,60,130,1) 100%);
 }
 
-.topBar ol > li:hover > ul {
+.topBar ol > li:hover > ul, #stopka ol > li:hover > ul{
     display: block;
 }
 
-.topBar ol > li > ul {
+.topBar ol > li > ul ,#stopka ol > li > ul {
     display: none;
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-.topBar ol > li > ul > li {
+.topBar ol > li > ul > li, #stopka  ol > li > ul > li{
     position: relative;
     background: rgb(0,60,130);
     background: linear-gradient(0deg, rgba(0,60,130,1) 0%, rgba(3,84,179,1) 100%);
     box-shadow: rgba(0, 0, 0, 0.15) 0 0 5px;
 }
 
-.topBar ol > li > ul > li:hover {
+.topBar ol > li > ul > li:hover, #stopka ol > li > ul > li:hover{
     background-color: #DDD;
 }
 
-.topBar ol > li > ul > li:hover > a {
+.topBar ol > li > ul > li:hover > a, #stopka  ol > li > ul > li:hover{
     background: rgb(0,37,79);
     background: linear-gradient(180deg, rgba(0,37,79,1) 0%, rgba(0,60,130,1) 100%);
 }
 
-.topBar a:hover {
+.topBar a:hover, #stopka a:hover{
 
     color: #ffffff;
 }
