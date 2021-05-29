@@ -11,7 +11,8 @@ body {
 
 body, html {
 
-    font-family: "Roboto";
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
     margin: 0;
     padding: 0;
 	height: 100%;
@@ -42,7 +43,6 @@ body, html {
     padding: 0;
     margin: 0;
     background-color: #003C82;
-    font-size: 18px;
     height: 2em;
     line-height: 2em;
     text-align: center;
@@ -53,6 +53,7 @@ body, html {
     text-decoration: none;
     color: #fafafa;
     padding: 0 5px;
+    text-transform: uppercase;
 }
 
 .topBar ol > li > a:first-child {
@@ -106,11 +107,11 @@ body, html {
 }
 
 .topBar ol > li > ul > li:hover > a {
-    background: rgb(0,60,130);
-    background: linear-gradient(0deg, rgba(0,60,130,1) 0%, rgba(5,91,191,1) 100%);
+    background: rgb(0,37,79);
+    background: linear-gradient(180deg, rgba(0,37,79,1) 0%, rgba(0,60,130,1) 100%);
 }
 
 .topBar a:hover {
 
-    color: #aeaeae;
+    color: #ffffff;
 }

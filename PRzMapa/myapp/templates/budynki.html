@@ -4,11 +4,13 @@
 {% include 'bar.html' %}
 {% load static %}
 <link rel="stylesheet"  href="{% static 'budynki.css' %}">
+<link rel="stylesheet"  href="{% static 'm_budynki.css' %}">
 <link rel="stylesheet"  href="{% static 'style.css' %}">
+
 <div class="kontenerBudynki">
     <div id="liniaGorna">
         <form action="{%url 'budynki' %}" method="get">
-        <input type="text" id="szukaj" name="q" placeholder="wpisz nazwę lub adres">
+        <input type="text" id="szukaj" name="q" placeholder="Wpisz nazwę lub adres">
         </form>
         <h1>Budynki</h1>
     </div>
@@ -31,6 +33,25 @@
         </tr>
         {% endfor %}
         </table>
+    </div>
+    <div id="stopka" class="topBar">
+        <ol class="menu">
+            <li><a href="{% url 'index' %}">
+                <img src="{% static 'domek.png' %}" width="32" height="32">
+            </a></li>
+            <li><a href="/budynki/?q=">
+                <img src="{% static 'budynek.png' %}" width="32" height="32">
+            </a></li>
+            <li><a href="#">
+                <img src="{% static 'punkty.png' %}" width="32" height="32">
+            </a></li>
+            <li><a href="#">
+                <img src="{% static 'logowanie.png' %}" width="32" height="32">
+            </a></li>
+            <li><a href="#">
+                <img src="{% static 'języki.png' %}" width="32" height="32">
+            </a></li>
+        </ol>
     </div>
 </div>
 {% endblock content %}
