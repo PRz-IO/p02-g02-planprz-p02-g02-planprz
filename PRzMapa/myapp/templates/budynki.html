@@ -6,28 +6,32 @@
 <link rel="stylesheet"  href="{% static 'budynki.css' %}">
 <link rel="stylesheet"  href="{% static 'style.css' %}">
 <div class="kontenerBudynki">
-<h1>Budynki</h1>
-<form action="{%url 'budynki' %}" method="get">
-<input type="text" id="szukaj" name="q" placeholder="wpisz nazwę lub adres">
-</form>
-    <table>
-    <tr>
-        <th>Nazwa</th>
-        <th>Adres</th>
-        <th></th>
-    </tr>
-    {% for ob in obiekty_user %}
-    <tr>
-        <td>{{ob.nazwa}}</td>
-        <td>{{ob.adres}}</td>
-        <td><a href = "{{ob.id_obiektu}}" > Szczegóły </a></td>
-    </tr>
-        {% empty %}
-    <tr>
-            <td colspan="3">Brak budynków</td>
-    </tr>
-    {% endfor %}
-</table>
+    <div id="liniaGorna">
+        <form action="{%url 'budynki' %}" method="get">
+        <input type="text" id="szukaj" name="q" placeholder="wpisz nazwę lub adres">
+        </form>
+        <h1>Budynki</h1>
+    </div>
+    <div id="tabelka">
+        <table>
+        <tr>
+            <th>Nazwa</th>
+            <th>Adres</th>
+            <th></th>
+        </tr>
+        {% for ob in obiekty_user %}
+        <tr>
+            <td>{{ob.nazwa}}</td>
+            <td>{{ob.adres}}</td>
+            <td><a href = "{{ob.id_obiektu}}" > Szczegóły </a></td>
+        </tr>
+            {% empty %}
+        <tr>
+                <td colspan="3">Brak budynków</td>
+        </tr>
+        {% endfor %}
+        </table>
+    </div>
 </div>
 {% endblock content %}
 
