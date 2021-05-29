@@ -105,3 +105,24 @@ body, html {
 .topBar ol > li > ul > li:hover > a {
     color: #09C;
 }
+
+.topBar .goog-te-gadget-simple{
+    width: 100%;
+    height: 36px;
+    font-family: Roboto;
+    font-size: 18px;
+    display: ruby-base-container;
+    text-transform: uppercase;
+}
+
+.topBar .goog-te-gadget-simple:hover{
+    background-color: #DDD;
+}
+
+.topBar .goog-te-menu-value:hover{
+    background-color: #DDD;
+}
+
+.topBar .goog-te-gadget-icon{
+    display: none;
+}
