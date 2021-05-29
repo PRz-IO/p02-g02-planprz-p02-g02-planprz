@@ -11,46 +11,60 @@
     <div id="liniaGorna">
         <h1>Budynki</h1>
         <form action="{%url 'budynki' %}" method="get">
-        <input type="text" id="szukaj" name="q" placeholder="Wpisz nazwę lub adres" autocomplete="off">
+            <input type="text" id="szukaj" name="q" placeholder="Wpisz nazwę lub adres" autocomplete="off">
         </form>
     </div>
     <div id="tabelka">
         <table>
-        <tr>
-            <th>Nazwa</th>
-            <th>Adres</th>
-            <th></th>
-        </tr>
+            <tr>
+                <th>Nazwa</th>
+                <th>Adres</th>
+                <th></th>
+            </tr>
         {% for ob in obiekty_user %}
         <tr>
             <td>{{ob.nazwa}}</td>
             <td>{{ob.adres}}</td>
-            <td><a href = "{{ob.id_obiektu}}" > Szczegóły </a></td>
+            <td>
+                <a href = "{{ob.id_obiektu}}" >
+                    Szczegóły
+                </a>
+            </td>
         </tr>
             {% empty %}
         <tr>
-                <td colspan="3">Brak budynków</td>
+            <td colspan="3">Brak budynków</td>
         </tr>
-        {% endfor %}
+            {% endfor %}
         </table>
     </div>
     <div id="stopka">
         <ol class="menu">
-            <li><a href="{% url 'index' %}">
-                <img src="{% static 'domek.png' %}" width="32" height="32">
-            </a></li>
-            <li><a href="/budynki/?q=">
-                <img src="{% static 'budynek.png' %}" width="32" height="32">
-            </a></li>
-            <li><a href="#">
-                <img src="{% static 'punkty.png' %}" width="32" height="32">
-            </a></li>
-            <li><a href="#">
-                <img src="{% static 'logowanie.png' %}" width="32" height="32">
-            </a></li>
-            <li><a href="#">
-                <img src="{% static 'języki.png' %}" width="32" height="32">
-            </a></li>
+            <li>
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'domek.png' %}" width="32" height="32">
+                </a>
+            </li>
+            <li>
+                <a href="/budynki/?q=">
+                    <img src="{% static 'budynek.png' %}" width="32" height="32">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="{% static 'punkty.png' %}" width="32" height="32">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="{% static 'logowanie.png' %}" width="32" height="32">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="{% static 'języki.png' %}" width="32" height="32">
+                </a>
+            </li>
         </ol>
     </div>
 </div>
