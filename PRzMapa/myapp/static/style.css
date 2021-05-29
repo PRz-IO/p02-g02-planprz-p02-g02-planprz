@@ -10,6 +10,7 @@ body {
 }
 
 body, html {
+
     font-family: "Roboto";
     margin: 0;
     padding: 0;
@@ -40,7 +41,7 @@ body, html {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    background-color: #FFF;
+    background-color: #003C82;
     font-size: 18px;
     height: 2em;
     line-height: 2em;
@@ -50,7 +51,7 @@ body, html {
 .topBar ol a {
     display: block;
     text-decoration: none;
-    color: #000;
+    color: #fafafa;
     padding: 0 5px;
 }
 
@@ -78,7 +79,8 @@ body, html {
 }
 
 .topBar ol > li:hover > a {
-    color: #09C;
+    background: rgb(0,37,79);
+    background: linear-gradient(180deg, rgba(0,37,79,1) 0%, rgba(0,60,130,1) 100%);
 }
 
 .topBar ol > li:hover > ul {
@@ -94,7 +96,8 @@ body, html {
 
 .topBar ol > li > ul > li {
     position: relative;
-    background-color: #EEE;
+    background: rgb(0,60,130);
+    background: linear-gradient(0deg, rgba(0,60,130,1) 0%, rgba(3,84,179,1) 100%);
     box-shadow: rgba(0, 0, 0, 0.15) 0 0 5px;
 }
 
@@ -103,5 +106,11 @@ body, html {
 }
 
 .topBar ol > li > ul > li:hover > a {
-    color: #09C;
+    background: rgb(0,60,130);
+    background: linear-gradient(0deg, rgba(0,60,130,1) 0%, rgba(5,91,191,1) 100%);
+}
+
+.topBar a:hover {
+
+    color: #aeaeae;
 }

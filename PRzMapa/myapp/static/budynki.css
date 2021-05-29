@@ -20,9 +20,12 @@
 }
 .kontenerBudynki #nagłówek {
 background-color: #02244b;
+
+
 }
 
 .kontenerBudynki table {
+
     position: absolute;
     z-index: 2;
     left: 50%;
@@ -47,18 +50,22 @@ background-color: #02244b;
     color: #fafafa;
     font-weight: 200;
     text-transform: uppercase;
+
 }
 
 .kontenerBudynki tr {
     width: 100%;
     background-color: #fafafa;
+
 }
 
 .kontenerBudynki tr:nth-child(even){
     background-color: #eeeeee;
+
 }
 
 .kontenerBudynki a {
+
     position: relative;
     display: inline-block;
     padding: 15px 20px;
@@ -68,6 +75,7 @@ background-color: #02244b;
     font-size: 12px;
     border-radius: 40px;
     background: linear-gradient(90deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
+
 }
 
 .kontenerBudynki #szukaj {
