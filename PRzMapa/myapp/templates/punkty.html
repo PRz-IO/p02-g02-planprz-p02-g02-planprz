@@ -4,11 +4,14 @@
 
 {% load static %}
 <link rel="stylesheet"  href="{% static 'punkty.css' %}">
+<link rel="stylesheet"  href="{% static 'punkty_mobilne.css' %}">
 
 <div class="kontenerBudynki">
     <div id="liniaGorna">
         <h1>{{ kategoria.nazwa_kategorii }}</h1>
-        <input type="text" id="szukaj" name="q" placeholder="Wpisz nazwę" autocomplete="off">
+        <form action="/{{kategoria.id_kategorii}}/" method="get">
+            <input type="text" id="szukaj" name="q" placeholder="Wpisz nazwę" autocomplete="off">
+        </form>
     </div>
     <div id="tabelka">
         <table>
@@ -24,7 +27,7 @@
                 <td>{{ i.obiekt_id_obiektu.nazwa }}</td>
                 <td>{{ i.nr_telefonu }}</td>
                 <td>
-                    <a href = "{% url 'punkt' i.id_punktu %}" >
+                    <a href = "/punkty/{{i.id_punktu}}/" >
                         Szczegóły
                     </a>
                 </td>

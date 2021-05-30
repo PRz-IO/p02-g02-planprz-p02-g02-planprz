@@ -11,13 +11,14 @@ def index(request):
 
 
 def punkty(request, id):
+    query = request.GET.get('q')
     kategorie = Kategoria.objects.all()
     if id is not 0:
         kategoria = Kategoria.objects.get(pk=id)
-        punkty = Punkt.objects.filter(kategoria_id_kategorii=id)
+        punkty = Punkt.objects.filter(Q(kategoria_id_kategorii=id), Q(nazwa__icontains=query))
     else:
-        kategoria = {'nazwa_kategorii': 'Wszystko'}
-        punkty = Punkt.objects.all()
+        kategoria = {'nazwa_kategorii': 'Wszystko', 'id_kategorii': 0}
+        punkty = Punkt.objects.filter(Q(nazwa__icontains=query))
 
     context = {'kategoria': kategoria,
                'kategorie': kategorie,

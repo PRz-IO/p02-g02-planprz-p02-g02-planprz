@@ -1,8 +1,4 @@
 \.idea
 \venv\pyvenv.cfg
 venv/pyvenv.cfg
-PRzMapa/PRzMapa/__pycache__
-PRzMapa/myapp/__pycache__
 *.pyc
-*.pyc
-PRzMapa/myapp/__pycache__/views.cpython-39.pyc
