@@ -14,7 +14,7 @@
         display:initial;
         background-color: #003C82;
         width: 100%;
-        height: 9vh;
+        height: 11vh;
         position: fixed;
         box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
         z-index: 2;
@@ -22,8 +22,8 @@
 
     #map {
         width: 100%;
-        height: calc(100% - 9vh);
-        top: 9vh;
+        height: calc(100% - 10vh);
+        top: 10vh;
         position: absolute;
         border: 0;
         z-index: 1;
@@ -31,8 +31,8 @@
 
     #stopka img{
         margin-top: 2px;
-        width: 8vh;
-        height: 8vh;
+        width: 9vh;
+        height: 9vh;
     }
 
     #stopka:hover{
@@ -45,7 +45,7 @@
         padding: 0;
         margin: 0;
         background-color: #003C82;
-        height: 8vh;
+        height: 9vh;
         text-align: center;
     }
 
@@ -109,11 +109,5 @@
     #google_translate_element, #google_translate_element *{
         height: 9.2vh !important;
         overflow:hidden;
-    }
-
-    img[src="/static/j%C4%99zyki.png"]{
-        z-index:2 !important;
-        transform: translate(110%,-113%);
-        pointer-events:none;
     }
 }

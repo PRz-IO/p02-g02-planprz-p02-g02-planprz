@@ -24,18 +24,21 @@ def punkty(request, id):
     return render(request, "punkty.html", context)
 
 def punkt(request , id):
+    kategorie = Kategoria.objects.all()
     punkt = Kategoria.objects.get(pk=id)
-    context = {'punkt': punkt}
+    context = {'punkt': punkt, 'kategorie':kategorie}
     return render(request, "punkt.html", context)
 
 def obiekty(request):
+    kategorie = Kategoria.objects.all()
     query=request.GET.get('q')
     obiekty_user=Obiekt.objects.filter(Q(nazwa__icontains=query) | Q(adres__icontains=query))
-    dane= {'obiekty_user': obiekty_user}
+    dane= {'obiekty_user': obiekty_user, 'kategorie':kategorie}
     return render(request,'budynki.html',dane)
 
 def punkty_b(request, id):
+    kategorie = Kategoria.objects.all()
     obiekt_user = Obiekt.objects.get(pk=id)
     punkty_budynek = Punkt.objects.filter(obiekt_id_obiektu=id)
-    dane= {'punkty_budynek': punkty_budynek, 'obiekt_user': obiekt_user}
+    dane= {'punkty_budynek': punkty_budynek, 'obiekt_user': obiekt_user, 'kategorie':kategorie}
     return render(request,'budynek.html',dane)
