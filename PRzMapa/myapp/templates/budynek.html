@@ -3,38 +3,40 @@
 {% block content %}
 {% load static %}
 <link rel="stylesheet"  href="{% static 'budynki.css' %}">
+<link rel="stylesheet"  href="{% static 'budynki_mobilne.css' %}">
+
 <div class="kontenerBudynki">
-<h1> {{obiekt_user.nazwa}}</h1>
-<table id="pierwsza">
-    <tr>
-        <th>Nazwa</th>
-        <th>Adres</th>
-        <th>Ułatwienia dla niepełnosprawnych</th></tr>
-    <tr>
-        <td>{{obiekt_user.nazwa}}</td>
-        <td>{{obiekt_user.adres}} </td>
-        <td>{% if obiekt_user.ułatwienia_dla_niepełnosprawnych == 1 %} Tak {% else %} Nie {% endif %}</td>
-    <tr>
-</table>
-<table id="druga">
-    <tr>
-        <th colspan="2" id="nagłówek">Lista punktów</th>
-    </tr>
-    <tr>
-        <th>Nazwa</th>
-        <th>Kategoria</th>
-    </tr>
-    {% for pun in punkty_budynek %}
+    <h1> {{obiekt_user.nazwa}}</h1>
+    <table id="pierwsza">
         <tr>
-            <td>{{pun.nazwa}}</td>
-            <td>{{pun.kategoria_id_kategorii.nazwa_kategorii}}</td>
+            <th>Nazwa</th>
+            <th>Adres</th>
+            <th>Ułatwienia dla niepełnosprawnych</th></tr>
+        <tr>
+            <td>{{obiekt_user.nazwa}}</td>
+            <td>{{obiekt_user.adres}} </td>
+            <td>{% if obiekt_user.ułatwienia_dla_niepełnosprawnych == 1 %} Tak {% else %} Nie {% endif %}</td>
+        <tr>
+    </table>
+    <table id="druga">
+        <tr>
+            <th colspan="2" id="nagłówek">Lista punktów</th>
         </tr>
-    {% empty %}
-    <tr>
-            <td colspan="2">Brak punktów w budynku</td>
-    </tr>
-    {% endfor %}
-</table>
+        <tr>
+            <th>Nazwa</th>
+            <th>Kategoria</th>
+        </tr>
+        {% for pun in punkty_budynek %}
+            <tr>
+                <td>{{pun.nazwa}}</td>
+                <td>{{pun.kategoria_id_kategorii.nazwa_kategorii}}</td>
+            </tr>
+        {% empty %}
+        <tr>
+                <td colspan="2">Brak punktów w budynku</td>
+        </tr>
+        {% endfor %}
+    </table>
 </div>
 
 {% include 'stopka.html' %}

@@ -1,0 +1,105 @@
+@media only screen and (min-width:1001px){
+    #stopka{
+        display:none;
+    }
+}
+@media only screen and (max-width: 1000px)
+{
+    body{
+        top: 11vh;
+        height: calc(100% - 11vh);
+        position: absolute !important;
+    }
+
+    .topBar{
+        position: relative !important;
+    }
+
+    .kontenerBudynki h1{
+        top: 50vh !important;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        color: #444444;
+        background: #FFFFFF;
+        text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 7px 6px 1px #CCCCCC;
+    }
+
+    .kontenerBudynki #pierwsza {
+        top:20%;
+        margin-bottom: 30px;
+    }
+
+    .kontenerBudynki #druga {
+        top:50%;
+    }
+
+    .kontenerBudynki #nagłówek {
+        background-color: #02244b;
+    }
+
+    .kontenerBudynki table {
+    
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+        box-shadow: 0 2px 15px rgba(64,64,64,.7);
+        border-radius: 0px 0px 0 0;
+        overflow: hidden;
+        margin-bottom: 15px;
+    }
+
+    .kontenerBudynki th,td {
+        padding: 15px 20px;
+        text-align: center;
+    }
+
+    .kontenerBudynki th {
+        background-color: #003C82;
+        color: #fafafa;
+        font-weight: 200;
+        text-transform: uppercase;
+    }
+
+    .kontenerBudynki tr {
+        width: 100%;
+        background-color: #fafafa;
+    }
+
+    .kontenerBudynki tr:nth-child(even){
+        background-color: #eeeeee;
+    }
+
+    .kontenerBudynki table a {
+        position: relative;
+        display: inline-block;
+        padding: 15px 20px;
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 12px;
+        border-radius: 40px;
+        background: linear-gradient(90deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
+    }
+
+    .kontenerBudynki #szukaj {
+        margin-left: auto;
+        display: block;
+        margin-right: auto;
+        width: calc(100% - 2vw);
+        border: 2px solid #aaa;
+        border-radius: 4px;
+        outline:none;
+        padding: 8px;
+        box-sizing:border-box;
+        transition:0.3s;
+    }
+
+    .kontenerBudynki #szukaj:focus {
+        border-color:dodgerBlue;
+        box-shadow: 0 0 8px 0 dodgerBlue;
+    }
+}
