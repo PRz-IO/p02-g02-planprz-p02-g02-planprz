@@ -8,6 +8,21 @@
         <link rel="stylesheet"  href="{% static 'style.css' %}">
         <link rel="stylesheet"  href="{% static 'stopka_mobilna.css' %}">
         <meta name="viewport" content="width=device-width,initial-scale=1">
+        <script type="text/javascript">
+            function tlumacz_toggle(){
+                szerokosc_okna = window.screen.width;
+                tlumacz_w_topBar = document.getElementById("google_translate_element");
+                tlumacz_w_stopce = document.getElementById("google_translate_element_stopka");
+                if(szerokosc_okna>800){
+                    tlumacz_w_topBar.id = "google_translate_element";
+                    tlumacz_w_stopce.id = "google_translate_element_stopka";
+                }
+                else{
+                    tlumacz_w_stopce.id = "google_translate_element";
+                    tlumacz_w_topBar.id = "google_translate_element_stopka";
+                }
+            }
+        </script>
     </head>
     <body>
     {% include 'stopka.html' %}
