@@ -3,27 +3,29 @@
 {% block content %}
 
 {% load static %}
-<link rel="stylesheet"  href="{% static 'budynki.css' %}">
+<link rel="stylesheet"  href="{% static 'punkty.css' %}">
 
 <div class="kontenerBudynki">
     <div id="liniaGorna">
-        <h1>Punkty</h1>
-            <input type="text" id="szukaj" name="q" placeholder="Wpisz nazwę lub adres" autocomplete="off">
+        <h1>{{ kategoria.nazwa_kategorii }}</h1>
+            <input type="text" id="szukaj" name="q" placeholder="Wpisz nazwę" autocomplete="off">
         </form>
     </div>
     <div id="tabelka">
         <table>
             <tr>
                 <th>Nazwa</th>
-                <th>Adres</th>
+                <th>Obiekt</th>
+                <th>Kontakt</th>
                 <th></th>
             </tr>
-        {% for ob in obiekty_user %}
+        {% for i in punkty %}
         <tr>
-            <td>{{ob.nazwa}}</td>
-            <td>{{ob.adres}}</td>
+            <td>{{ i.nazwa }}</td>
+            <td>{{ i.obiekt_id_obiektu.nazwa_obiektu }}</td>
+            <td>{{ i.numer_telefonu }}</td>
             <td>
-                <a href = "{{ob.id_obiektu}}" >
+                <a href = "{% url 'punkt.html' i.id_punktu %}" >
                     Szczegóły
                 </a>
             </td>
