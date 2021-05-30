@@ -26,7 +26,7 @@
 
     }
 
-    .kontenerBudynki a {
+    #stopka a {
         position: relative;
         display: inline-block;
         padding: 15px 20px;
