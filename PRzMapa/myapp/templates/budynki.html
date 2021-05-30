@@ -2,10 +2,10 @@
 
 {% block content %}
 {% include 'bar.html' %}
+
 {% load static %}
 <link rel="stylesheet"  href="{% static 'budynki.css' %}">
 <link rel="stylesheet"  href="{% static 'style.css' %}">
-<link rel="stylesheet"  href="{% static 'm_budynki.css' %}">
 
 <div class="kontenerBudynki">
     <div id="liniaGorna">
@@ -40,6 +40,6 @@
     </div>
 </div>
 
-{% include 'stopka.html' %}
+
 {% endblock content %}
 
