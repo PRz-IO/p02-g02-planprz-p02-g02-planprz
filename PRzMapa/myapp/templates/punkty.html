@@ -5,7 +5,7 @@
 {% load static %}
 <link rel="stylesheet"  href="{% static 'punkty.css' %}">
 
-{% for i in kategorie %}
+{% for i in kategoria %}
 <div class="kontenerBudynki">
     <div id="liniaGorna">
         <h1>{{ i.nazwa_kategorii }}</h1>
@@ -20,7 +20,7 @@
                 <th>Kontakt</th>
                 <th></th>
             </tr>
-        {% for j in punkty.i.id_kategorii %}
+        {% for j in punkty %}
         <tr>
             <td>{{ j.nazwa }}</td>
             <td>{{ j.obiekt_id_obiektu.nazwa }}</td>
