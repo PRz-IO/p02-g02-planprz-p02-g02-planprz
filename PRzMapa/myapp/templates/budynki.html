@@ -4,8 +4,8 @@
 {% include 'bar.html' %}
 {% load static %}
 <link rel="stylesheet"  href="{% static 'budynki.css' %}">
-<link rel="stylesheet"  href="{% static 'm_budynki.css' %}">
 <link rel="stylesheet"  href="{% static 'style.css' %}">
+<link rel="stylesheet"  href="{% static 'm_budynki.css' %}">
 
 <div class="kontenerBudynki">
     <div id="liniaGorna">
@@ -39,34 +39,7 @@
         </table>
     </div>
 </div>
-    <div id="stopka">
-        <ol class="menu">
-            <li>
-                <a href="{% url 'index' %}">
-                    <img src="{% static 'domek.png' %}" width="32" height="32">
-                </a>
-            </li>
-            <li>
-                <a href="/budynki/?q=">
-                    <img src="{% static 'budynek.png' %}" width="32" height="32">
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="{% static 'punkty.png' %}" width="32" height="32">
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="{% static 'logowanie.png' %}" width="32" height="32">
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="{% static 'języki.png' %}" width="32" height="32">
-                </a>
-            </li>
-        </ol>
-    </div>
+
+{% include 'stopka.html' %}
 {% endblock content %}
 
