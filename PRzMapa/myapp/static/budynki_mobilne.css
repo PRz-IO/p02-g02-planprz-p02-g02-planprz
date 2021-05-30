@@ -40,7 +40,7 @@
     }
 
     .kontenerBudynki table {
-    
+
         margin-left: auto;
         margin-right: auto;
         width: 100%;
@@ -50,7 +50,7 @@
         border-radius: 0px 0px 0 0;
         overflow: hidden;
         margin-bottom: 0px;
-        font-size:0.7rem;
+        font-size: 0.7rem;
     }
 
     .kontenerBudynki th,td {
@@ -81,7 +81,7 @@
         color: #fff;
         text-decoration: none;
         text-transform: uppercase;
-        font-size: 12px;
+        font-size: 0.7rem;
         border-radius: 40px;
         background: linear-gradient(90deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
     }
@@ -102,5 +102,16 @@
     .kontenerBudynki #szukaj:focus {
         border-color:dodgerBlue;
         box-shadow: 0 0 8px 0 dodgerBlue;
+    }
+}
+
+@media only screen and (max-width: 370px)
+{
+.kontenerBudynki table {
+        font-size: 0.6rem;
+    }
+
+.kontenerBudynki table a {
+        font-size: 0.6rem;
     }
 }
