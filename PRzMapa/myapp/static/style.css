@@ -18,13 +18,17 @@ body, html {
 	height: 100%;
 }
 
+#obr {
+    margin-top: 2px;
+}
+
     /* STRONA GŁÓWNA */
 .topBar{
     background-color: white;
     width: 100%;
     height: auto;
     position: absolute;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     z-index: 2;
 }
 
@@ -63,15 +67,15 @@ body, html {
 
 .topBar ol > li{
     float: left;
-    width: calc((100% - 36px) / 4);
+    width: calc((100% - 64px - 4px) / 4);
     margin-left: 1px;
     height: 2em;
 }
 
 .topBar ol > li:first-child{
-    margin-left: 0;
+    margin-left: 0px;
     left: 32px;
-    width: 32px;
+    width: 64px;
     padding: 0;
 }
 
@@ -86,6 +90,7 @@ body, html {
 
 .topBar ol > li:hover > ul{
     display: block;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .topBar ol > li > ul {

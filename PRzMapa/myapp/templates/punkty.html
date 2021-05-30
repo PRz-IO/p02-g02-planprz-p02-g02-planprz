@@ -5,12 +5,10 @@
 {% load static %}
 <link rel="stylesheet"  href="{% static 'punkty.css' %}">
 
-{% for i in kategoria %}
 <div class="kontenerBudynki">
     <div id="liniaGorna">
-        <h1>{{ i.nazwa_kategorii }}</h1>
-            <input type="text" id="szukaj" name="q" placeholder="Wpisz nazwę" autocomplete="off">
-        </form>
+        <h1>{{ kategoria.nazwa_kategorii }}</h1>
+        <input type="text" id="szukaj" name="q" placeholder="Wpisz nazwę" autocomplete="off">
     </div>
     <div id="tabelka">
         <table>
@@ -20,26 +18,25 @@
                 <th>Kontakt</th>
                 <th></th>
             </tr>
-        {% for j in punkty %}
-        <tr>
-            <td>{{ j.nazwa }}</td>
-            <td>{{ j.obiekt_id_obiektu.nazwa }}</td>
-            <td>{{ j.nr_telefonu }}</td>
-            <td>
-                <a href = "{% url 'punkt' j.id_punktu %}" >
-                    Szczegóły
-                </a>
-            </td>
-        </tr>
+            {% for i in punkty %}
+            <tr>
+                <td>{{ i.nazwa }}</td>
+                <td>{{ i.obiekt_id_obiektu.nazwa }}</td>
+                <td>{{ i.nr_telefonu }}</td>
+                <td>
+                    <a href = "{% url 'punkt' i.id_punktu %}" >
+                        Szczegóły
+                    </a>
+                </td>
+            </tr>
             {% empty %}
-        <tr>
-            <td colspan="4">Brak punktów</td>
-        </tr>
+            <tr>
+                <td colspan="4">Brak punktów</td>
+            </tr>
             {% endfor %}
         </table>
     </div>
 </div>
-{% endfor %}
 
 {% endblock content %}
 
