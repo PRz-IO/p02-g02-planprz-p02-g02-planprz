@@ -1,3 +1,5 @@
 \.idea
 \venv\pyvenv.cfg
 venv/pyvenv.cfg
+PRzMapa/PRzMapa/__pycache__
+PRzMapa/myapp/__pycache__

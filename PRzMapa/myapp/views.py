@@ -11,15 +11,13 @@ def index(request):
 
 
 def punkty(request, id):
-    kategorie = Kategoria.objects.all()
     if id is not 0:
-        kategoria = Kategoria.objects.get(pk=id)
+        kategorie = Kategoria.objects.get(pk=id)
         punkty = Punkt.objects.filter(kategoria_id_kategorii=id)
     else:
-        kategoria = {'nazwa_kategorii': 'Wszystko'}
+        kategorie = Kategoria.objects.all()
         punkty = Punkt.objects.all()
-    context = {'kategoria': kategoria,
-               'kategorie': kategorie,
+    context = {'kategorie': kategorie,
                'punkty': punkty}
     return render(request, "punkty.html", context)
 

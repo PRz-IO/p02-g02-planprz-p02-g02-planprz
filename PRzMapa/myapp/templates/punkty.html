@@ -5,9 +5,10 @@
 {% load static %}
 <link rel="stylesheet"  href="{% static 'punkty.css' %}">
 
+{% for i in kategorie %}
 <div class="kontenerBudynki">
     <div id="liniaGorna">
-        <h1>{{ kategoria.nazwa_kategorii }}</h1>
+        <h1>{{ kategorie.nazwa_kategorii }}</h1>
             <input type="text" id="szukaj" name="q" placeholder="Wpisz nazwę" autocomplete="off">
         </form>
     </div>
@@ -19,13 +20,13 @@
                 <th>Kontakt</th>
                 <th></th>
             </tr>
-        {% for i in punkty %}
+        {% for j in punkty.objects.filter(pk=1) %}
         <tr>
-            <td>{{ i.nazwa }}</td>
-            <td>{{ i.obiekt_id_obiektu.nazwa_obiektu }}</td>
-            <td>{{ i.numer_telefonu }}</td>
+            <td>{{ j.nazwa }}</td>
+            <td>{{ j.obiekt_id_obiektu.nazwa }}</td>
+            <td>{{ j.nr_telefonu }}</td>
             <td>
-                <a href = "{% url 'punkt.html' i.id_punktu %}" >
+                <a href = "{% url 'punkt' j.id_punktu %}" >
                     Szczegóły
                 </a>
             </td>
@@ -38,7 +39,7 @@
         </table>
     </div>
 </div>
-
+{% endfor %}
 
 {% endblock content %}
 
