@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet"  href="{% static 'budynki.css' %}">
+
+<h1>Punkty</h1>
+{% for punkt in punkty %}
+    <p>---</p>
+    <p>{{ punkt.nazwa }}</p>
+    <p>{{ punkt.informacje }}</p>
+    <p>{{ punkt.nr_telefonu }}</p>
+    <p>---</p>
+    {% endfor %}
+<a href="{% url 'panel-pracownika' %}">powrót do panelu pracownika</a>
+{% include 'stopka.html' %}
+{% endblock content %}

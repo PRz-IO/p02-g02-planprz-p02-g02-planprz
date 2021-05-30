@@ -93,6 +93,7 @@ class Punkt(models.Model):
 
 
 class PunktPracownicy(models.Model):
+    id_punkt_pracownicy=models.AutoField(primary_key=True, db_column='id_punkt_pracownicy')
     punkt_id_punktu = models.ForeignKey(Punkt, models.DO_NOTHING, db_column='punkt_id_punktu')
     pracownicy_id_pracownika = models.ForeignKey(Pracownicy, models.DO_NOTHING, db_column='pracownicy_id_pracownika')
 

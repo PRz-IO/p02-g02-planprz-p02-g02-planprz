@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet"  href="{% static 'budynki.css' %}">
+
+<h1>Panel Pracownika</h1>
+
+<a href="{% url 'panel-pracownika-punkty'%}">Punkty</a>
+<a href="{% url 'panel-pracownika-zmiana-hasla'%}">Zmiana hasła</a>
+<a href="{% url 'panel-pracownika-usun-konto'%}">Usuń konto</a>
+
+{% include 'stopka.html' %}
+{% endblock content %}
