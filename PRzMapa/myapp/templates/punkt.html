@@ -2,9 +2,10 @@
 
 {% block content %}
 
+{% load myapp_tags %}
 {% load static %}
 <link rel="stylesheet"  href="{% static 'punkt.css' %}">
-<link rel="stylesheet"  href="{% static 'punkty_mobilne.css' %}">
+<link rel="stylesheet"  href="{% static 'punkt_mobilne.css' %}">
 
 <div class="kontenerPunkty">
     <div id="liniaGorna">
@@ -19,32 +20,48 @@
                 <td colspan="2">ZDJĘCIE</td>
             </tr>
             <tr>
-                <td id="doPrawej">Kategoria:</td>
-                <td>{{ punkt.kategoria_id_kategorii.nazwa_kategorii }}</td>
+                <td class="doPrawej">Kategoria:</td>
+                <td class="doLewej">{{ punkt.kategoria_id_kategorii.nazwa_kategorii }}</td>
             </tr>
             <tr>
-                <td id="doPrawej">Obiekt:</td>
-                <td>{{ punkt.obiekt_id_obiektu.nazwa }}</td>
+                <td class="doPrawej">Obiekt:</td>
+                <td class="doLewej">{{ punkt.obiekt_id_obiektu.nazwa }}</td>
             </tr>
             <tr>
-                <td id="doPrawej">Adres:</td>
-                <td>{{ punkt.obiekt_id_obiektu.adres }}</td>
+                <td class="doPrawej">Adres:</td>
+                <td class="doLewej">{{ punkt.obiekt_id_obiektu.adres }}</td>
             </tr>
             <tr>
-                <td id="doPrawej">Ułatwienia dla niepełnosprawnych:</td>
-                <td>{% if punkt.obiekt_id_obiektu.ułatwienia_dla_niepełnosprawnych == 1 %} Tak {% else %} Nie {% endif %}</td>
+                <td class="doPrawej">Ułatwienia dla niepełnosprawnych:</td>
+                <td class="doLewej">{% if punkt.obiekt_id_obiektu.ułatwienia_dla_niepełnosprawnych == 1 %} Tak {% else %} Nie {% endif %}</td>
             </tr>
             <tr>
-                <td id="doPrawej">Kontakt:</td>
-                <td>{{ punkt.nr_telefonu }}</td>
+                <td class="doPrawej">Kontakt:</td>
+                <td class="doLewej">{{ punkt.nr_telefonu }}</td>
             </tr>
             <tr>
-                <td id="doPrawej">Informacje:</td>
-                <td>{{ punkt.informacje }}</td>
+                <td class="doPrawej">
+                    poniedziałek:<br>
+                    wtorek:<br>
+                    środa:<br>
+                    czwartek:<br>
+                    piątek:<br>
+                    sobota:<br>
+                    niedziela:
+                </td>
+                <td class="doLewej">
+                    {{ godzina.1.godz_otw }} - {{ godzina.1.godz_zamkn }}<br>
+                    {{ godzina.2.godz_otw }} - {{ godzina.2.godz_zamkn }}<br>
+                    {{ godzina.3.godz_otw }} - {{ godzina.3.godz_zamkn }}<br>
+                    {{ godzina.4.godz_otw }} - {{ godzina.4.godz_zamkn }}<br>
+                    {{ godzina.5.godz_otw }} - {{ godzina.5.godz_zamkn }}<br>
+                    {{ godzina.6.godz_otw }} - {{ godzina.6.godz_zamkn }}<br>
+                    {{ godzina.7.godz_otw }} - {{ godzina.7.godz_zamkn }}
+                </td>
             </tr>
             <tr>
-                <td colspan="2"><a href="">POKAŻ NA MAPIE</a>
-                <a href="">NAWIGACJA</a></td>
+                <td colspan="2"><a href="" id="lewo">POKAŻ NA MAPIE</a>
+                <a href="" id="prawo">NAWIGACJA</a></td>
             </tr>
         </table>
     </div>

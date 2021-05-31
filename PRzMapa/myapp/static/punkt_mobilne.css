@@ -15,7 +15,35 @@
         position: relative !important;
     }
 
+    .kontenerPunkty h1{
+        top: auto;
+    }
 
+    .kontenerPunkty table {
+        width: 100% !important;
+        border-collapse: collapse;
+        border-radius: 0px 0px 0 0;
+        margin-bottom: 0px;
+        font-size: 0.8rem;
+    }
+
+    .kontenerPunkty tr {
+        width: 100%;
+        background-color: #fafafa;
+    }
+
+    .kontenerPunkty table a {
+        font-size: 0.8rem;
+    }
+
+    #prawo {
+        margin-right: 10vw;
+    }
+
+    #lewo {
+
+        margin-left: 10vw;
+    }
 }
 
 @media only screen and (max-width: 450px)

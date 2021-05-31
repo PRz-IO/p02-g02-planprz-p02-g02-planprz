@@ -2,10 +2,6 @@
     position: relative !important;
 }
 
-#doPrawej {
-    text-align: right;
-}
-
 .kontenerPunkty h1{
     text-align: center;
     margin-left: auto;
@@ -20,7 +16,7 @@
 .kontenerPunkty table {
     margin-left: auto;
     margin-right: auto;
-    width: 60%;
+    width: 40%;
     border-collapse: collapse;
     border-spacing: 0;
     box-shadow: 0 2px 15px rgba(64,64,64,.7);
@@ -34,13 +30,8 @@
     text-align: center;
 }
 
-.kontenerPunkty tr > td:first {
-    padding: 15px 20px;
-    text-align: center;
-}
-
 .kontenerPunkty td:first-child {
-    width: 30%;
+    width: 40%;
 }
 
 .kontenerPunkty th {
@@ -92,4 +83,23 @@
 
     border-color:dodgerBlue;
     box-shadow: 0 0 8px 0 dodgerBlue;
+}
+
+    #prawo {
+        float: right;
+        margin-right: 15%;
+    }
+
+    #lewo {
+        float: left;
+        margin-left: 15%;
+    }
+
+.doPrawej {
+    text-align: right;
+}
+
+.doLewej {
+    text-align: left;
+    padding-left: 15%;
 }

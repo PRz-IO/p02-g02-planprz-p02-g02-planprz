@@ -37,8 +37,16 @@ def punkty(request, id):
 def punkt(request , id):
     kategorie = Kategoria.objects.all()
     punkt = Punkt.objects.get(pk=id)
+    godzina = {'1': GodzinyOtwarcia.objects.filter(Q(punkt_id_punktu=id) & Q(dni_tygodnia_id_dnia_tygodnia=1)).first(),
+               '2': GodzinyOtwarcia.objects.filter(Q(punkt_id_punktu=id) & Q(dni_tygodnia_id_dnia_tygodnia=2)).first(),
+               '3': GodzinyOtwarcia.objects.filter(Q(punkt_id_punktu=id) & Q(dni_tygodnia_id_dnia_tygodnia=3)).first(),
+               '4': GodzinyOtwarcia.objects.filter(Q(punkt_id_punktu=id) & Q(dni_tygodnia_id_dnia_tygodnia=4)).first(),
+               '5': GodzinyOtwarcia.objects.filter(Q(punkt_id_punktu=id) & Q(dni_tygodnia_id_dnia_tygodnia=5)).first(),
+               '6': GodzinyOtwarcia.objects.filter(Q(punkt_id_punktu=id) & Q(dni_tygodnia_id_dnia_tygodnia=6)).first(),
+               '7': GodzinyOtwarcia.objects.filter(Q(punkt_id_punktu=id) & Q(dni_tygodnia_id_dnia_tygodnia=7)).first()}
     context = {'punkt': punkt,
-               'kategorie':kategorie}
+               'kategorie': kategorie,
+               'godzina': godzina}
     return render(request, "punkt.html", context)
 
 def obiekty(request):

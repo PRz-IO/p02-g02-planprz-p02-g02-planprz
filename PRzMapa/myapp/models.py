@@ -17,7 +17,7 @@ class Administratorzy(models.Model):
     nr_telefonu = models.CharField(max_length=9, blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'administratorzy'
 
 
@@ -26,7 +26,7 @@ class DniTygodnia(models.Model):
     dzień = models.CharField(max_length=11)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'dni_tygodnia'
 
 
@@ -37,7 +37,7 @@ class GodzinyOtwarcia(models.Model):
     godz_zamkn = models.TimeField()
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'godziny_otwarcia'
 
 
@@ -46,7 +46,7 @@ class Kategoria(models.Model):
     nazwa_kategorii = models.CharField(max_length=20)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'kategoria'
 
 
@@ -57,7 +57,7 @@ class Obiekt(models.Model):
     ułatwienia_dla_niepełnosprawnych = models.TextField()  # This field type is a guess.
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'obiekt'
 
 
@@ -72,7 +72,7 @@ class Pracownicy(models.Model):
     czy_aktywowany = models.TextField()  # This field type is a guess.
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'pracownicy'
 
 
@@ -88,7 +88,7 @@ class Punkt(models.Model):
     szerokość_geograficzna = models.FloatField()
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'punkt'
 
 
@@ -97,5 +97,5 @@ class PunktPracownicy(models.Model):
     pracownicy_id_pracownika = models.ForeignKey(Pracownicy, models.DO_NOTHING, db_column='pracownicy_id_pracownika')
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'punkt_pracownicy'
