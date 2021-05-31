@@ -18,14 +18,12 @@
             <tr>
                 <th>Nazwa</th>
                 <th>Obiekt</th>
-                <th>Kontakt</th>
                 <th></th>
             </tr>
             {% for i in punkty %}
             <tr>
                 <td>{{ i.nazwa }}</td>
                 <td>{{ i.obiekt_id_obiektu.nazwa }}</td>
-                <td>{{ i.nr_telefonu }}</td>
                 <td>
                     <a href = "/punkty/{{i.id_punktu}}/" >
                         Szczegóły

@@ -30,13 +30,11 @@
 }
 
 .kontenerPunkty th,td {
-
     padding: 15px 20px;
     text-align: center;
 }
 
 .kontenerPunkty tr > td:first {
-
     padding: 15px 20px;
     text-align: center;
 }
@@ -46,7 +44,6 @@
 }
 
 .kontenerPunkty th {
-
     background-color: #003C82;
     color: #fafafa;
     font-weight: 200;
@@ -54,13 +51,11 @@
 }
 
 .kontenerPunkty tr {
-
     width: 100%;
     background-color: #fafafa;
 }
 
 .kontenerPunkty tr:nth-child(even){
-
     background-color: #eeeeee;
 }
 
