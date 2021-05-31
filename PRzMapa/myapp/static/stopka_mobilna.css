@@ -46,7 +46,7 @@
         padding: 0;
         margin: 0;
         background-color: #003C82;
-        height: 9vh;
+        height: 10vh;
         text-align: center;
     }
 
@@ -86,17 +86,32 @@
 
     #stopka ol > li > ul {
         display: none;
+        width: 98vw !important;
+        margin-left: auto;
+        margin-right: auto;
         list-style-type: none;
         padding: 0;
-        margin: 0;
     }
 
     #stopka  ol > li > ul > li{
         position: relative;
+        height: 6vh;
         background: rgb(0,60,130);
         background: linear-gradient(0deg, rgba(0,60,130,1) 0%, rgba(3,84,179,1) 100%);
         box-shadow: rgba(0, 0, 0, 0.15) 0 0 5px;
     }
+
+    #stopka  ol > li > ul > li > a{
+        position: absolute;
+        padding: 1.5vh 5vw;
+        height: 100%;
+        width: 98% !important;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center !important;
+        font-size: 1rem;
+    }
+
 
     #stopka ol > li > ul > li:hover{
         background-color: #DDD;
