@@ -169,3 +169,6 @@ a.goog-te-menu-value{
     color:#666;
     white-space: nowrap;
 }
+ul li:last-child{
+    border-bottom:3px rgb(0,40,110) solid;
+}
