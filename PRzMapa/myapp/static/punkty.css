@@ -62,8 +62,8 @@
     background: linear-gradient(90deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
 }
 
-.kontenerPunkty table a {
-    background: linear-gradient(180deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
+.kontenerPunkty table a:hover {
+    background: linear-gradient(-90deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
 }
 
 .kontenerPunkty #szukaj {

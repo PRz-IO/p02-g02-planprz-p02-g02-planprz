@@ -75,6 +75,11 @@
     background: linear-gradient(90deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
 }
 
+.kontenerBudynki table a:hover {
+
+    background: linear-gradient(-90deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
+}
+
 .kontenerBudynki #szukaj {
     margin-left: auto;
     margin-right: auto;
