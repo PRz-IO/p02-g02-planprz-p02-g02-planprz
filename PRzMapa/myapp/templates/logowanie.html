@@ -6,4 +6,26 @@
 <link rel="stylesheet"  href="{% static 'logowanie.css' %}">
 <link rel="stylesheet"  href="{% static 'logowanie_mobilne.css' %}">
 
+<div class="kontenerLogowanie">
+    <div id="tabelka">
+        <table>
+            <tr>
+                <th>LOGOWANIE</th>
+            </tr>
+            <tr>
+                <td>
+                    <form action="" method="get">
+                        Login: <input type="text" class="log" name="log" placeholder="Wpisz login">
+                        <br>
+                        Hasło: <input type="password" class="log" name="pas" placeholder="Wpisz hasło">
+                        <br><br>
+                        <input type="submit" class="bt">
+                        <input type="button" class="bt" value="Rejestracja">
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
 {% endblock %}

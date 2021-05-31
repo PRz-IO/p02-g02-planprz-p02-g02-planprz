@@ -1,0 +1,84 @@
+.topBar{
+    position: relative !important;
+}
+
+.kontenerLogowanie {
+    margin-top: 10%;
+}
+
+.kontenerLogowanie table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-shadow: 0 2px 15px rgba(64,64,64,.7);
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.kontenerLogowanie th,td {
+    padding: 15px 20px;
+    text-align: center;
+}
+
+.kontenerLogowanie th {
+
+    background-color: #003C82;
+    color: #fafafa;
+    font-weight: 200;
+    text-transform: uppercase;
+}
+
+.kontenerLogowanie tr {
+
+    width: 100%;
+    background-color: #fafafa;
+}
+
+.kontenerLogowanie table a {
+
+    position: relative;
+    display: inline-block;
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    border-radius: 40px;
+    background: linear-gradient(90deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
+}
+
+.kontenerLogowanie .log {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    margin: 8px 10%;
+    outline:none;
+    padding: 8px;
+    box-sizing:border-box;
+    transition:0.3s;
+}
+
+.kontenerLogowanie .bt {
+    background: linear-gradient(90deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
+    padding: 10px 32px;
+    text-align: center;
+    border: 0;
+    border-radius: 40px;
+    float: left;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 10%;
+}
+
+.kontenerLogowanie .log:focus {
+
+    border-color:dodgerBlue;
+    box-shadow: 0 0 8px 0 dodgerBlue;
+}

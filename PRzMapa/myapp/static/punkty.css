@@ -2,7 +2,7 @@
     position: relative !important;
 }
 
-.kontenerBudynki h1{
+.kontenerPunkty h1{
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -13,19 +13,7 @@
     text-transform: capitalize;
 }
 
-.kontenerBudynki #pierwsza {
-    top:20%;
-    margin-bottom: 30px;
-}
-
-.kontenerBudynki #druga {
-    top:50%;
-}
-.kontenerBudynki #nagłówek {
-    background-color: #02244b;
-}
-
-.kontenerBudynki table {
+.kontenerPunkty table {
     margin-left: auto;
     margin-right: auto;
     width: 60%;
@@ -37,13 +25,13 @@
     margin-bottom: 15px;
 }
 
-.kontenerBudynki th,td {
+.kontenerPunkty th,td {
 
     padding: 15px 20px;
     text-align: center;
 }
 
-.kontenerBudynki th {
+.kontenerPunkty th {
 
     background-color: #003C82;
     color: #fafafa;
@@ -51,18 +39,18 @@
     text-transform: uppercase;
 }
 
-.kontenerBudynki tr {
+.kontenerPunkty tr {
 
     width: 100%;
     background-color: #fafafa;
 }
 
-.kontenerBudynki tr:nth-child(even){
+.kontenerPunkty tr:nth-child(even){
 
     background-color: #eeeeee;
 }
 
-.kontenerBudynki table a {
+.kontenerPunkty table a {
 
     position: relative;
     display: inline-block;
@@ -75,7 +63,7 @@
     background: linear-gradient(90deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
 }
 
-.kontenerBudynki #szukaj {
+.kontenerPunkty #szukaj {
     margin-left: auto;
     margin-right: auto;
     width: 20%;
@@ -88,7 +76,7 @@
     transition:0.3s;
 }
 
-.kontenerBudynki #szukaj:focus {
+.kontenerPunkty #szukaj:focus {
 
     border-color:dodgerBlue;
     box-shadow: 0 0 8px 0 dodgerBlue;

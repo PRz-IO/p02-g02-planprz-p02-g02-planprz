@@ -15,7 +15,7 @@
         position: relative !important;
     }
 
-    .kontenerBudynki h1{
+    .kontenerPunkty h1{
         top: 50vh !important;
         text-align: center;
         margin-left: auto;
@@ -26,21 +26,20 @@
         text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 7px 6px 1px #CCCCCC;
     }
 
-    .kontenerBudynki #pierwsza {
+    .kontenerPunkty #pierwsza {
         top:20%;
         margin-bottom: 30px;
     }
 
-    .kontenerBudynki #druga {
+    .kontenerPunkty #druga {
         top:50%;
     }
 
-    .kontenerBudynki #nagłówek {
+    .kontenerPunkty #nagłówek {
         background-color: #02244b;
     }
 
-    .kontenerBudynki table {
-
+    .kontenerPunkty table {
         margin-left: auto;
         margin-right: auto;
         width: 100%;
@@ -53,28 +52,28 @@
         font-size: 0.7rem;
     }
 
-    .kontenerBudynki th,td {
+    .kontenerPunkty th,td {
         padding: 15px 20px;
         text-align: center;
     }
 
-    .kontenerBudynki th {
+    .kontenerPunkty th {
         background-color: #003C82;
         color: #fafafa;
         font-weight: 200;
         text-transform: uppercase;
     }
 
-    .kontenerBudynki tr {
+    .kontenerPunkty tr {
         width: 100%;
         background-color: #fafafa;
     }
 
-    .kontenerBudynki tr:nth-child(even){
+    .kontenerPunkty tr:nth-child(even){
         background-color: #eeeeee;
     }
 
-    .kontenerBudynki table a {
+    .kontenerPunkty table a {
         position: relative;
         display: inline-block;
         padding: 15px 20px;
@@ -86,7 +85,7 @@
         background: linear-gradient(90deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
     }
 
-    .kontenerBudynki #szukaj {
+    .kontenerPunkty #szukaj {
         margin-left: auto;
         display: block;
         margin-right: auto;
@@ -99,7 +98,7 @@
         transition:0.3s;
     }
 
-    .kontenerBudynki #szukaj:focus {
+    .kontenerPunkty #szukaj:focus {
         border-color:dodgerBlue;
         box-shadow: 0 0 8px 0 dodgerBlue;
     }
@@ -107,11 +106,11 @@
 
 @media only screen and (max-width: 370px)
 {
-.kontenerBudynki table {
+.kontenerPunkty table {
         font-size: 0.6rem;
     }
 
-.kontenerBudynki table a {
+.kontenerPunkty table a {
         font-size: 0.6rem;
     }
 }
