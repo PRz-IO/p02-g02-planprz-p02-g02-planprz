@@ -6,7 +6,7 @@
 @media only screen and (max-width: 1000px)
 {
     body{
-        top: 11vh;
+        top: 11vh !important;
         height: calc(100% - 11vh);
         position: absolute !important;
     }
@@ -15,53 +15,69 @@
         position: relative !important;
     }
 
-    .kontenerBudynki table {
+    .kontenerLogowanie table {
+
         margin-left: auto;
         margin-right: auto;
-        width: 100%;
+        width: 100% !important;
         border-collapse: collapse;
         border-spacing: 0;
         box-shadow: 0 2px 15px rgba(64,64,64,.7);
-        border-radius: 0px 0px 0 0;
+        border-radius: 0px 0px 0 0 !important;
         overflow: hidden;
         margin-bottom: 0px;
         font-size: 0.7rem;
     }
 
-    .kontenerBudynki th,td {
+    .kontenerLogowanie th,td {
         padding: 15px 20px;
         text-align: center;
+        font-size: 1rem;
     }
 
-    .kontenerBudynki th {
+    .kontenerLogowanie th {
         background-color: #003C82;
         color: #fafafa;
         font-weight: 200;
         text-transform: uppercase;
     }
 
-    .kontenerBudynki tr {
+    .kontenerLogowanie tr {
         width: 100%;
         background-color: #fafafa;
     }
 
-    .kontenerBudynki tr:nth-child(even){
+    .kontenerLogowanie tr:nth-child(even){
         background-color: #eeeeee;
     }
 
-    .kontenerBudynki table a {
+    .kontenerLogowanie table a{
         position: relative;
         display: inline-block;
         padding: 15px 20px;
         color: #fff;
         text-decoration: none;
         text-transform: uppercase;
-        font-size: 0.7rem;
+        font-size: 1rem;
         border-radius: 40px;
         background: linear-gradient(90deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
     }
 
-    .kontenerBudynki #szukaj {
+    .kontenerLogowanie .bt {
+        position: relative;
+        display: inline-block;
+        padding: 15px 20px;
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        border-radius: 40px;
+        background: linear-gradient(90deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
+    }
+
+
+
+    .kontenerLogowanie #szukaj {
         margin-left: auto;
         display: block;
         margin-right: auto;
@@ -74,19 +90,21 @@
         transition:0.3s;
     }
 
-    .kontenerBudynki #szukaj:focus {
+    .kontenerLogowanie #szukaj:focus {
         border-color:dodgerBlue;
         box-shadow: 0 0 8px 0 dodgerBlue;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
 @media only screen and (max-width: 370px)
 {
-.kontenerBudynki table {
-        font-size: 0.6rem;
+.kontenerLogowanie table {
+        font-size: 0.8rem;
     }
 
-.kontenerBudynki table a {
-        font-size: 0.6rem;
+.kontenerLogowanie table a {
+        font-size: 0.8rem;
     }
 }
