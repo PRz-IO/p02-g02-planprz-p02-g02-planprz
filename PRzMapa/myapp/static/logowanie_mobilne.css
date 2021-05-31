@@ -34,6 +34,16 @@
         font-size: 1rem;
     }
 
+    .kontenerLogowanie table a {
+        margin-left:10%;
+
+    }
+
+    .kontenerLogowanie .bt {
+        margin-left:5%;
+    }
+
+
     .kontenerLogowanie th {
         background-color: #003C82;
         color: #fafafa;
