@@ -126,10 +126,6 @@ body, html {
 
 /*Tlumacz*/
 
-.goog-te-gadget {
-    font-family: 'Roboto', sans-serif;
-}
-
 .topBar .goog-te-gadget-simple{
     width: 100%;
     height: 2em;
@@ -137,6 +133,7 @@ body, html {
     background-color: #003C82;
     border: none;
     text-transform: uppercase;
+    font-family: roboto;
 }
 
 .topBar .goog-te-gadget-simple:hover{
@@ -156,4 +153,19 @@ body, html {
 
 a.goog-te-menu-value span{
     color: #ffffff !important;
+}
+
+a.goog-te-menu-value{
+    font-family: roboto;
+}
+
+#google_translate_element{
+    font-family: roboto !important;
+}
+
+.goog-te-gadget {
+    font-family:roboto;
+    font-size:11px;
+    color:#666;
+    white-space:nowrap
 }
