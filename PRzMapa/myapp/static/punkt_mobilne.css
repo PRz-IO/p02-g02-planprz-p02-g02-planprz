@@ -1,0 +1,41 @@
+@media only screen and (min-width:1001px){
+    #stopka{
+        display:none;
+    }
+}
+@media only screen and (max-width: 1000px)
+{
+    body{
+        top: 11vh !important;
+        height: calc(100% - 11vh);
+        position: absolute !important;
+    }
+
+    .topBar{
+        position: relative !important;
+    }
+
+
+}
+
+@media only screen and (max-width: 450px)
+{
+.kontenerPunkty table {
+        font-size: 0.7rem;
+    }
+
+.kontenerPunkty table a {
+        font-size: 0.7rem;
+    }
+}
+
+@media only screen and (max-width: 370px)
+{
+.kontenerPunkty table {
+        font-size: 0.6rem;
+    }
+
+.kontenerPunkty table a {
+        font-size: 0.6rem;
+    }
+}
