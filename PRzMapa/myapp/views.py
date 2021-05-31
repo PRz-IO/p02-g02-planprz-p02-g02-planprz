@@ -9,6 +9,10 @@ def index(request):
     context = {'kategorie':kategorie}
     return render(request, "home.html", context)
 
+def logowanie(request):
+    kategorie = Kategoria.objects.all()
+    context = {'kategorie': kategorie}
+    return render(request, "logowanie.html", context)
 
 def punkty(request, id):
     query = request.GET.get('q')
