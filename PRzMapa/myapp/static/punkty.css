@@ -51,7 +51,6 @@
 }
 
 .kontenerPunkty table a {
-
     position: relative;
     display: inline-block;
     padding: 15px 20px;
@@ -63,6 +62,10 @@
     background: linear-gradient(90deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
 }
 
+.kontenerPunkty table a {
+    background: linear-gradient(180deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
+}
+
 .kontenerPunkty #szukaj {
     margin-left: auto;
     margin-right: auto;
@@ -70,10 +73,10 @@
     border: 2px solid #aaa;
     border-radius: 4px;
     margin: 8px 20%;
-    outline:none;
+    outline: none;
     padding: 8px;
-    box-sizing:border-box;
-    transition:0.3s;
+    box-sizing: border-box;
+    transition: 0.3s;
 }
 
 .kontenerPunkty #szukaj:focus {

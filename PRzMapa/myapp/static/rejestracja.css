@@ -2,11 +2,11 @@
     position: relative !important;
 }
 
-.kontenerLogowanie {
+.kontenerRejestracja {
     margin-top: 10%;
 }
 
-.kontenerLogowanie table {
+.kontenerRejestracja table {
     margin-left: auto;
     margin-right: auto;
     width: 40%;
@@ -18,41 +18,41 @@
     margin-bottom: 15px;
 }
 
-.kontenerLogowanie th {
+.kontenerRejestracja th {
     padding: 15px 20px;
     text-align: center;
 }
 
-.kontenerLogowanie td{
+.kontenerRejestracja td{
     padding: 5px 10px;
     text-align: center;
 }
 
-.kontenerLogowanie td:first-child {
+.kontenerRejestracja td:first-child {
     width: 30%;
 }
 
-.kontenerLogowanie th {
+.kontenerRejestracja th {
     background-color: #003C82;
     color: #fafafa;
     font-weight: 200;
     text-transform: uppercase;
 }
 
-.kontenerLogowanie tr {
+.kontenerRejestracja tr {
     width: 100%;
     background-color: #fafafa;
 }
 
-.kontenerLogowanie tr td:first-child {
-    padding-bottom: 10px;
-}
-
-.kontenerLogowanie tr td:first-child {
+.kontenerRejestracja tr td:first-child {
     text-align: right;
 }
 
-.kontenerLogowanie table a {
+.kontenerRejestracja tr td:first-child {
+    padding-bottom: 10px;
+}
+
+.kontenerRejestracja table a {
     padding: 10px 32px;
     text-align: center;
     text-decoration: none;
@@ -67,11 +67,12 @@
     background: linear-gradient(90deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
 }
 
-.kontenerPunkty table a:hover {
-    background: linear-gradient(-90deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
+.kontenerRejestracja table a:hover {
+    background: linear-gradient(180deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
+    color: green;
 }
 
-.kontenerLogowanie .log {
+.kontenerRejestracja .log {
     margin-left: auto;
     margin-right: auto;
     width: 60%;
@@ -85,7 +86,7 @@
     transition:0.3s;
 }
 
-.kontenerLogowanie .bt {
+.kontenerRejestracja .bt {
     background: linear-gradient(90deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
     padding: 10px 32px;
     text-align: center;
@@ -99,11 +100,11 @@
     margin-left: 15%;
 }
 
-.kontenerLogowanie .bt:hover {
-    background: linear-gradient(-90deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
+.kontenerRejestracja .bt:hover {
+    background: linear-gradient(180deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
 }
 
-.kontenerLogowanie .log:focus {
+.kontenerRejestracja .log:focus {
 
     border-color:dodgerBlue;
     box-shadow: 0 0 8px 0 dodgerBlue;
