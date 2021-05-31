@@ -20,20 +20,26 @@
     </table>
     <table id="druga">
         <tr>
-            <th colspan="2" id="nagłówek">Lista punktów</th>
+            <th colspan="3" id="nagłówek">Lista punktów</th>
         </tr>
         <tr>
             <th>Nazwa</th>
             <th>Kategoria</th>
+            <th></th>
         </tr>
         {% for pun in punkty_budynek %}
             <tr>
                 <td>{{pun.nazwa}}</td>
                 <td>{{pun.kategoria_id_kategorii.nazwa_kategorii}}</td>
+                <td>
+                    <a href = "/punkty/{{pun.id_punktu}}/" >
+                    Szczegóły
+                    </a>
+                </td>
             </tr>
         {% empty %}
         <tr>
-                <td colspan="2">Brak punktów w budynku</td>
+                <td colspan="3">Brak punktów w budynku</td>
         </tr>
         {% endfor %}
     </table>
