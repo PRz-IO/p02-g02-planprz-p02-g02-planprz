@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load static %}
+<link rel="stylesheet"  href="{% static 'punkt.css' %}">
+<link rel="stylesheet"  href="{% static 'punkty_mobilne.css' %}">
+
+<div class="kontenerPunkty">
+    <div id="liniaGorna">
+        <h1>PUNKT</h1>
+    </div>
+    <div id="tabelka">
+        <table>
+            <tr>
+                <th colspan="2">{{ punkt.nazwa }}</th>
+            </tr>
+            <tr>
+                <td colspan="2">ZDJĘCIE</td>
+            </tr>
+            <tr>
+                <td id="doPrawej">Kategoria:</td>
+                <td>{{ punkt.kategoria_id_kategorii.nazwa_kategorii }}</td>
+            </tr>
+            <tr>
+                <td id="doPrawej">Obiekt:</td>
+                <td>{{ punkt.obiekt_id_obiektu.nazwa }}</td>
+            </tr>
+            <tr>
+                <td id="doPrawej">Adres:</td>
+                <td>{{ punkt.obiekt_id_obiektu.adres }}</td>
+            </tr>
+            <tr>
+                <td id="doPrawej">Ułatwienia dla niepełnosprawnych:</td>
+                <td>{% if punkt.obiekt_id_obiektu.ułatwienia_dla_niepełnosprawnych == 1 %} Tak {% else %} Nie {% endif %}</td>
+            </tr>
+            <tr>
+                <td id="doPrawej">Kontakt:</td>
+                <td>{{ punkt.nr_telefonu }}</td>
+            </tr>
+            <tr>
+                <td id="doPrawej">Informacje:</td>
+                <td>{{ punkt.informacje }}</td>
+            </tr>
+            <tr>
+                <td colspan="2"><a href="">POKAŻ NA MAPIE</a>
+                <a href="">NAWIGACJA</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+{% endblock content %}
+

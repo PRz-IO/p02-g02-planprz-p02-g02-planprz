@@ -36,8 +36,9 @@ def punkty(request, id):
 
 def punkt(request , id):
     kategorie = Kategoria.objects.all()
-    punkt = Kategoria.objects.get(pk=id)
-    context = {'punkt': punkt, 'kategorie':kategorie}
+    punkt = Punkt.objects.get(pk=id)
+    context = {'punkt': punkt,
+               'kategorie':kategorie}
     return render(request, "punkt.html", context)
 
 def obiekty(request):
