@@ -19,6 +19,7 @@ class Administratorzy(models.Model):
     class Meta:
         managed = True
         db_table = 'administratorzy'
+        verbose_name_plural = "Administratorzy"
 
 
 class DniTygodnia(models.Model):
@@ -28,6 +29,7 @@ class DniTygodnia(models.Model):
     class Meta:
         managed = True
         db_table = 'dni_tygodnia'
+        verbose_name_plural = "Dni tygodnia"
 
 
 class GodzinyOtwarcia(models.Model):
@@ -39,6 +41,7 @@ class GodzinyOtwarcia(models.Model):
     class Meta:
         managed = True
         db_table = 'godziny_otwarcia'
+        verbose_name_plural = "Godziny otwarcia"
 
 
 class Kategoria(models.Model):
@@ -48,6 +51,7 @@ class Kategoria(models.Model):
     class Meta:
         managed = True
         db_table = 'kategoria'
+        verbose_name_plural = "Kategorie"
 
 
 class Obiekt(models.Model):
@@ -59,6 +63,7 @@ class Obiekt(models.Model):
     class Meta:
         managed = True
         db_table = 'obiekt'
+        verbose_name_plural = "Obiekty"
 
 
 class Pracownicy(models.Model):
@@ -74,6 +79,7 @@ class Pracownicy(models.Model):
     class Meta:
         managed = True
         db_table = 'pracownicy'
+        verbose_name_plural = "Pracownicy"
 
 
 class Punkt(models.Model):
@@ -90,6 +96,7 @@ class Punkt(models.Model):
     class Meta:
         managed = True
         db_table = 'punkt'
+        verbose_name_plural = "Punkty"
 
 
 class PunktPracownicy(models.Model):
@@ -99,3 +106,4 @@ class PunktPracownicy(models.Model):
     class Meta:
         managed = True
         db_table = 'punkt_pracownicy'
+        verbose_name_plural = "Punkty - Pracownicy"
