@@ -7,16 +7,16 @@
 <link rel="stylesheet"  href="{% static 'punkt_mobilne.css' %}">
 <script>
     function initMap() {
-        const uluru = { lat: {{ punkt.długość_geograficzna }}, lng: {{ punkt.szerokość_geograficzna }}};
+        const point = { lat: {{ punkt.długość_geograficzna }}, lng: {{ punkt.szerokość_geograficzna }}};
 
         const map = new google.maps.Map(document.getElementById("pojemnik-mapa"), {
-            zoom: 4,
-            center: uluru,
+            zoom: 18,
+            center: point,
         });
 
-        const marker = new google.maps.Marker({
-            position: uluru,
-            map: pojemnik-mapa,
+        new google.maps.Marker({
+            position: point,
+            map: map,
         });
     }
 </script>
