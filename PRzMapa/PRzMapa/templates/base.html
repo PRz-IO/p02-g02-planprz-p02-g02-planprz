@@ -9,14 +9,16 @@
         <link rel="stylesheet"  href="{% static 'stopka_mobilna.css' %}">
         <meta name="viewport" content="width=device-width,initial-scale=1">
 
+        {% block head %}
+
+        {% endblock head %}
+
     </head>
     <body>
-    {% include 'stopka.html' %}
-    {% include 'bar.html' %}
+        {% include 'stopka.html' %}
+        {% include 'bar.html' %}
 
         {% block content %}
-
-
 
         {% endblock content %}
 

@@ -16,13 +16,13 @@
 .kontenerPunkty table {
     margin-left: auto;
     margin-right: auto;
-    width: 40%;
+    width: 50%;
     border-collapse: collapse;
     border-spacing: 0;
     box-shadow: 0 2px 15px rgba(64,64,64,.7);
     border-radius: 12px 12px 0 0;
     overflow: hidden;
-    margin-bottom: 15px;
+    margin-bottom: 5%;
 }
 
 .kontenerPunkty th,td {
@@ -50,7 +50,7 @@
     background-color: #eeeeee;
 }
 
-.kontenerPunkty table a {
+.kontenerPunkty table a#lewo, a#prawo {
     position: relative;
     display: inline-block;
     padding: 15px 20px;
@@ -62,38 +62,19 @@
     background: linear-gradient(90deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
 }
 
-.kontenerPunkty table a:hover {
+.kontenerPunkty table a#lewo:hover, a#prawo:hover {
     background: linear-gradient(-90deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
 }
 
-.kontenerPunkty #szukaj {
-    margin-left: auto;
-    margin-right: auto;
-    width: 20%;
-    border: 2px solid #aaa;
-    border-radius: 4px;
-    margin: 8px 20%;
-    outline: none;
-    padding: 8px;
-    box-sizing: border-box;
-    transition: 0.3s;
+#prawo {
+    float: right;
+    margin-right: 15%;
 }
 
-.kontenerPunkty #szukaj:focus {
-
-    border-color:dodgerBlue;
-    box-shadow: 0 0 8px 0 dodgerBlue;
+#lewo {
+    float: left;
+    margin-left: 15%;
 }
-
-    #prawo {
-        float: right;
-        margin-right: 15%;
-    }
-
-    #lewo {
-        float: left;
-        margin-left: 15%;
-    }
 
 .doPrawej {
     text-align: right;
@@ -102,4 +83,21 @@
 .doLewej {
     text-align: left;
     padding-left: 15%;
+}
+
+#obrazek {
+    margin: 0;
+    padding-top: 4px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.pojemnik {
+    padding: 0;
+    height: auto;
+}
+
+#pojemnik-mapa {
+    padding: 0;
+    height: 500px;
 }

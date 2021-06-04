@@ -1,23 +1,47 @@
 {% extends "base.html" %}
-
-{% block content %}
-
-{% load myapp_tags %}
 {% load static %}
+
+{% block head %}
+
 <link rel="stylesheet"  href="{% static 'punkt.css' %}">
 <link rel="stylesheet"  href="{% static 'punkt_mobilne.css' %}">
+<script>
+    function initMap() {
+        const uluru = { lat: {{ punkt.długość_geograficzna }}, lng: {{ punkt.szerokość_geograficzna }}};
+
+        const map = new google.maps.Map(document.getElementById("pojemnik-mapa"), {
+            zoom: 4,
+            center: uluru,
+        });
+
+        const marker = new google.maps.Marker({
+            position: uluru,
+            map: pojemnik-mapa,
+        });
+    }
+</script>
+
+{% endblock head %}
+
+{% block content %}
+{% load myapp_tags %}
 
 <div class="kontenerPunkty">
     <div id="liniaGorna">
-        <h1>PUNKT</h1>
+        <h1>{{ punkt.nazwa }}</h1>
     </div>
     <div id="tabelka">
         <table>
             <tr>
-                <th colspan="2">{{ punkt.nazwa }}</th>
+                <th colspan="2">ZDJĘCIE</th>
             </tr>
             <tr>
-                <td colspan="2">ZDJĘCIE</td>
+                <td colspan="2" class="pojemnik"><img src="{{ punkt.zdjęcie|link }}" id="obrazek"></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th colspan="2">INFORMACJE</th>
             </tr>
             <tr>
                 <td class="doPrawej">Kategoria:</td>
@@ -59,6 +83,19 @@
                     {{ godzina.7.godz_otw }} - {{ godzina.7.godz_zamkn }}
                 </td>
             </tr>
+
+        </table>
+        <table>
+            <tr>
+                <th colspan="2">MAPA</th>
+            </tr>
+            <tr>
+                <td colspan="2" id="pojemnik-mapa"></td>
+            </tr>
+            <script
+              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCan_xu4WQrClbqr-3Beiv4IgEOWUTzWSw&callback=initMap"
+              async
+            ></script>
             <tr>
                 <td colspan="2"><a href="" id="lewo">POKAŻ NA MAPIE</a>
                 <a href="" id="prawo">NAWIGACJA</a></td>
