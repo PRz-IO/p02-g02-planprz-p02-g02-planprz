@@ -37,7 +37,7 @@
 .kontenerPunkty th {
     background-color: #003C82;
     color: #fafafa;
-    font-weight: 200;
+    font-weight: 200 !important;
     text-transform: uppercase;
 }
 
@@ -50,7 +50,7 @@
     background-color: #eeeeee;
 }
 
-.kontenerPunkty table a#lewo, a#prawo {
+.kontenerPunkty table a#link {
     position: relative;
     display: inline-block;
     padding: 15px 20px;
@@ -62,18 +62,8 @@
     background: linear-gradient(90deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
 }
 
-.kontenerPunkty table a#lewo:hover, a#prawo:hover {
+.kontenerPunkty table a#link:hover {
     background: linear-gradient(-90deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
-}
-
-#prawo {
-    float: right;
-    margin-right: 15%;
-}
-
-#lewo {
-    float: left;
-    margin-left: 15%;
 }
 
 .doPrawej {

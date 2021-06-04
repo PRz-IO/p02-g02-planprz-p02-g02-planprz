@@ -3,8 +3,6 @@
 
 {% block head %}
 
-<link rel="stylesheet"  href="{% static 'punkt.css' %}">
-<link rel="stylesheet"  href="{% static 'punkt_mobilne.css' %}">
 <script>
     function initMap() {
         const point = { lat: {{ punkt.długość_geograficzna }}, lng: {{ punkt.szerokość_geograficzna }}};
@@ -14,12 +12,30 @@
             center: point,
         });
 
+        const image = {
+            url: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+            size: new google.maps.Size(20, 32),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(0, 32),
+        };
+
+        const shape = {
+            coords: [1, 1, 1, 20, 18, 20, 18, 1],
+            type: "poly",
+        };
+
         new google.maps.Marker({
             position: point,
             map: map,
+            animation: google.maps.Animation.DROP,
+            icon: image,
+            shape: shape,
+            title: "{{ punkt.nazwa }}",
         });
     }
 </script>
+<link rel="stylesheet"  href="{% static 'punkt.css' %}">
+<link rel="stylesheet"  href="{% static 'punkt_mobilne.css' %}">
 
 {% endblock head %}
 
@@ -97,8 +113,7 @@
               async
             ></script>
             <tr>
-                <td colspan="2"><a href="" id="lewo">POKAŻ NA MAPIE</a>
-                <a href="" id="prawo">NAWIGACJA</a></td>
+                <td colspan="2"> <a href="" id="link">NAWIGACJA</a> </td>
             </tr>
         </table>
     </div>

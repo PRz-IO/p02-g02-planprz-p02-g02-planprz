@@ -21,15 +21,6 @@
         top:0;
     }
 
-    #map {
-        width: 100%;
-        height: calc(100% - 10vh);
-        top: 10vh;
-        position: absolute;
-        border: 0;
-        z-index: 1;
-    }
-
     #stopka img{
         margin-top: 5px;
         width: 9vh;

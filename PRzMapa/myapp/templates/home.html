@@ -1,9 +1,56 @@
 {% extends "base.html" %}
-
-{% block content %}
 {% load static %}
 
+{% block head %}
+
+<script>
+    function initMap() {
+        const map = new google.maps.Map(document.getElementById("mapa-glowna"), {
+            zoom: 17,
+            center: { lat: 50.01950808183996, lng: 21.989112773557373},
+        });
+
+        var infowindow = new google.maps.InfoWindow();
+
+        var marker;
+
+        {% for i in punkty %}
+        marker = new google.maps.Marker({
+            position: { lat: {{ i.długość_geograficzna }}, lng: {{ i.szerokość_geograficzna }}},
+            map: map,
+        });
+
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(LocationsForMap[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+
+      {% endfor %}
+    }
+</script>
+
+{% endblock head %}
 
 
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2563.583197258202!2d21.987060290401!3d50.0191669751682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473cfbae554b096b%3A0xfb1f78d1a4df278d!2sPolitechnika%20Rzeszowska%20im.%20Ignacego%20%C5%81ukasiewicza!5e0!3m2!1spl!2spl!4v1621681106715!5m2!1spl!2spl" id="map"></iframe>
+{% block content %}
+
+<style type="text/css">
+    #mapa-glowna {
+        width: 100%;
+        height: calc(100% - 32px);
+        top: 32px;
+        position: absolute;
+        border: 0;
+        z-index: 1;
+    }
+</style>
+
+<div id="mapa-glowna"></div>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCan_xu4WQrClbqr-3Beiv4IgEOWUTzWSw&callback=initMap"
+    async
+></script>
+
 {% endblock content %}

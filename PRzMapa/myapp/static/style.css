@@ -32,15 +32,6 @@ body, html {
     z-index: 2;
 }
 
-#map {
-    width: 100%;
-    height: calc(100% - 32px);
-    top: 32px;
-    position: absolute;
-    border: 0;
-    z-index: 1;
-}
-
     /* LISTA ROZWIJANA */
 .topBar ol {
     list-style-type: none;
