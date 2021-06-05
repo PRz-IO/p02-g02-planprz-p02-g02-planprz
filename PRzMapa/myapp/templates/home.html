@@ -10,24 +10,40 @@
             center: { lat: 50.01950808183996, lng: 21.989112773557373},
         });
 
+        const image = {
+            url: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+            size: new google.maps.Size(20, 32),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(0, 32),
+        };
+
+        const shape = {
+            coords: [1, 1, 1, 20, 18, 20, 18, 1],
+            type: "poly",
+        };
+
         var infowindow = new google.maps.InfoWindow();
 
-        var marker;
+        var marker, j = 0;
 
         {% for i in punkty %}
         marker = new google.maps.Marker({
             position: { lat: {{ i.długość_geograficzna }}, lng: {{ i.szerokość_geograficzna }}},
             map: map,
+            animation: google.maps.Animation.DROP,
+            icon: image,
+            shape: shape,
+            title: "{{ i.nazwa }}",
         });
 
-        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        google.maps.event.addListener(marker, 'click', (function(marker, j) {
         return function() {
-          infowindow.setContent(LocationsForMap[i][0]);
+          infowindow.setContent("{{ i.nazwa }}");
           infowindow.open(map, marker);
         }
-      })(marker, i));
-
-      {% endfor %}
+      })(marker, j));
+        j = j + 1;
+        {% endfor %}
     }
 </script>
 
@@ -47,7 +63,7 @@
     }
 </style>
 
-<div id="mapa-glowna"></div>
+<div id="mapa-glowna">{{i.szerokość_geograficzna}}</div>
 <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCan_xu4WQrClbqr-3Beiv4IgEOWUTzWSw&callback=initMap"
     async
