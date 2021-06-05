@@ -38,7 +38,7 @@
 
         google.maps.event.addListener(marker, 'click', (function(marker, j) {
         return function() {
-          infowindow.setContent("{{ i.nazwa }}");
+          infowindow.setContent('<a href = "/punkty/{{i.id_punktu}}/">{{ i.nazwa }}</a>');
           infowindow.open(map, marker);
         }
       })(marker, j));
