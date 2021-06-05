@@ -113,6 +113,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+TIME_INPUT_FORMATS = [
+    '%H:%M',
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
