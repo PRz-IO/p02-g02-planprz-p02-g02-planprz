@@ -17,7 +17,7 @@ class Administratorzy(models.Model):
     nr_telefonu = models.CharField(max_length=9, blank=True, null=True)
 
     def __str__(self):
-        return f"{self.id_administratorzy}, {self.nazwisko} {self.imię}"
+        return f"ID administratora:{self.id_administratorzy} | {self.nazwisko} {self.imię}"
 
     class Meta:
         managed = True
@@ -30,7 +30,7 @@ class DniTygodnia(models.Model):
     dzień = models.CharField(max_length=11)
 
     def __str__(self):
-        return f"{self.id_dnia_tygodnia}, {self.dzień}"
+        return f"ID dnia tygodnia:{self.id_dnia_tygodnia} | {self.dzień}"
 
     class Meta:
         managed = True
@@ -45,7 +45,7 @@ class GodzinyOtwarcia(models.Model):
     godz_zamkn = models.TimeField()
 
     def __str__(self):
-        return f"{self.dni_tygodnia_id_dnia_tygodnia}, {self.punkt_id_punktu}"
+        return f"{self.dni_tygodnia_id_dnia_tygodnia} || {self.punkt_id_punktu}"
 
     class Meta:
         managed = True
@@ -58,7 +58,7 @@ class Kategoria(models.Model):
     nazwa_kategorii = models.CharField(max_length=20)
 
     def __str__(self):
-        return f"{self.id_kategorii}, {self.nazwa_kategorii}"
+        return f"ID kategorii:{self.id_kategorii} | {self.nazwa_kategorii}"
 
     class Meta:
         managed = True
@@ -73,7 +73,7 @@ class Obiekt(models.Model):
     ułatwienia_dla_niepełnosprawnych = models.TextField()  # This field type is a guess.
 
     def __str__(self):
-        return f"{self.id_obiektu}, {self.nazwa}"
+        return f"ID obiektu:{self.id_obiektu} | {self.nazwa}"
 
     class Meta:
         managed = True
@@ -92,7 +92,7 @@ class Pracownicy(models.Model):
     czy_aktywowany = models.TextField()  # This field type is a guess.
 
     def __str__(self):
-        return f"{self.id_pracownika}, {self.nazwisko} {self.imię}"
+        return f"ID pracownika:{self.id_pracownika} | {self.nazwisko} {self.imię}"
 
     class Meta:
         managed = True
@@ -112,7 +112,7 @@ class Punkt(models.Model):
     szerokość_geograficzna = models.FloatField()
 
     def __str__(self):
-        return f"{self.id_punktu}, {self.nazwa}"
+        return f"ID punktu:{self.id_punktu} | {self.nazwa}"
 
     class Meta:
         managed = True
@@ -125,7 +125,7 @@ class PunktPracownicy(models.Model):
     pracownicy_id_pracownika = models.ForeignKey(Pracownicy, models.DO_NOTHING, db_column='pracownicy_id_pracownika')
 
     def __str__(self):
-        return f"{self.punkt_id_punktu}, {self.pracownicy_id_pracownika}"
+        return f"{self.punkt_id_punktu} || {self.pracownicy_id_pracownika}"
 
     class Meta:
         managed = True
