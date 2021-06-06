@@ -7,8 +7,10 @@ from django.db.models import Q
 def index(request):
     kategorie = Kategoria.objects.all()
     punkty = Punkt.objects.all()
+    budynki = Obiekt.objects.all()
     context = {'kategorie':kategorie,
-               'punkty': punkty}
+               'punkty': punkty,
+               'budynki': budynki}
     return render(request, "home.html", context)
 
 def logowanie(request):

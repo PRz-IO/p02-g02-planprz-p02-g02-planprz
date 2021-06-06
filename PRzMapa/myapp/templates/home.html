@@ -44,6 +44,26 @@
       })(marker, j));
         j = j + 1;
         {% endfor %}
+
+        {% for k in budynki %}
+        marker = new google.maps.Marker({
+            position: { lat: {{ 50.0 }}+j, lng: {{ 50.0 }}+j},
+            map: map,
+            animation: google.maps.Animation.DROP,
+            icon: image,
+            shape: shape,
+            title: "{{ k.nazwa }}",
+        });
+
+        google.maps.event.addListener(marker, 'click', (function(marker, j) {
+        return function() {
+          infowindow.setContent('<a href = "/budynki/{{k.id_obiektu}}/">{{ k.nazwa }}</a>');
+          infowindow.open(map, marker);
+        }
+      })(marker, j));
+        j = j + 1;
+        {% endfor %}
+
     }
 </script>
 
