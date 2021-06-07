@@ -1,8 +1,11 @@
 from django.contrib import admin
 from .models import *
-
+from django.contrib.auth.models import User, Group
 
 # Register your models here.
+admin.site.unregister(User)
+admin.site.unregister(Group)
+
 @admin.register(Administratorzy)
 class Administratorzy(admin.ModelAdmin):
     list_display = ("id_administratorzy","nazwisko", "imię")
@@ -41,3 +44,4 @@ class PunktPracownicy(admin.ModelAdmin):
 @admin.register(Obiekt)
 class Obiekt(admin.ModelAdmin):
     list_display = ("id_obiektu", "nazwa")
+
