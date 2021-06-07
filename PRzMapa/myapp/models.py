@@ -17,12 +17,13 @@ class Administratorzy(models.Model):
     nr_telefonu = models.CharField(max_length=9, blank=True, null=True)
 
     def __str__(self):
-        return f"ID administratora:{self.id_administratorzy} | {self.nazwisko} {self.imię}"
+        return f"{self.id_administratorzy}, {self.nazwisko} {self.imię}"
 
     class Meta:
         managed = True
         db_table = 'administratorzy'
         verbose_name_plural = "Administratorzy"
+        ordering = ("id_administratorzy","nazwisko", "imię")
 
 
 class DniTygodnia(models.Model):
@@ -30,12 +31,13 @@ class DniTygodnia(models.Model):
     dzień = models.CharField(max_length=11)
 
     def __str__(self):
-        return f"ID dnia tygodnia:{self.id_dnia_tygodnia} | {self.dzień}"
+        return f"{self.id_dnia_tygodnia}, {self.dzień}"
 
     class Meta:
         managed = True
         db_table = 'dni_tygodnia'
         verbose_name_plural = "Dni tygodnia"
+        ordering = ("id_dnia_tygodnia","dzień")
 
 
 class GodzinyOtwarcia(models.Model):
@@ -45,25 +47,26 @@ class GodzinyOtwarcia(models.Model):
     godz_zamkn = models.TimeField()
 
     def __str__(self):
-        return f"{self.dni_tygodnia_id_dnia_tygodnia} || {self.punkt_id_punktu}"
+        return f"{self.dni_tygodnia_id_dnia_tygodnia}, {self.punkt_id_punktu}"
 
     class Meta:
         managed = True
         db_table = 'godziny_otwarcia'
         verbose_name_plural = "Godziny otwarcia"
-
+        ordering = ("dni_tygodnia_id_dnia_tygodnia", "punkt_id_punktu")
 
 class Kategoria(models.Model):
     id_kategorii = models.AutoField(primary_key=True)
     nazwa_kategorii = models.CharField(max_length=20)
 
     def __str__(self):
-        return f"ID kategorii:{self.id_kategorii} | {self.nazwa_kategorii}"
+        return f"{self.id_kategorii}, {self.nazwa_kategorii}"
 
     class Meta:
         managed = True
         db_table = 'kategoria'
         verbose_name_plural = "Kategorie"
+        ordering = ("id_kategorii", "nazwa_kategorii")
 
 
 class Obiekt(models.Model):
@@ -75,12 +78,13 @@ class Obiekt(models.Model):
     szerokość_geograficzna = models.FloatField()
 
     def __str__(self):
-        return f"ID obiektu:{self.id_obiektu} | {self.nazwa}"
+        return f"{self.id_obiektu}, {self.nazwa}"
 
     class Meta:
         managed = True
         db_table = 'obiekt'
         verbose_name_plural = "Obiekty"
+        ordering = ("id_obiektu", "nazwa")
 
 
 class Pracownicy(models.Model):
@@ -94,12 +98,13 @@ class Pracownicy(models.Model):
     czy_aktywowany = models.TextField()  # This field type is a guess.
 
     def __str__(self):
-        return f"ID pracownika:{self.id_pracownika} | {self.nazwisko} {self.imię}"
+        return f"{self.id_pracownika}, {self.nazwisko} {self.imię}"
 
     class Meta:
         managed = True
         db_table = 'pracownicy'
         verbose_name_plural = "Pracownicy"
+        ordering = ("id_pracownika", "nazwisko", "imię")
 
 
 class Punkt(models.Model):
@@ -114,12 +119,13 @@ class Punkt(models.Model):
     szerokość_geograficzna = models.FloatField()
 
     def __str__(self):
-        return f"ID punktu:{self.id_punktu} | {self.nazwa}"
+        return f"{self.id_punktu}, {self.nazwa}"
 
     class Meta:
         managed = True
         db_table = 'punkt'
         verbose_name_plural = "Punkty"
+        ordering = ("id_punktu", "nazwa")
 
 
 class PunktPracownicy(models.Model):
@@ -127,9 +133,10 @@ class PunktPracownicy(models.Model):
     pracownicy_id_pracownika = models.ForeignKey(Pracownicy, models.DO_NOTHING, db_column='pracownicy_id_pracownika')
 
     def __str__(self):
-        return f"{self.punkt_id_punktu} || {self.pracownicy_id_pracownika}"
+        return f"{self.punkt_id_punktu}, {self.pracownicy_id_pracownika}"
 
     class Meta:
         managed = True
         db_table = 'punkt_pracownicy'
         verbose_name_plural = "Punkty - Pracownicy"
+        ordering = ("punkt_id_punktu", "pracownicy_id_pracownika")
