@@ -81,6 +81,22 @@
         border: 0;
         z-index: 1;
     }
+    @media only screen and (max-width: 1000px)
+    {
+        body{
+            top: 11vh !important;
+            height: calc(100% - 11vh);
+            position: absolute !important;
+        }
+
+        #mapa-glowna {
+            top: 0;
+        }
+
+        .topBar{
+            position: relative !important;
+        }
+    }
 </style>
 
 <div id="mapa-glowna">{{i.szerokość_geograficzna}}</div>
