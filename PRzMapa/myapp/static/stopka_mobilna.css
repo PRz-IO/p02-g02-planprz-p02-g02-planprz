@@ -125,21 +125,7 @@
     }
 
     #google_translate_element, #google_translate_element *{
-        height: 10vh !important;
+        height: 9.2vh !important;
         overflow:hidden;
-    }
-
-    .goog-te-gadget-simple{
-        width: 80%;
-        border: none !important;
-        background-color: #003C82 !important;
-        background-image: url("https://www.email.cz/download/k/oc9qhfKjwO6DCry17QZyKOGpeKduVzXn9prjG-bfbV7xeyquGty7r4b1yP-SgdSLrw3gF5k/prz_jezyki.jpg");
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-    }
-
-    .goog-te-gadget-icon{
-        visibility: hidden;
     }
 }
