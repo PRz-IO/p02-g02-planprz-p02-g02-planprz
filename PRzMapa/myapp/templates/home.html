@@ -37,11 +37,11 @@
         });
 
         google.maps.event.addListener(marker, 'click', (function(marker, j) {
-        return function() {
-          infowindow.setContent('<a href = "/punkty/{{i.id_punktu}}/">{{ i.nazwa }}</a>');
-          infowindow.open(map, marker);
-        }
-      })(marker, j));
+            return function() {
+                infowindow.setContent('<a href = "/punkty/{{i.id_punktu}}/">{{ i.nazwa }}</a>');
+                infowindow.open(map, marker);
+            }
+        })(marker, j));
         j = j + 1;
         {% endfor %}
         
@@ -56,10 +56,10 @@
         });
 
         google.maps.event.addListener(marker, 'click', (function(marker, j) {
-        return function() {
-          infowindow.setContent('<a href = "/budynki/{{k.id_obiektu}}/">{{ k.nazwa }}</a>');
-          infowindow.open(map, marker);
-        }
+            return function() {
+                infowindow.setContent('<a href = "/budynki/{{k.id_obiektu}}/">{{ k.nazwa }}</a>');
+                infowindow.open(map, marker);
+            }
       })(marker, j));
         j = j + 1;
         {% endfor %}
