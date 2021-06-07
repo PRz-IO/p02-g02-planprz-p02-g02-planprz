@@ -20,6 +20,7 @@
 
 .kontenerBudynki #druga {
     top:50%;
+    margin-bottom: 30px;
 }
 .kontenerBudynki #nagłówek {
     background-color: #02244b;
@@ -47,7 +48,7 @@
 
     background-color: #003C82;
     color: #fafafa;
-    font-weight: 200;
+    font-weight: 900 !important;
     text-transform: uppercase;
 }
 
@@ -62,7 +63,7 @@
     background-color: #eeeeee;
 }
 
-.kontenerBudynki table a {
+.kontenerBudynki table a.link {
 
     position: relative;
     display: inline-block;
@@ -97,4 +98,9 @@
 
     border-color:dodgerBlue;
     box-shadow: 0 0 8px 0 dodgerBlue;
+}
+
+#pojemnik-mapa {
+    padding: 0;
+    height: 500px;
 }
