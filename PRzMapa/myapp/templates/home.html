@@ -44,7 +44,7 @@
       })(marker, j));
         j = j + 1;
         {% endfor %}
-
+        
         {% for k in budynki %}
         marker = new google.maps.Marker({
             position: { lat: {{ k.szerokość_geograficzna }}, lng: {{ k.długość_geograficzna }}},
