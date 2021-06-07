@@ -28,7 +28,7 @@
 
         {% for i in punkty %}
         marker = new google.maps.Marker({
-            position: { lat: {{ i.długość_geograficzna }}, lng: {{ i.szerokość_geograficzna }}},
+            position: { lat: {{ i.szerokość_geograficzna }}, lng: {{ i.długość_geograficzna }}},
             map: map,
             animation: google.maps.Animation.DROP,
             icon: image,
@@ -47,7 +47,7 @@
 
         {% for k in budynki %}
         marker = new google.maps.Marker({
-            position: { lat: {{ 50.0 }}+j, lng: {{ 50.0 }}+j},
+            position: { lat: {{ k.szerokość_geograficzna }}, lng: {{ k.długość_geograficzna }}},
             map: map,
             animation: google.maps.Animation.DROP,
             icon: image,

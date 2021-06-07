@@ -71,6 +71,8 @@ class Obiekt(models.Model):
     nazwa = models.CharField(max_length=40)
     adres = models.CharField(max_length=40)
     ułatwienia_dla_niepełnosprawnych = models.TextField()  # This field type is a guess.
+    długość_geograficzna = models.FloatField()
+    szerokość_geograficzna = models.FloatField()
 
     def __str__(self):
         return f"ID obiektu:{self.id_obiektu} | {self.nazwa}"
