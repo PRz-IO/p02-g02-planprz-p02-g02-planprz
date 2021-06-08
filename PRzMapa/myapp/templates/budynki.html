@@ -4,6 +4,7 @@
 
 {% load static %}
 <link rel="stylesheet"  href="{% static 'budynki.css' %}">
+<link rel="stylesheet"  href="{% static 'budynki_mobilne.css' %}">
 
 <div class="kontenerBudynki">
     <div id="liniaGorna">
@@ -24,7 +25,7 @@
             <td>{{ob.nazwa}}</td>
             <td>{{ob.adres}}</td>
             <td>
-                <a href = "{{ob.id_obiektu}}" >
+                <a href = "{{ob.id_obiektu}}" class="link" >
                     Szczegóły
                 </a>
             </td>

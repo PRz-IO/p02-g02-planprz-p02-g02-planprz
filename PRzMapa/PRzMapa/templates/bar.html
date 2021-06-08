@@ -4,7 +4,7 @@
     <ol class="menu">
         <li>
             <a href="{% url 'index' %}">
-                <img src="{% static 'domek.png' %}" width="32" height="32">
+                <img src="{% static 'domek.png' %}" width="28" height="28" id="obr">
             </a>
         </li>
         <li>
@@ -14,14 +14,14 @@
         </li>
         <li>
             <a href="#">
-                PUNKT
+                PUNKTY ▼
                 <ul>
                     <li>
-                        <a href="{% url 'punkty' 0 %}">Wszystko</a>
+                        <a href="/0/?q=">Wszystko</a>
                     </li>
                 {% for i in kategorie %}
                     <li>
-                        <a href="{% url 'punkty' i.id_kategorii %}">{{ i.nazwa_kategorii }}</a>
+                        <a href="/{{i.id_kategorii}}/?q=">{{ i.nazwa_kategorii }}</a>
                     </li>
                 {% endfor %}
                 </ul>
@@ -29,16 +29,23 @@
         </li>
         <li>
             <a href="#">
-                LOGOWANIE
+                LOGOWANIE ▼
                 <ul>
-                    <li><a href="/admin">Administrator</a></li>
-                    <li><a href="/pracownik">Pracownik</a></li>
+                    <li><a href="/admin/">Administrator</a></li>
+                    <li><a href="/logowanie/">Pracownik</a></li>
                 </ul>
             </a>
         </li>
         <li>
             <a href="#">
-                Jezyki
+                <div id="google_translate_element">
+                    <script type="text/javascript">// <![CDATA[
+                        function googleTranslateElementInit() {
+                        new google.translate.TranslateElement({pageLanguage: 'pl', includedLanguages: 'pl,en,uk,it,es,fr,de,ja,ru,zh-CN,cs', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                        }
+                        // ]]></script>
+                    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
+                </div>
             </a>
         </li>
     </ol>

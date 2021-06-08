@@ -10,12 +10,16 @@ body {
 }
 
 body, html {
-
+    font-weight: 900;
     font-family: 'Roboto', sans-serif;
     font-size: 1em;
     margin: 0;
     padding: 0;
 	height: 100%;
+}
+
+#obr {
+    margin-top: 2px;
 }
 
     /* STRONA GŁÓWNA */
@@ -24,17 +28,8 @@ body, html {
     width: 100%;
     height: auto;
     position: absolute;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     z-index: 2;
-}
-
-#map {
-    width: 100%;
-    height: calc(100% - 32px);
-    top: 32px;
-    position: absolute;
-    border: 0;
-    z-index: 1;
 }
 
     /* LISTA ROZWIJANA */
@@ -63,15 +58,15 @@ body, html {
 
 .topBar ol > li{
     float: left;
-    width: calc((100% - 36px) / 4);
+    width: calc((100% - 64px - 4px) / 4);
     margin-left: 1px;
     height: 2em;
 }
 
 .topBar ol > li:first-child{
-    margin-left: 0;
+    margin-left: 0px;
     left: 32px;
-    width: 32px;
+    width: 64px;
     padding: 0;
 }
 
@@ -86,6 +81,7 @@ body, html {
 
 .topBar ol > li:hover > ul{
     display: block;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .topBar ol > li > ul {
@@ -121,10 +117,6 @@ body, html {
 
 /*Tlumacz*/
 
-.goog-te-gadget {
-    font-family: 'Roboto', sans-serif;
-}
-
 .topBar .goog-te-gadget-simple{
     width: 100%;
     height: 2em;
@@ -132,6 +124,7 @@ body, html {
     background-color: #003C82;
     border: none;
     text-transform: uppercase;
+    font-family: roboto;
 }
 
 .topBar .goog-te-gadget-simple:hover{
@@ -151,4 +144,22 @@ body, html {
 
 a.goog-te-menu-value span{
     color: #ffffff !important;
+}
+
+a.goog-te-menu-value{
+    font-family: roboto;
+}
+
+#google_translate_element{
+    font-family: roboto !important;
+}
+
+.goog-te-gadget {
+    font-family:roboto;
+    font-size:11px;
+    color:#666;
+    white-space: nowrap;
+}
+ul li:last-child{
+    border-bottom:3px rgb(0,40,110) solid;
 }

@@ -2,40 +2,93 @@
 
 {% block content %}
 {% load static %}
+<script>
+    function initMap() {
+        const point = { lat: {{ obiekt_user.szerokość_geograficzna }}, lng: {{ obiekt_user.długość_geograficzna }}};
+
+        const map = new google.maps.Map(document.getElementById("pojemnik-mapa"), {
+            zoom: 18,
+            center: point,
+        });
+
+        const image = {
+            url: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+            size: new google.maps.Size(20, 32),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(0, 32),
+        };
+
+        const shape = {
+            coords: [1, 1, 1, 20, 18, 20, 18, 1],
+            type: "poly",
+        };
+
+        new google.maps.Marker({
+            position: point,
+            map: map,
+            animation: google.maps.Animation.DROP,
+            icon: image,
+            shape: shape,
+            title: "{{ obiekt_user.nazwa }}",
+        });
+    }
+</script>
 <link rel="stylesheet"  href="{% static 'budynki.css' %}">
+<link rel="stylesheet"  href="{% static 'budynki_mobilne.css' %}">
+
 <div class="kontenerBudynki">
-<h1> {{obiekt_user.nazwa}}</h1>
-<table id="pierwsza">
-    <tr>
-        <th>Nazwa</th>
-        <th>Adres</th>
-        <th>Ułatwienia dla niepełnosprawnych</th></tr>
-    <tr>
-        <td>{{obiekt_user.nazwa}}</td>
-        <td>{{obiekt_user.adres}} </td>
-        <td>{% if obiekt_user.ułatwienia_dla_niepełnosprawnych == 1 %} Tak {% else %} Nie {% endif %}</td>
-    <tr>
-</table>
-<table id="druga">
-    <tr>
-        <th colspan="2" id="nagłówek">Lista punktów</th>
-    </tr>
-    <tr>
-        <th>Nazwa</th>
-        <th>Kategoria</th>
-    </tr>
-    {% for pun in punkty_budynek %}
+    <h1> {{obiekt_user.nazwa}}</h1>
+    <table id="pierwsza">
         <tr>
-            <td>{{pun.nazwa}}</td>
-            <td>{{pun.kategoria_id_kategorii.nazwa_kategorii}}</td>
+            <th>Nazwa</th>
+            <th>Adres</th>
+            <th>Ułatwienia dla niepełnosprawnych</th></tr>
+        <tr>
+            <td>{{obiekt_user.nazwa}}</td>
+            <td>{{obiekt_user.adres}} </td>
+            <td>{% if obiekt_user.ułatwienia_dla_niepełnosprawnych == 1 %} Tak {% else %} Nie {% endif %}</td>
+        <tr>
+    </table>
+    <table id="druga">
+            <tr>
+                <th colspan="2">MAPA</th>
+            </tr>
+            <tr>
+                <td colspan="2" id="pojemnik-mapa"></td>
+            </tr>
+            <script
+              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCan_xu4WQrClbqr-3Beiv4IgEOWUTzWSw&callback=initMap"
+              async
+            ></script>
+            <tr>
+                <td colspan="2"> <a href="https://www.google.com/maps/dir//{{ obiekt_user.szerokość_geograficzna }}+{{ obiekt_user.długość_geograficzna }}/@{{ obiekt_user.szerokość_geograficzna }},{{ obiekt_user.długość_geograficzna }},16.95z/data=!4m7!4m6!1m0!1m3!2m2!1d40.20232!2d50.35293!3e2" target="_blank" class="link">NAWIGACJA</a> </td>
+            </tr>
+        </table>
+    <table id="trzecia">
+        <tr>
+            <th colspan="3" id="nagłówek">Lista punktów</th>
         </tr>
-    {% empty %}
-    <tr>
-            <td colspan="2">Brak punktów w budynku</td>
-    </tr>
-    {% endfor %}
-</table>
+        <tr>
+            <th>Nazwa</th>
+            <th>Kategoria</th>
+            <th></th>
+        </tr>
+        {% for pun in punkty_budynek %}
+            <tr>
+                <td>{{pun.nazwa}}</td>
+                <td>{{pun.kategoria_id_kategorii.nazwa_kategorii}}</td>
+                <td>
+                    <a href = "/punkty/{{pun.id_punktu}}/" class="link" >
+                    Szczegóły
+                    </a>
+                </td>
+            </tr>
+        {% empty %}
+        <tr>
+                <td colspan="3">Brak punktów w budynku</td>
+        </tr>
+        {% endfor %}
+    </table>
 </div>
 
-{% include 'stopka.html' %}
 {% endblock content %}

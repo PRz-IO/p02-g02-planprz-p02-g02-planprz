@@ -4,10 +4,12 @@
 
 {% load static %}
 <link rel="stylesheet"  href="{% static 'punkty.css' %}">
+<link rel="stylesheet"  href="{% static 'punkty_mobilne.css' %}">
 
-<div class="kontenerBudynki">
+<div class="kontenerPunkty">
     <div id="liniaGorna">
         <h1>{{ kategoria.nazwa_kategorii }}</h1>
+        <form action="/{{kategoria.id_kategorii}}/" method="get">
             <input type="text" id="szukaj" name="q" placeholder="Wpisz nazwę" autocomplete="off">
         </form>
     </div>
@@ -16,29 +18,26 @@
             <tr>
                 <th>Nazwa</th>
                 <th>Obiekt</th>
-                <th>Kontakt</th>
                 <th></th>
             </tr>
-        {% for i in punkty %}
-        <tr>
-            <td>{{ i.nazwa }}</td>
-            <td>{{ i.obiekt_id_obiektu.nazwa_obiektu }}</td>
-            <td>{{ i.numer_telefonu }}</td>
-            <td>
-                <a href = "{% url 'punkt.html' i.id_punktu %}" >
-                    Szczegóły
-                </a>
-            </td>
-        </tr>
+            {% for i in punkty %}
+            <tr>
+                <td>{{ i.nazwa }}</td>
+                <td>{{ i.obiekt_id_obiektu.nazwa }}</td>
+                <td>
+                    <a href = "/punkty/{{i.id_punktu}}/" >
+                        Szczegóły
+                    </a>
+                </td>
+            </tr>
             {% empty %}
-        <tr>
-            <td colspan="3">Brak punktów</td>
-        </tr>
+            <tr>
+                <td colspan="4">Brak punktów</td>
+            </tr>
             {% endfor %}
         </table>
     </div>
 </div>
-
 
 {% endblock content %}
 

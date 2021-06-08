@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myapp',
+    'myapp.templatetags',
 ]
 
 MIDDLEWARE = [
@@ -112,6 +113,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+TIME_INPUT_FORMATS = [
+    '%H:%M',
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/

@@ -8,18 +8,33 @@ from django.contrib.auth.decorators import login_required
 
 def index(request):
     kategorie = Kategoria.objects.all()
-    context = {'kategorie':kategorie}
+    punkty = Punkt.objects.all()
+    budynki = Obiekt.objects.all()
+    context = {'kategorie':kategorie,
+               'punkty': punkty,
+               'budynki': budynki}
     return render(request, "home.html", context)
 
+def logowanie(request):
+    kategorie = Kategoria.objects.all()
+    context = {'kategorie': kategorie}
+    return render(request, "logowanie.html", context)
+
+def rejestracja(request):
+    kategorie = Kategoria.objects.all()
+    context = {'kategorie': kategorie}
+    return render(request, "rejestracja.html", context)
 
 def punkty(request, id):
+    query = request.GET.get('q')
     kategorie = Kategoria.objects.all()
     if id is not 0:
         kategoria = Kategoria.objects.get(pk=id)
-        punkty = Punkt.objects.filter(kategoria_id_kategorii=id)
+        punkty = Punkt.objects.filter(Q(kategoria_id_kategorii=id), Q(nazwa__icontains=query))
     else:
-        kategoria = {'nazwa_kategorii': 'Wszystko'}
-        punkty = Punkt.objects.all()
+        kategoria = {'nazwa_kategorii': 'Wszystko', 'id_kategorii': 0}
+        punkty = Punkt.objects.filter(Q(nazwa__icontains=query))
+
     context = {'kategoria': kategoria,
                'kategorie': kategorie,
                'punkty': punkty}
@@ -27,8 +42,17 @@ def punkty(request, id):
 
 def punkt(request , id):
     kategorie = Kategoria.objects.all()
-    punkt = Kategoria.objects.get(pk=id)
-    context = {'punkt': punkt, 'kategorie':kategorie}
+    punkt = Punkt.objects.get(pk=id)
+    godzina = {'1': GodzinyOtwarcia.objects.filter(Q(punkt_id_punktu=id) & Q(dni_tygodnia_id_dnia_tygodnia=1)).first(),
+               '2': GodzinyOtwarcia.objects.filter(Q(punkt_id_punktu=id) & Q(dni_tygodnia_id_dnia_tygodnia=2)).first(),
+               '3': GodzinyOtwarcia.objects.filter(Q(punkt_id_punktu=id) & Q(dni_tygodnia_id_dnia_tygodnia=3)).first(),
+               '4': GodzinyOtwarcia.objects.filter(Q(punkt_id_punktu=id) & Q(dni_tygodnia_id_dnia_tygodnia=4)).first(),
+               '5': GodzinyOtwarcia.objects.filter(Q(punkt_id_punktu=id) & Q(dni_tygodnia_id_dnia_tygodnia=5)).first(),
+               '6': GodzinyOtwarcia.objects.filter(Q(punkt_id_punktu=id) & Q(dni_tygodnia_id_dnia_tygodnia=6)).first(),
+               '7': GodzinyOtwarcia.objects.filter(Q(punkt_id_punktu=id) & Q(dni_tygodnia_id_dnia_tygodnia=7)).first()}
+    context = {'punkt': punkt,
+               'kategorie': kategorie,
+               'godzina': godzina}
     return render(request, "punkt.html", context)
 
 def obiekty(request):

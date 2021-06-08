@@ -15,11 +15,25 @@
         <li>
             <a href="#">
                 <img src="{% static 'punkty.png' %}">
+                <ul id="punkty">
+                    <li>
+                        <a href="/0/?q=">Wszystko</a>
+                    </li>
+                {% for i in kategorie %}
+                    <li>
+                        <a href="/{{i.id_kategorii}}/?q=">{{ i.nazwa_kategorii }}</a>
+                    </li>
+                {% endfor %}
+                </ul>
             </a>
         </li>
         <li>
             <a href="#">
                 <img src="{% static 'logowanie.png' %}">
+                <ul id="logowanie">
+                    <li><a href="/admin/">Administrator</a></li>
+                    <li><a href="/logowanie/">Pracownik</a></li>
+                </ul>
             </a>
         </li>
         <li>

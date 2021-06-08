@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+
+<script>
+    function initMap() {
+        const point = { lat: {{ punkt.szerokość_geograficzna }}, lng: {{ punkt.długość_geograficzna }}};
+
+        const map = new google.maps.Map(document.getElementById("pojemnik-mapa"), {
+            zoom: 18,
+            center: point,
+        });
+
+        const image = {
+            url: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+            size: new google.maps.Size(20, 32),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(0, 32),
+        };
+
+        const shape = {
+            coords: [1, 1, 1, 20, 18, 20, 18, 1],
+            type: "poly",
+        };
+
+        new google.maps.Marker({
+            position: point,
+            map: map,
+            animation: google.maps.Animation.DROP,
+            icon: image,
+            shape: shape,
+            title: "{{ punkt.nazwa }}",
+        });
+    }
+</script>
+<link rel="stylesheet"  href="{% static 'punkt.css' %}">
+<link rel="stylesheet"  href="{% static 'punkt_mobilne.css' %}">
+
+{% endblock head %}
+
+{% block content %}
+{% load myapp_tags %}
+
+<div class="kontenerPunkty">
+    <div id="liniaGorna">
+        <h1>{{ punkt.nazwa }}</h1>
+    </div>
+    <div id="tabelka">
+        <table>
+            <tr>
+                <th colspan="2">ZDJĘCIE</th>
+            </tr>
+            <tr>
+                <td colspan="2" class="pojemnik"><img src="{{ punkt.zdjęcie|link }}" id="obrazek"></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th colspan="2">INFORMACJE</th>
+            </tr>
+            <tr>
+                <td class="doPrawej">Kategoria:</td>
+                <td class="doLewej">{{ punkt.kategoria_id_kategorii.nazwa_kategorii }}</td>
+            </tr>
+            <tr>
+                <td class="doPrawej">Obiekt:</td>
+                <td class="doLewej">{{ punkt.obiekt_id_obiektu.nazwa }}</td>
+            </tr>
+            <tr>
+                <td class="doPrawej">Adres:</td>
+                <td class="doLewej">{{ punkt.obiekt_id_obiektu.adres }}</td>
+            </tr>
+            <tr>
+                <td class="doPrawej">Ułatwienia dla niepełnosprawnych:</td>
+                <td class="doLewej">{% if punkt.obiekt_id_obiektu.ułatwienia_dla_niepełnosprawnych == 1 %} Tak {% else %} Nie {% endif %}</td>
+            </tr>
+            <tr>
+                <td class="doPrawej">Kontakt:</td>
+                <td class="doLewej">{{ punkt.nr_telefonu }}</td>
+            </tr>
+            <tr>
+                <td class="doPrawej">
+                    poniedziałek:<br>
+                    wtorek:<br>
+                    środa:<br>
+                    czwartek:<br>
+                    piątek:<br>
+                    sobota:<br>
+                    niedziela:
+                </td>
+                <td class="doLewej">
+                    {{ godzina.1.godz_otw|time:'H:i' }} - {{ godzina.1.godz_zamkn|time:'H:i' }}<br>
+                    {{ godzina.2.godz_otw|time:'H:i' }} - {{ godzina.2.godz_zamkn|time:'H:i' }}<br>
+                    {{ godzina.3.godz_otw|time:'H:i' }} - {{ godzina.3.godz_zamkn|time:'H:i' }}<br>
+                    {{ godzina.4.godz_otw|time:'H:i' }} - {{ godzina.4.godz_zamkn|time:'H:i' }}<br>
+                    {{ godzina.5.godz_otw|time:'H:i' }} - {{ godzina.5.godz_zamkn|time:'H:i' }}<br>
+                    {{ godzina.6.godz_otw|time:'H:i' }} - {{ godzina.6.godz_zamkn|time:'H:i' }}<br>
+                    {{ godzina.7.godz_otw|time:'H:i' }} - {{ godzina.7.godz_zamkn|time:'H:i' }}
+                </td>
+            </tr>
+
+        </table>
+        <table>
+            <tr>
+                <th colspan="2">MAPA</th>
+            </tr>
+            <tr>
+                <td colspan="2" id="pojemnik-mapa"></td>
+            </tr>
+            <script
+              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCan_xu4WQrClbqr-3Beiv4IgEOWUTzWSw&callback=initMap"
+              async
+            ></script>
+            <tr>
+                <td colspan="2"> <a href="https://www.google.com/maps/dir//{{ punkt.szerokość_geograficzna }}+{{ punkt.długość_geograficzna }}/@50.0191568,21.9873604,16.95z/data=!4m7!4m6!1m0!1m3!2m2!1d40.20232!2d50.35293!3e2" target="_blank" id="link">NAWIGACJA</a> </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+{% endblock content %}
+

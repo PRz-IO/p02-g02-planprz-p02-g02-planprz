@@ -1,0 +1,114 @@
+.topBar{
+    position: relative !important;
+}
+
+.kontenerLogowanie {
+    margin-top: 10vh;
+}
+
+.kontenerLogowanie table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50vw;
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-shadow: 0 2px 15px rgba(64,64,64,.7);
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.kontenerLogowanie td{
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.kontenerLogowanie td:first-child {
+    width: 30%;
+}
+
+.kontenerLogowanie th {
+    padding: 15px 20px;
+    text-align: center;
+    background-color: #003C82;
+    color: #fafafa;
+    font-weight: 200;
+    text-transform: uppercase;
+}
+
+.kontenerLogowanie tr {
+    width: 100%;
+    background-color: #fafafa;
+}
+
+.kontenerLogowanie tr td:first-child {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-align: right;
+}
+
+.kontenerLogowanie table a {
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    border: 0;
+    border-radius: 40px;
+    float: initial;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 0%;
+    margin-right: 0%;
+    background: linear-gradient(90deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
+}
+
+.kontenerLogowanie table a:hover {
+    background: linear-gradient(-90deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
+}
+
+.kontenerLogowanie .log {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    float: left;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    margin: 8px 10%;
+    outline:none;
+    padding: 8px;
+    box-sizing:border-box;
+    transition:0.3s;
+}
+
+.kontenerLogowanie .bt {
+    background: linear-gradient(90deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
+    padding: 10px 32px;
+    text-align: center;
+    border: 0;
+    border-radius: 40px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 0%;
+    font-family: roboto;
+}
+
+.kontenerLogowanie .bt:hover {
+    background: linear-gradient(-90deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
+}
+
+.kontenerLogowanie .log:focus {
+
+    border-color:dodgerBlue;
+    box-shadow: 0 0 8px 0 dodgerBlue;
+}
+
+#przyciski input{
+    margin-right: 3vw;
+}
+
+#przyciski a{
+    margin-left: 3vw;
+}
