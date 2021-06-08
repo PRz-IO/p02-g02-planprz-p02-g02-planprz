@@ -21,7 +21,7 @@ class DniTygodniaAdmin(admin.ModelAdmin):
 
 class InLineGodzinyOtwarcia(admin.StackedInline):
     model = GodzinyOtwarcia
-    max_num = 1
+    max_num = 7
 
 
 class PunktAdmin(admin.ModelAdmin):
