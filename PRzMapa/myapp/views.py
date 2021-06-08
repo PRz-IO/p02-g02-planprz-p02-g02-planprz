@@ -10,20 +10,23 @@ def index(request):
     kategorie = Kategoria.objects.all()
     punkty = Punkt.objects.all()
     budynki = Obiekt.objects.all()
-    context = {'kategorie':kategorie,
+    context = {'kategorie': kategorie,
                'punkty': punkty,
                'budynki': budynki}
     return render(request, "home.html", context)
+
 
 def logowanie(request):
     kategorie = Kategoria.objects.all()
     context = {'kategorie': kategorie}
     return render(request, "logowanie.html", context)
 
+
 def rejestracja(request):
     kategorie = Kategoria.objects.all()
     context = {'kategorie': kategorie}
     return render(request, "rejestracja.html", context)
+
 
 def punkty(request, id):
     query = request.GET.get('q')
@@ -40,7 +43,8 @@ def punkty(request, id):
                'punkty': punkty}
     return render(request, "punkty.html", context)
 
-def punkt(request , id):
+
+def punkt(request, id):
     kategorie = Kategoria.objects.all()
     punkt = Punkt.objects.get(pk=id)
     godzina = {'1': GodzinyOtwarcia.objects.filter(Q(punkt_id_punktu=id) & Q(dni_tygodnia_id_dnia_tygodnia=1)).first(),
@@ -55,35 +59,45 @@ def punkt(request , id):
                'godzina': godzina}
     return render(request, "punkt.html", context)
 
+
 def obiekty(request):
     kategorie = Kategoria.objects.all()
-    query=request.GET.get('q')
-    obiekty_user=Obiekt.objects.filter(Q(nazwa__icontains=query) | Q(adres__icontains=query))
-    dane= {'obiekty_user': obiekty_user, 'kategorie':kategorie}
-    return render(request,'budynki.html',dane)
+    query = request.GET.get('q')
+    obiekty_user = Obiekt.objects.filter(Q(nazwa__icontains=query) | Q(adres__icontains=query))
+    dane = {'obiekty_user': obiekty_user, 'kategorie': kategorie}
+    return render(request, 'budynki.html', dane)
+
 
 def punkty_b(request, id):
     kategorie = Kategoria.objects.all()
     obiekt_user = Obiekt.objects.get(pk=id)
     punkty_budynek = Punkt.objects.filter(obiekt_id_obiektu=id)
-    dane= {'punkty_budynek': punkty_budynek, 'obiekt_user': obiekt_user, 'kategorie':kategorie}
-    return render(request,'budynek.html',dane)
+    dane = {'punkty_budynek': punkty_budynek, 'obiekt_user': obiekt_user, 'kategorie': kategorie}
+    return render(request, 'budynek.html', dane)
+
+
 @login_required
 def panel_pracownika(request):
     return render(request, 'panel_pracownika.html')
+
+
 @login_required
 def pracownik_punkty(request):
-    pracownik_id=request.user.id
+    pracownik_id = request.user.id
     przypisane_punkty = PunktPracownicy.objects.filter(pracownicy_id_pracownika=1)
-    punkty=[]
+    punkty = []
     for przypisany_punkt in przypisane_punkty:
         punkty.append(Punkt.objects.get(id_punktu=przypisany_punkt.punkt_id_punktu.id_punktu))
     dane = {'punkty': punkty}
 
     return render(request, 'pracownik_punkty.html', dane)
+
+
 @login_required
 def pracownik_zmiana_hasla(request):
     return render(request, 'pracownik_zmiana_hasla.html')
+
+
 @login_required
 def pracownik_usun_konto(request):
     return render(request, 'pracownik_usun_konto.html')
