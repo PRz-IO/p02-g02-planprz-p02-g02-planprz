@@ -18,6 +18,9 @@ class AdministratorzyAdmin(admin.ModelAdmin):
 class DniTygodniaAdmin(admin.ModelAdmin):
     list_display = ("id_dnia_tygodnia","dzień")
 
+    def has_add_permission(self, request, obj=None):
+        return False
+
 
 class InLineGodzinyOtwarcia(admin.StackedInline):
     model = GodzinyOtwarcia
@@ -43,7 +46,7 @@ class PracownicyAdmin(admin.ModelAdmin):
 class GodzinyOtwarciaAdmin(admin.ModelAdmin):
     list_display = ("dni_tygodnia_id_dnia_tygodnia", "punkt_id_punktu")
     list_filter = ('dni_tygodnia_id_dnia_tygodnia',)
-
+    fields = ('dni_tygodnia_id_dnia_tygodnia', 'punkt_id_punktu', ('godz_otw', 'godz_zamkn'))
 
 class KategoriaAdmin(admin.ModelAdmin):
     list_display = ("id_kategorii", "nazwa_kategorii")
@@ -52,6 +55,7 @@ class KategoriaAdmin(admin.ModelAdmin):
 
 class PunktPracownicyAdmin(admin.ModelAdmin):
     list_display = ("punkt_id_punktu", "pracownicy_id_pracownika")
+    list_filter = ('punkt_id_punktu', 'pracownicy_id_pracownika')
 
 
 class ObiektAdmin(admin.ModelAdmin):

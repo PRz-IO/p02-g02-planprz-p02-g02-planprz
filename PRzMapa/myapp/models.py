@@ -12,9 +12,9 @@ class Administratorzy(models.Model):
     id_administratorzy = models.AutoField(primary_key=True)
     nazwisko = models.CharField(max_length=40)
     imię = models.CharField(max_length=40)
-    adres_mailowy = models.CharField(max_length=40)
+    adres_mailowy = models.CharField(max_length=40, verbose_name="Adres e-mail")
     hasło = models.CharField(max_length=20)
-    nr_telefonu = models.CharField(max_length=9, blank=True, null=True)
+    nr_telefonu = models.CharField(max_length=9, blank=True, null=True, verbose_name="Telefon")
 
     def __str__(self):
         return f"{self.id_administratorzy}, {self.nazwisko} {self.imię}"
@@ -41,10 +41,10 @@ class DniTygodnia(models.Model):
 
 
 class GodzinyOtwarcia(models.Model):
-    dni_tygodnia_id_dnia_tygodnia = models.ForeignKey(DniTygodnia, models.DO_NOTHING, db_column='dni_tygodnia_id_dnia_tygodnia')
-    punkt_id_punktu = models.ForeignKey('Punkt', models.DO_NOTHING, db_column='punkt_id_punktu')
-    godz_otw = models.TimeField()
-    godz_zamkn = models.TimeField()
+    dni_tygodnia_id_dnia_tygodnia = models.ForeignKey(DniTygodnia, models.DO_NOTHING, db_column='dni_tygodnia_id_dnia_tygodnia', verbose_name="Dzień tygodnia")
+    punkt_id_punktu = models.ForeignKey('Punkt', models.DO_NOTHING, db_column='punkt_id_punktu', verbose_name="Nazwa punktu")
+    godz_otw = models.TimeField(verbose_name='Godzina otwarcia')
+    godz_zamkn = models.TimeField(verbose_name='Godzina zamknięcia')
 
     def __str__(self):
         return f"{self.dni_tygodnia_id_dnia_tygodnia}, {self.punkt_id_punktu}"
@@ -73,7 +73,7 @@ class Obiekt(models.Model):
     id_obiektu = models.AutoField(primary_key=True)
     nazwa = models.CharField(max_length=40)
     adres = models.CharField(max_length=40)
-    ułatwienia_dla_niepełnosprawnych = models.TextField()  # This field type is a guess.
+    ułatwienia_dla_niepełnosprawnych = models.TextField(verbose_name="Ułatwienia dla niepełnosprawnych (0/1)")  # This field type is a guess.
     długość_geograficzna = models.FloatField()
     szerokość_geograficzna = models.FloatField()
 
@@ -91,11 +91,11 @@ class Pracownicy(models.Model):
     id_pracownika = models.AutoField(primary_key=True)
     imię = models.CharField(max_length=40)
     nazwisko = models.CharField(max_length=40)
-    adres_mailowy = models.CharField(max_length=40)
+    adres_mailowy = models.CharField(max_length=40, verbose_name="Adres e-mail")
     hasło = models.CharField(max_length=20)
-    kontakt = models.CharField(max_length=40, blank=True, null=True)
+    kontakt = models.CharField(max_length=40, blank=True, null=True, verbose_name="Telefon")
     data_założenia_konta = models.DateField()
-    czy_aktywowany = models.TextField()  # This field type is a guess.
+    czy_aktywowany = models.TextField(verbose_name="Czy aktywowany (0/1)")  # This field type is a guess.
 
     def __str__(self):
         return f"{self.id_pracownika}, {self.nazwisko} {self.imię}"
@@ -111,10 +111,10 @@ class Punkt(models.Model):
     id_punktu = models.AutoField(primary_key=True)
     nazwa = models.CharField(max_length=40)
     zdjęcie = models.TextField(blank=True, null=True)
-    obiekt_id_obiektu = models.ForeignKey(Obiekt, models.DO_NOTHING, db_column='obiekt_id_obiektu')
+    obiekt_id_obiektu = models.ForeignKey(Obiekt, models.DO_NOTHING, db_column='obiekt_id_obiektu', verbose_name="Nazwa obiektu")
     informacje = models.CharField(max_length=50, blank=True, null=True)
-    nr_telefonu = models.CharField(max_length=9, blank=True, null=True)
-    kategoria_id_kategorii = models.ForeignKey(Kategoria, models.DO_NOTHING, db_column='kategoria_id_kategorii')
+    nr_telefonu = models.CharField(max_length=9, blank=True, null=True, verbose_name="Telefon")
+    kategoria_id_kategorii = models.ForeignKey(Kategoria, models.DO_NOTHING, db_column='kategoria_id_kategorii', verbose_name="Kategoria")
     długość_geograficzna = models.FloatField()
     szerokość_geograficzna = models.FloatField()
 
@@ -130,8 +130,8 @@ class Punkt(models.Model):
 
 class PunktPracownicy(models.Model):
     id = models.AutoField(primary_key=True, db_column='id')
-    punkt_id_punktu = models.ForeignKey(Punkt, models.DO_NOTHING, db_column='punkt_id_punktu')
-    pracownicy_id_pracownika = models.ForeignKey(Pracownicy, models.DO_NOTHING, db_column='pracownicy_id_pracownika')
+    punkt_id_punktu = models.ForeignKey(Punkt, models.DO_NOTHING, db_column='punkt_id_punktu', verbose_name="Nazwa punktu")
+    pracownicy_id_pracownika = models.ForeignKey(Pracownicy, models.DO_NOTHING, db_column='pracownicy_id_pracownika', verbose_name="Pracownik")
 
     def __str__(self):
         return f"{self.punkt_id_punktu}, {self.pracownicy_id_pracownika}"
