@@ -8,8 +8,8 @@
 from django.db import models
 
 wybory = {
-    ('zero', '0'),
-    ('one', '1')
+    ('0', 'nie'),
+    ('1', 'tak')
 }
 
 class Administratorzy(models.Model):
@@ -77,7 +77,7 @@ class Obiekt(models.Model):
     id_obiektu = models.AutoField(primary_key=True)
     nazwa = models.CharField(max_length=40)
     adres = models.CharField(max_length=40)
-    ułatwienia_dla_niepełnosprawnych = models.CharField(max_length=10, choices=wybory, verbose_name="Ułatwienia dla niepełnosprawnych (nie/tak)")
+    ułatwienia_dla_niepełnosprawnych = models.CharField(max_length=10, choices=wybory, verbose_name="Ułatwienia dla niepełnosprawnych")
     długość_geograficzna = models.FloatField()
     szerokość_geograficzna = models.FloatField()
 
@@ -99,7 +99,7 @@ class Pracownicy(models.Model):
     hasło = models.CharField(max_length=20)
     kontakt = models.CharField(max_length=40, blank=True, null=True, verbose_name="Telefon")
     data_założenia_konta = models.DateField()
-    czy_aktywowany = models.CharField(max_length=10, choices=wybory, verbose_name="Czy aktywowany (nie/tak)")  # This field type is a guess.
+    czy_aktywowany = models.CharField(max_length=10, choices=wybory, verbose_name="Czy aktywowany")
 
     def __str__(self):
         return f"{self.id_pracownika}, {self.nazwisko} {self.imię}"
