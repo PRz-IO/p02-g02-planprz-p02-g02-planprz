@@ -7,6 +7,10 @@
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
 
+wybory = {
+    ('zero', '0'),
+    ('one', '1')
+}
 
 class Administratorzy(models.Model):
     id_administratorzy = models.AutoField(primary_key=True)
@@ -43,8 +47,8 @@ class DniTygodnia(models.Model):
 class GodzinyOtwarcia(models.Model):
     dni_tygodnia_id_dnia_tygodnia = models.ForeignKey(DniTygodnia, models.DO_NOTHING, db_column='dni_tygodnia_id_dnia_tygodnia', verbose_name="Dzień tygodnia")
     punkt_id_punktu = models.ForeignKey('Punkt', models.DO_NOTHING, db_column='punkt_id_punktu', verbose_name="Nazwa punktu")
-    godz_otw = models.TimeField(verbose_name='Godzina otwarcia')
-    godz_zamkn = models.TimeField(verbose_name='Godzina zamknięcia')
+    godz_otw = models.TimeField(verbose_name='Godzina otwarcia', help_text="Wprowadź godzinę od 00:00 do 23:59")
+    godz_zamkn = models.TimeField(verbose_name='Godzina zamknięcia', help_text="Wprowadź godzinę od 00:00 do 23:59")
 
     def __str__(self):
         return f"{self.dni_tygodnia_id_dnia_tygodnia}, {self.punkt_id_punktu}"
@@ -73,7 +77,7 @@ class Obiekt(models.Model):
     id_obiektu = models.AutoField(primary_key=True)
     nazwa = models.CharField(max_length=40)
     adres = models.CharField(max_length=40)
-    ułatwienia_dla_niepełnosprawnych = models.TextField(verbose_name="Ułatwienia dla niepełnosprawnych (0/1)")  # This field type is a guess.
+    ułatwienia_dla_niepełnosprawnych = models.CharField(max_length=10, choices=wybory, verbose_name="Ułatwienia dla niepełnosprawnych (nie/tak)")
     długość_geograficzna = models.FloatField()
     szerokość_geograficzna = models.FloatField()
 
@@ -95,7 +99,7 @@ class Pracownicy(models.Model):
     hasło = models.CharField(max_length=20)
     kontakt = models.CharField(max_length=40, blank=True, null=True, verbose_name="Telefon")
     data_założenia_konta = models.DateField()
-    czy_aktywowany = models.TextField(verbose_name="Czy aktywowany (0/1)")  # This field type is a guess.
+    czy_aktywowany = models.CharField(max_length=10, choices=wybory, verbose_name="Czy aktywowany (nie/tak)")  # This field type is a guess.
 
     def __str__(self):
         return f"{self.id_pracownika}, {self.nazwisko} {self.imię}"

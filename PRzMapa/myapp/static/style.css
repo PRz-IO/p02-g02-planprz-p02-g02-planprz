@@ -160,6 +160,16 @@ a.goog-te-menu-value{
     color:#666;
     white-space: nowrap;
 }
-ul li:last-child{
+
+.topBar ul li:last-child{
     border-bottom:3px rgb(0,40,110) solid;
+    border-radius:0 0 8px 8px ;
+}
+
+.topBar ul{
+    border-radius:0 0 8px 8px ;
+}
+
+.topBar ul li:hover{
+    border-radius:0 0 8px 8px !important;
 }
