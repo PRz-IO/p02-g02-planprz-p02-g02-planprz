@@ -9,6 +9,20 @@ body {
 	bottom: 0;
 }
 
+#tlo {
+    background-image: url("politechnika.jpg");
+    filter: blur(3px);
+    background-repeat: no-repeat;
+    height:100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-size: cover;
+    background-position: center center;
+    position: fixed;
+    z-index:-1;
+}
+
 body, html {
     font-weight: 900;
     font-family: 'Roboto', sans-serif;
