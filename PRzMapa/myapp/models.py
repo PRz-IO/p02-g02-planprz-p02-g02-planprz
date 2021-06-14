@@ -114,7 +114,7 @@ class Pracownicy(models.Model):
 class Punkt(models.Model):
     id_punktu = models.AutoField(primary_key=True)
     nazwa = models.CharField(max_length=40)
-    zdjęcie = models.TextField(blank=True, null=True)
+    zdjęcie = models.TextField(blank=True, null=True, db_column='zdjęcie')
     obiekt_id_obiektu = models.ForeignKey(Obiekt, models.DO_NOTHING, db_column='obiekt_id_obiektu', verbose_name="Nazwa obiektu")
     informacje = models.CharField(max_length=50, blank=True, null=True)
     nr_telefonu = models.CharField(max_length=9, blank=True, null=True, verbose_name="Telefon")
