@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
+from .forms import *
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
+from .forms import *
 
 
 # Create your views here.
@@ -23,9 +25,16 @@ def logowanie(request):
 
 
 def rejestracja(request):
-    kategorie = Kategoria.objects.all()
-    context = {'kategorie': kategorie}
-    return render(request, "rejestracja.html", context)
+    if request.method == 'POST':
+        form=RegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect("http://127.0.0.1:8000/")
+    else:
+        form=RegisterForm()
+#    kategorie = Kategoria.objects.all()
+#    context = {'kategorie': kategorie}
+    return render(request, "rejestracja.html", {"form":form})
 
 
 def punkty(request, id):
