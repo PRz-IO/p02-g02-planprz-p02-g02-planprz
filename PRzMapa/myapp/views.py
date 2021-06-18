@@ -4,6 +4,7 @@ from .forms import *
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from .forms import *
+from django.contrib.auth import *
 
 
 # Create your views here.
@@ -19,10 +20,20 @@ def index(request):
 
 
 def logowanie(request):
-    kategorie = Kategoria.objects.all()
-    context = {'kategorie': kategorie}
-    return render(request, "logowanie.html", context)
+    if request.method == 'POST':
+        form=LoginForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect("http://127.0.0.1:8000/logowanie/")
+    else:
+        form=LoginForm()
+#    kategorie = Kategoria.objects.all()
+#    context = {'kategorie': kategorie}
+    return render(request, "logowanie.html", {"form":form})
 
+
+def logout(request, next_page=None, template_name='logowanie.html'):
+    auth_logout(request)
 
 def rejestracja(request):
     if request.method == 'POST':

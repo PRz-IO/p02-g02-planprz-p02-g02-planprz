@@ -13,24 +13,39 @@
                 <th colspan="2">LOGOWANIE</th>
             </tr>
 
-            <form action="" method="get">
-                <tr>
-                    <td>Login:</td>
-                    <td><input type="text" class="log" name="log" placeholder="Wpisz login"></td>
-                </tr>
-                <tr>
-                    <td>Hasło:</td>
-                    <td><input type="password" class="log" name="pas" placeholder="Wpisz hasło"></td>
+  {% if form.errors %}
+    <p>Your username and password didn't match. Please try again.</p>
+  {% endif %}
 
-                </tr>
+  {% if next %}
+    {% if user.is_authenticated %}
+      <p>Your account doesn't have access to this page. To proceed,
+      please login with an account that has access.</p>
+    {% else %}
+      <p>Please login to see this page.</p>
+    {% endif %}
+  {% endif %}
+            <form action="" method="POST">
                 <tr id="przyciski">
                     <td colspan="2" style="text-align: center;">
-                        <input type="submit" class="bt">
+                        {% csrf_token %}
+                                {% if user.is_authenticated %}
+                        <a href="{% url 'logout' %}" class="btn btn-default navbar-btn">Wyloguj</a>
+  Witaj, {{ user.username }}!
+{% else %}
+  <p>Nie zalogowano</p>
+                        <a href="{% url 'login' %}" class="btn btn-default navbar-btn">Zaloguj</a>
+{% endif %}
+                {{ form.as_p }}
+                        <input type="submit" value="Prześlij dane" class="bt">
+                        <input type="hidden" name="next" value="{{ next }}" />
                         <a href="/rejestracja/">Rejestracja</a>
+
                     </td>
                 </tr>
             </form>
         </table>
+
     </div>
 </div>
 

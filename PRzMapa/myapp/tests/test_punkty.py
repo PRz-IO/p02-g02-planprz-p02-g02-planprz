@@ -1,5 +1,4 @@
 from django.test import TestCase
-from django.core.exceptions import ValidationError
 from ..models import *
 
 # Create your tests here.
@@ -17,4 +16,5 @@ class PunktTest(TestCase):
                              szerokość_geograficzna= 50.245)
 
     def test_punkt_validation(self):
-        pass
+        one = Punkt.objects.get(id_punktu=1)
+        self.assertEqual(one.informacje, 'tak')
