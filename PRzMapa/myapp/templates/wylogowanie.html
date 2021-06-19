@@ -32,15 +32,12 @@
                                 {% if user.is_authenticated %}
 
   Witaj, {{ user.username }}!
-                        <br/><br/>
-                        <a href="{% url 'logout' %}" class="btn btn-default navbar-btn">Wyloguj</a>
-                        <a href="{% url 'panel-pracownika' %}" class="btn btn-default navbar-btn">Panel obsługi</a>
+
 {% else %}
 
-<!--                        <a href="{% url 'login' %}" class="btn btn-default navbar-btn">Zaloguj</a>-->
-                        {{ form.as_p }}
-                        <p>Nie zalogowano</p>
-                        <input type="submit" value="Prześlij dane" class="bt"/>
+
+                        <p>Nie zalogowano</p><br>
+                        <a href="{% url 'login' %}" class="btn btn-default navbar-btn">Zaloguj</a>
                         <input type="hidden" name="next" value="{{ next }}" />
                         <a href="/rejestracja/">Rejestracja</a>
 {% endif %}

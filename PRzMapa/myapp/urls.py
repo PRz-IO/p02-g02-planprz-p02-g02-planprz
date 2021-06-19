@@ -19,7 +19,7 @@ urlpatterns = [
     path('panel-pracownika/zmiana-hasla/', pracownik_zmiana_hasla, name='panel-pracownika-zmiana-hasla'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('login/', LoginView.as_view(template_name='logowanie.html' ), name="login"),
-    path('logout/', LogoutView.as_view(template_name='logowanie.html' ), name="logout"),
+    path('logout/', LogoutView.as_view(template_name='wylogowanie.html' ), name="logout"),
     url(r'^admin/', admin.site.urls),
 ]
 

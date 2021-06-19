@@ -9,44 +9,17 @@
 <div class="kontenerLogowanie">
     <div>
         <table>
-            <tr>
-                <th colspan="2">REJESTRACJA</th>
-            </tr>
-
+            <th colspan="2">Rejestracja</th>
             <form method="POST">
                 {% csrf_token %}
                 {{form}}
-<!--                <tr>-->
-<!--                    <td>Email:</td>-->
-<!--                    <td><input type="text" class="log" name="adres_mailowy" placeholder="Wpisz email"></td>-->
-<!--                </tr>-->
-<!--                <tr>-->
-<!--                    <td>Imię:</td>-->
-<!--                    <td><input type="text" class="log" name="imię" placeholder="Wpisz imię"></td>-->
-<!--                </tr>-->
-<!--                <tr>-->
-<!--                    <td>Nazwisko:</td>-->
-<!--                    <td><input type="text" class="log" name="nazwisko" placeholder="Wpisz nazwisko"></td>-->
-<!--                </tr>-->
-<!--                <tr>-->
-<!--                    <td>Nr. telefonu:</td>-->
-<!--                    <td><input type="password" class="log" name="kontakt" placeholder="Wpisz numer telefonu"></td>-->
-<!--                </tr>-->
-<!--                <tr>-->
-<!--                    <td>Podaj hasło:</td>-->
-<!--                    <td><input type="password" class="log" name="hasło" placeholder="Wpisz hasło"></td>-->
-<!--                </tr>-->
-<!--&lt;!&ndash;                <tr>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <td>Powtórz hasło:</td>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <td><input type="password" class="log" name="pas" placeholder="Wpisz hasło jeszcze raz"></td>&ndash;&gt;-->
-<!--&lt;!&ndash;                </tr>&ndash;&gt;-->
-<!--                <tr id="przyciski">-->
-<!--                    <td colspan="2" style="text-align: center;">-->
-                        <input type="submit" class="bt">-->
-<!--                        <a href="/logowanie/">Powrót</a>-->
-<!--                    </td>-->
-<!--                </tr>-->
+                <tr>
+                <th colspan="2"><input type="submit" class="bt"></th>
+            </tr>
             </form>
+
+    <br>
+
         </table>
     </div>
 </div>

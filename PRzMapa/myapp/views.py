@@ -32,8 +32,9 @@ def logowanie(request):
     return render(request, "logowanie.html", {"form":form})
 
 
-def logout(request, next_page=None, template_name='logowanie.html'):
+def logout(request, next_page=None, template_name='wylogowanie.html'):
     auth_logout(request)
+    return render(request, "wylogowanie.html")
 
 def rejestracja(request):
     if request.method == 'POST':
