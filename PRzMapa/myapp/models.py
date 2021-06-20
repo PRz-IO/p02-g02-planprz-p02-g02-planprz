@@ -40,7 +40,7 @@ class DniTygodnia(models.Model):
 
     class Meta:
         managed = True
-        db_table = 'dni_tygodnia'
+        db_table = 'myapp_dni_tygodnia'
         verbose_name_plural = "Dni tygodnia"
         ordering = ("id","dzień")
 
@@ -56,7 +56,7 @@ class GodzinyOtwarcia(models.Model):
 
     class Meta:
         managed = True
-        db_table = 'godziny_otwarcia'
+        db_table = 'myapp_godziny_otwarcia'
         verbose_name_plural = "Godziny otwarcia"
         ordering = ("dni_tygodnia_id_dnia_tygodnia", "punkt_id_punktu")
 
@@ -69,7 +69,7 @@ class Kategoria(models.Model):
 
     class Meta:
         managed = True
-        db_table = 'kategoria'
+        db_table = 'myapp_kategoria'
         verbose_name_plural = "Kategorie"
         ordering = ("id", "nazwa_kategorii")
 
@@ -87,7 +87,7 @@ class Obiekt(models.Model):
 
     class Meta:
         managed = True
-        db_table = 'obiekt'
+        db_table = 'myapp_obiekt'
         verbose_name_plural = "Obiekty"
         ordering = ("id", "nazwa")
 
@@ -102,7 +102,7 @@ class Pracownicy(models.Model):
 
     class Meta:
         managed = True
-        db_table = 'pracownicy'
+        db_table = 'myapp_pracownicy'
         verbose_name_plural = "Pracownicy"
         ordering = ("id",)
 
@@ -123,7 +123,7 @@ class Punkt(models.Model):
 
     class Meta:
         managed = True
-        db_table = 'punkt'
+        db_table = 'myapp_punkt'
         verbose_name_plural = "Punkty"
         ordering = ("id", "nazwa")
 
@@ -138,6 +138,6 @@ class PunktPracownicy(models.Model):
 
     class Meta:
         managed = True
-        db_table = 'punkt_pracownicy'
+        db_table = 'myapp_punkt_pracownicy'
         verbose_name_plural = "Punkty - Pracownicy"
         ordering = ("punkt_id_punktu", "pracownicy_id_pracownika")
