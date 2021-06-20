@@ -9,7 +9,7 @@
 <div class="kontenerPunkty">
     <div id="liniaGorna">
         <h1>{{ kategoria.nazwa_kategorii }}</h1>
-        <form action="/{{kategoria.id_kategorii}}/" method="get">
+        <form action="/{{kategoria.id}}/" method="get">
             <input type="text" id="szukaj" name="q" placeholder="Wpisz nazwę" autocomplete="off">
         </form>
     </div>
@@ -25,7 +25,7 @@
                 <td>{{ i.nazwa }}</td>
                 <td>{{ i.obiekt_id_obiektu.nazwa }}</td>
                 <td>
-                    <a href = "/punkty/{{i.id_punktu}}/" >
+                    <a href = "/punkty/{{i.id}}/" >
                         Szczegóły
                     </a>
                 </td>

@@ -33,14 +33,14 @@ wybory = {
 
 class DniTygodnia(models.Model):
  #   id_dnia_tygodnia = models.AutoField(primary_key=True)
-    dzień = models.CharField(max_length=11)
+    dzień = models.CharField(max_length=12)
 
     def __str__(self):
         return f"{self.id}, {self.dzień}"
 
     class Meta:
         managed = True
-        db_table = 'myapp_dni_tygodnia'
+        db_table = 'myapp_dnitygodnia'
         verbose_name_plural = "Dni tygodnia"
         ordering = ("id","dzień")
 
@@ -56,7 +56,7 @@ class GodzinyOtwarcia(models.Model):
 
     class Meta:
         managed = True
-        db_table = 'myapp_godziny_otwarcia'
+        db_table = 'myapp_godzinyotwarcia'
         verbose_name_plural = "Godziny otwarcia"
         ordering = ("dni_tygodnia_id_dnia_tygodnia", "punkt_id_punktu")
 
@@ -65,7 +65,7 @@ class Kategoria(models.Model):
     nazwa_kategorii = models.CharField(max_length=20)
 
     def __str__(self):
-        return f"{self.id_kategorii}, {self.nazwa_kategorii}"
+        return f"{self.id}, {self.nazwa_kategorii}"
 
     class Meta:
         managed = True
@@ -83,7 +83,7 @@ class Obiekt(models.Model):
     szerokość_geograficzna = models.FloatField()
 
     def __str__(self):
-        return f"{self.id_obiektu}, {self.nazwa}"
+        return f"{self.id}, {self.nazwa}"
 
     class Meta:
         managed = True
@@ -119,7 +119,7 @@ class Punkt(models.Model):
     szerokość_geograficzna = models.FloatField()
 
     def __str__(self):
-        return f"{self.id_punktu}, {self.nazwa}"
+        return f"{self.id}, {self.nazwa}"
 
     class Meta:
         managed = True
@@ -138,6 +138,6 @@ class PunktPracownicy(models.Model):
 
     class Meta:
         managed = True
-        db_table = 'myapp_punkt_pracownicy'
+        db_table = 'myapp_punktpracownicy'
         verbose_name_plural = "Punkty - Pracownicy"
         ordering = ("punkt_id_punktu", "pracownicy_id_pracownika")
