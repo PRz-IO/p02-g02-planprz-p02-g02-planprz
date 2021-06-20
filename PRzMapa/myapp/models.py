@@ -38,11 +38,11 @@ class DniTygodnia(models.Model):
     def __str__(self):
         return f"{self.id}, {self.dzień}"
 
-    # class Meta:
-    #     managed = True
-    #     db_table = 'dni_tygodnia'
-    #     verbose_name_plural = "Dni tygodnia"
-    #     ordering = ("id_dnia_tygodnia","dzień")
+    class Meta:
+        managed = True
+        db_table = 'dni_tygodnia'
+        verbose_name_plural = "Dni tygodnia"
+        ordering = ("id","dzień")
 
 
 class GodzinyOtwarcia(models.Model):
@@ -54,11 +54,11 @@ class GodzinyOtwarcia(models.Model):
     def __str__(self):
         return f"{self.dni_tygodnia_id_dnia_tygodnia}, {self.punkt_id_punktu}"
 
-    # class Meta:
-    #     managed = True
-    #     db_table = 'godziny_otwarcia'
-    #     verbose_name_plural = "Godziny otwarcia"
-    #     ordering = ("dni_tygodnia_id_dnia_tygodnia", "punkt_id_punktu")
+    class Meta:
+        managed = True
+        db_table = 'godziny_otwarcia'
+        verbose_name_plural = "Godziny otwarcia"
+        ordering = ("dni_tygodnia_id_dnia_tygodnia", "punkt_id_punktu")
 
 class Kategoria(models.Model):
  #   id_kategorii = models.AutoField(primary_key=True)
@@ -67,11 +67,11 @@ class Kategoria(models.Model):
     def __str__(self):
         return f"{self.id_kategorii}, {self.nazwa_kategorii}"
 
-    # class Meta:
-    #     managed = True
-    #     db_table = 'kategoria'
-    #     verbose_name_plural = "Kategorie"
-    #     ordering = ("id_kategorii", "nazwa_kategorii")
+    class Meta:
+        managed = True
+        db_table = 'kategoria'
+        verbose_name_plural = "Kategorie"
+        ordering = ("id", "nazwa_kategorii")
 
 
 class Obiekt(models.Model):
@@ -85,11 +85,11 @@ class Obiekt(models.Model):
     def __str__(self):
         return f"{self.id_obiektu}, {self.nazwa}"
 
-    # class Meta:
-    #     managed = True
-    #     db_table = 'obiekt'
-    #     verbose_name_plural = "Obiekty"
-    #     ordering = ("id_obiektu", "nazwa")
+    class Meta:
+        managed = True
+        db_table = 'obiekt'
+        verbose_name_plural = "Obiekty"
+        ordering = ("id", "nazwa")
 
 
 class Pracownicy(models.Model):
@@ -100,11 +100,11 @@ class Pracownicy(models.Model):
     def __str__(self):
         return f"{self.id}, {self.user.first_name} {self.user.last_name}"
 
-    # class Meta:
-    #     managed = True
-    #     db_table = 'pracownicy'
-    #     verbose_name_plural = "Pracownicy"
-    #     ordering = ("id_pracownika", "nazwisko", "imię")
+    class Meta:
+        managed = True
+        db_table = 'pracownicy'
+        verbose_name_plural = "Pracownicy"
+        ordering = ("id",)
 
 
 class Punkt(models.Model):
@@ -121,11 +121,11 @@ class Punkt(models.Model):
     def __str__(self):
         return f"{self.id_punktu}, {self.nazwa}"
 
-    # class Meta:
-    #     managed = True
-    #     db_table = 'punkt'
-    #     verbose_name_plural = "Punkty"
-    #     ordering = ("id_punktu", "nazwa")
+    class Meta:
+        managed = True
+        db_table = 'punkt'
+        verbose_name_plural = "Punkty"
+        ordering = ("id", "nazwa")
 
 
 class PunktPracownicy(models.Model):
@@ -136,8 +136,8 @@ class PunktPracownicy(models.Model):
     def __str__(self):
         return f"{self.punkt_id_punktu}, {self.pracownicy_id_pracownika}"
 
-    # class Meta:
-    #     managed = True
-    #     db_table = 'punkt_pracownicy'
-    #     verbose_name_plural = "Punkty - Pracownicy"
-    #     ordering = ("punkt_id_punktu", "pracownicy_id_pracownika")
+    class Meta:
+        managed = True
+        db_table = 'punkt_pracownicy'
+        verbose_name_plural = "Punkty - Pracownicy"
+        ordering = ("punkt_id_punktu", "pracownicy_id_pracownika")
