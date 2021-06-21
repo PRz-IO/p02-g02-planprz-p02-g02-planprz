@@ -5,6 +5,10 @@
 <link rel="stylesheet"  href="{% static 'budynki.css' %}">
 
 <h1>Usun Konto</h1>
+
+<h2>Czy na pewno chcesz usunąć konto?</h2>
+
+<a href="{% url 'panel-pracownika-usun-konto-potwierdzone' %}">Tak</a>
 <a href="{% url 'panel-pracownika' %}">powrót do panelu pracownika</a>
 {% include 'stopka.html' %}
 {% endblock content %}

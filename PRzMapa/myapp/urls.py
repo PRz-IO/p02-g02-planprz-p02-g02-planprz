@@ -15,6 +15,8 @@ urlpatterns = [
     path('budynki/<id>/', punkty_b, name='punkty_b'),
     path('panel-pracownika/punkty/', pracownik_punkty, name='panel-pracownika-punkty'),
     path('panel-pracownika/usun-konto/', pracownik_usun_konto, name='panel-pracownika-usun-konto'),
+    path('panel-pracownika/usun-konto/potwierdzone/', pracownik_usun_konto_potwierdzone,
+         name='panel-pracownika-usun-konto-potwierdzone'),
     path('panel-pracownika/zmiana-hasla/', PasswordChangeView.as_view(template_name="myapp/pracownik_zmiana_hasla.html",
                                                                       success_url=reverse_lazy("panel-pracownika")),
          name='panel-pracownika-zmiana-hasla'),

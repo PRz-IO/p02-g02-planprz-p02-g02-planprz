@@ -124,3 +124,9 @@ def pracownik_punkty(request):
 @login_required
 def pracownik_usun_konto(request):
     return render(request, 'pracownik_usun_konto.html')
+
+@login_required
+def pracownik_usun_konto_potwierdzone(request):
+    user_to_delete = request.user
+    user_to_delete.delete()
+    return redirect('index')
