@@ -121,13 +121,13 @@ TIME_INPUT_FORMATS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-US'
+LANGUAGE_CODE = 'pl-PL'
 
 TIME_ZONE = 'Europe/Berlin'
 
 USE_I18N = True
 
-USE_L10N = True
+USE_L10N = False
 
 USE_TZ = True
 
