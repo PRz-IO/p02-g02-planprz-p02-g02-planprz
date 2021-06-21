@@ -109,7 +109,14 @@ def pracownik_punkty(request):
     user_id = request.user.id
     pracownik: Pracownicy = Pracownicy.objects.get(user=user_id)
     punkty = [pracownik.punkt]
-    dane = {'punkty': punkty}
+
+    form = PunktForm()
+    if request.method == "POST":
+        form = PunktForm(request.POST, instance=pracownik.punkt)
+        if form.is_valid():
+            form.save()
+
+    dane = {'punkty': punkty, "form": form}
 
     return render(request, 'pracownik_punkty.html', dane)
 

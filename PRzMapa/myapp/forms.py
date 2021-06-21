@@ -1,6 +1,9 @@
 from django.contrib.auth.forms import UserCreationForm
+from django.forms import ModelForm
+
 from .models import *
 from django.contrib.auth.models import User
+
 
 class RegisterForm(UserCreationForm):
     class Meta:
@@ -15,6 +18,7 @@ class RegisterForm(UserCreationForm):
            "id_password2": "Powtórz Hasło"
        }
 
+
 class LoginForm(UserCreationForm):
     class Meta:
        model = User
@@ -22,3 +26,12 @@ class LoginForm(UserCreationForm):
        labels = {
            "username": "Login"
        }
+
+
+class PunktForm(ModelForm):
+    class Meta:
+        model = Punkt
+        fields = [
+            "informacje",
+            "nr_telefonu"
+        ]
