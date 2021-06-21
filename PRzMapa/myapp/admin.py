@@ -59,6 +59,12 @@ class KategoriaAdmin(admin.ModelAdmin):
     def has_add_permission(self, request, obj=None):
         return False
 
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+    def has_change_permission(self, request, obj=None):
+        return False
+
 
 class PunktPracownicyAdmin(admin.ModelAdmin):
     list_display = ("punkt_id_punktu", "pracownicy_id_pracownika")
