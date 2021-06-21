@@ -116,7 +116,7 @@ class Punkt(models.Model):
 
 class Pracownicy(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    kontakt = models.EmailField(verbose_name="Email")
+    kontakt = models.CharField(max_length=9, verbose_name="Telefon")
     czy_aktywowany = models.CharField(max_length=10, choices=wybory, verbose_name="Czy aktywny")
     punkt = models.ForeignKey(Punkt, models.DO_NOTHING, null=True)
 
