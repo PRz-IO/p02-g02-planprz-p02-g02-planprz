@@ -4,6 +4,7 @@
 {% load static %}
 <link rel="stylesheet"  href="{% static 'punkt.css' %}">
 <link rel="stylesheet"  href="{% static 'punkt_mobilne.css' %}">
+<link rel="stylesheet"  href="{% static 'pracownicy.css' %}">
 
 <div class="kontenerPunkty">
     <div id="liniaGorna">
@@ -40,17 +41,17 @@
             </tr>
             <tr>
                 <th>
-                    <a href="{% url 'panel-pracownika-zmiana-hasla'%}">
+                    <a href="{% url 'panel-pracownika-zmiana-hasla'%}" class="btn btn-default navbar-btn">
                         Zmiana hasła
                     </a>
                 </th>
                 <th>
-                    <a href="{% url 'panel-pracownika-usun-konto'%}">
+                    <a href="{% url 'panel-pracownika-usun-konto'%}" class="btn btn-default navbar-btn">
                         Usuń konto
                     </a>
                 </th>
                 <th>
-                    <a href="{% url 'panel-pracownika-punkty'%}">
+                    <a href="{% url 'panel-pracownika-punkty'%}" class="btn btn-default navbar-btn">
                         Punkt
                     </a>
                 </th>
@@ -58,6 +59,8 @@
         </table>
     </div>
 </div>
+
+
 
 {% include 'stopka.html' %}
 {% endblock content %}
