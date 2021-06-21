@@ -38,7 +38,7 @@
 
         google.maps.event.addListener(marker, 'click', (function(marker, j) {
             return function() {
-                infowindow.setContent('<a href = "/punkty/{{i.id_punktu}}/">{{ i.nazwa }}</a>');
+                infowindow.setContent('<a href = "/punkty/{{i.id}}/">{{ i.nazwa }}</a>');
                 infowindow.open(map, marker);
             }
         })(marker, j));
@@ -57,7 +57,7 @@
 
         google.maps.event.addListener(marker, 'click', (function(marker, j) {
             return function() {
-                infowindow.setContent('<a href = "/budynki/{{k.id_obiektu}}/">{{ k.nazwa }}</a>');
+                infowindow.setContent('<a href = "/budynki/{{k.id}}/">{{ k.nazwa }}</a>');
                 infowindow.open(map, marker);
             }
       })(marker, j));
