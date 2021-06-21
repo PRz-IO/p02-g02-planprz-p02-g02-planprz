@@ -95,7 +95,7 @@ class Obiekt(models.Model):
 class Pracownicy(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     kontakt = models.CharField(max_length=40, blank=True, null=True, verbose_name="Telefon")
-    czy_aktywowany = models.CharField(max_length=10, choices=wybory, verbose_name="Czy aktywowany")
+    czy_aktywowany = models.CharField(max_length=10, choices=wybory, verbose_name="Czy aktywny")
 
     def __str__(self):
         return f"{self.id}, {self.user.first_name} {self.user.last_name}"

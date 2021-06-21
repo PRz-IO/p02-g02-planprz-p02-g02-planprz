@@ -15,6 +15,8 @@ from django.contrib import admin
 #         return "{} {}".format(obj.nazwisko, obj.imię)
 #
 #
+
+
 class DniTygodniaAdmin(admin.ModelAdmin):
     list_display = ("id","dzień")
 
@@ -34,13 +36,14 @@ class PunktAdmin(admin.ModelAdmin):
     search_fields = ('nazwa', 'informacje')
 
 
-# class PracownicyAdmin(admin.ModelAdmin):
-#     list_display = ("id_pracownika", 'Nazwisko_i_imię', 'adres_mailowy', 'kontakt', 'data_założenia_konta', 'czy_aktywowany')
-#     search_fields = ('imię', 'nazwisko', 'adres_mailowy', 'kontakt')
-#     list_filter = ('czy_aktywowany','data_założenia_konta')
-#
-#     def Nazwisko_i_imię(self, obj):
-#         return "{} {}".format(obj.nazwisko, obj.imię)
+class PracownicyAdmin(admin.ModelAdmin):
+    list_display = ("id",'Nazwisko_i_imię', 'kontakt', 'czy_aktywowany')
+    #TODO: naprawić search_field bo sypie błędy
+    #search_fields = ('user','kontakt')
+    list_filter = ('czy_aktywowany',)
+
+    def Nazwisko_i_imię(self, obj):
+        return "{} {}".format(obj.user.last_name, obj.user.first_name)
 
 
 class GodzinyOtwarciaAdmin(admin.ModelAdmin):
@@ -48,9 +51,13 @@ class GodzinyOtwarciaAdmin(admin.ModelAdmin):
     list_filter = ('dni_tygodnia_id_dnia_tygodnia',)
     fields = ('dni_tygodnia_id_dnia_tygodnia', 'punkt_id_punktu', ('godz_otw', 'godz_zamkn'))
 
+
 class KategoriaAdmin(admin.ModelAdmin):
     list_display = ("id", "nazwa_kategorii")
     list_filter = ('nazwa_kategorii',)
+
+    def has_add_permission(self, request, obj=None):
+        return False
 
 
 class PunktPracownicyAdmin(admin.ModelAdmin):
@@ -67,8 +74,7 @@ class ObiektAdmin(admin.ModelAdmin):
 #admin.site.register(Administratorzy)
 admin.site.register(DniTygodnia, DniTygodniaAdmin)
 admin.site.register(Punkt, PunktAdmin)
-# admin.site.register(Pracownicy, PracownicyAdmin)
-admin.site.register(Pracownicy)
+admin.site.register(Pracownicy, PracownicyAdmin)
 admin.site.register(GodzinyOtwarcia, GodzinyOtwarciaAdmin)
 admin.site.register(Kategoria, KategoriaAdmin)
 admin.site.register(PunktPracownicy, PunktPracownicyAdmin)
