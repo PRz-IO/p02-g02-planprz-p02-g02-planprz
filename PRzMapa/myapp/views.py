@@ -107,12 +107,8 @@ def panel_pracownika(request):
 @login_required
 def pracownik_punkty(request):
     user_id = request.user.id
-    pracownik_id = Pracownicy.objects.get(user=user_id)
-
-    przypisane_punkty = PunktPracownicy.objects.filter(pracownicy_id_pracownika=pracownik_id)
-    punkty = []
-    for przypisany_punkt in przypisane_punkty:
-        punkty.append(Punkt.objects.get(id_punktu=przypisany_punkt.punkt_id_punktu.id_punktu))
+    pracownik: Pracownicy = Pracownicy.objects.get(user=user_id)
+    punkty = [pracownik.punkt]
     dane = {'punkty': punkty}
 
     return render(request, 'pracownik_punkty.html', dane)
