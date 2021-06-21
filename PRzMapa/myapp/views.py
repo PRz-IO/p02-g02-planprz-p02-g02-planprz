@@ -104,19 +104,16 @@ def panel_pracownika(request):
 
 @login_required
 def pracownik_punkty(request):
-    pracownik_id = request.user.id
-    przypisane_punkty = PunktPracownicy.objects.filter(pracownicy_id_pracownika=1)
+    user_id = request.user.id
+    pracownik_id = Pracownicy.objects.get(user=user_id)
+
+    przypisane_punkty = PunktPracownicy.objects.filter(pracownicy_id_pracownika=pracownik_id)
     punkty = []
     for przypisany_punkt in przypisane_punkty:
         punkty.append(Punkt.objects.get(id_punktu=przypisany_punkt.punkt_id_punktu.id_punktu))
     dane = {'punkty': punkty}
 
     return render(request, 'pracownik_punkty.html', dane)
-
-
-@login_required
-def pracownik_zmiana_hasla(request):
-    return render(request, 'pracownik_zmiana_hasla.html')
 
 
 @login_required
