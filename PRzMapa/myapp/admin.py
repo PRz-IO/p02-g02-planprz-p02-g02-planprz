@@ -44,8 +44,6 @@ class PunktAdmin(admin.ModelAdmin):
 
 class PracownicyAdmin(admin.ModelAdmin):
     list_display = ("id",'Nazwisko_i_imię', 'kontakt', 'czy_aktywowany')
-    #TODO: naprawić search_field bo sypie błędy
-    #search_fields = ('user','kontakt')
     list_filter = ('czy_aktywowany',)
 
     def Nazwisko_i_imię(self, obj):
