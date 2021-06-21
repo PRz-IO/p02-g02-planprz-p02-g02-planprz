@@ -99,7 +99,9 @@ def punkty_b(request, id):
 
 @login_required
 def panel_pracownika(request):
-    return render(request, 'panel_pracownika.html')
+    pracownik = Pracownicy.objects.get(user=request.user.id)
+    dane = {'pracownik': pracownik}
+    return render(request, 'panel_pracownika.html', dane)
 
 
 @login_required
