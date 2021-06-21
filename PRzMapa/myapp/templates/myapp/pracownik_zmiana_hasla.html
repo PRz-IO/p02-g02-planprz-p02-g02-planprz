@@ -5,14 +5,37 @@
 {% load static %}
 <link rel="stylesheet"  href="{% static 'budynki.css' %}">
 
-<h1>Zmiana hasla</h1>
-<a href="{% url 'panel-pracownika' %}">powrót do panelu pracownika</a>
+<link rel="stylesheet"  href="{% static 'pracownicy.css' %}">
 
-<form method="post">
-    {% csrf_token %}
-    {{ form|crispy }}
-    <button type="submit" name="button">Zmień hasło</button>
-</form>
+<div class="kontenerPracownicy">
+
+    <div id="tabelka">
+        <table>
+            <tr>
+                <th colspan="3">Zmiana hasła</th>
+            </tr>
+            <tr>
+                <td>
+                    <form method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                        <br>
+                    <button type="submit" name="button">Zmień hasło</button>
+                    </form>
+                </td>
+
+            </tr>
+
+            <tr>
+                <th>
+                    <a href="{% url 'panel-pracownika' %}">powrót do panelu pracownika</a>
+
+                    </a>
+                </th>
+            </tr>
+        </table>
+    </div>
+</div>
 
 {% include 'stopka.html' %}
 {% endblock content %}

@@ -33,5 +33,13 @@ class PunktForm(ModelForm):
         model = Punkt
         fields = [
             "informacje",
-            "nr_telefonu"
+            "nr_telefonu",
         ]
+        labels = {"informacje": "Informacje",
+            "nr_telefonu" : "Numer telefonu"}
+
+class GodzinyForm(ModelForm):
+    class meta:
+        model = GodzinyOtwarcia
+        fields = ["godz_otw", "godz_zamkn"]
+        labels = {"godz_otw": "Godzina otwarcia", "godz_zamkn": "Godzina zamknięcia"}

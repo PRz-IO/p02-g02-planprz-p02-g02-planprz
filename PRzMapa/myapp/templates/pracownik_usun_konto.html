@@ -2,13 +2,26 @@
 
 {% block content %}
 {% load static %}
-<link rel="stylesheet"  href="{% static 'budynki.css' %}">
+<link rel="stylesheet"  href="{% static 'pracownicy.css' %}">
 
-<h1>Usun Konto</h1>
+<div class="kontenerPracownicy">
 
-<h2>Czy na pewno chcesz usunąć konto?</h2>
+<h1>Usuń Konto</h1>
+<table>
+    <tr>
+        <th>Czy na pewno chcesz usunąć konto?</th>
+    </tr>
+    <br>
+    <tr>
+        <th><a href="{% url 'panel-pracownika-usun-konto-potwierdzone' %}">Tak</a></th>
+    </tr>
+    <br>
+    <tr>
+        <th><a href="{% url 'panel-pracownika' %}">powrót do panelu pracownika</a></th>
+    </tr>
+</table>
 
-<a href="{% url 'panel-pracownika-usun-konto-potwierdzone' %}">Tak</a>
-<a href="{% url 'panel-pracownika' %}">powrót do panelu pracownika</a>
+</div>
+
 {% include 'stopka.html' %}
 {% endblock content %}
