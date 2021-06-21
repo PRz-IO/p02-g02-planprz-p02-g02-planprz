@@ -8,4 +8,4 @@ from django.contrib.auth.models import User
 def create_pracownik(sender, instance: User, created, **kwargs):
     if created:
         if not instance.is_superuser:  # Jesli user nie jest adminem to stworz Pracownika
-            Pracownicy.objects.create(user=instance, kontakt=instance.email, czy_aktywowany='1')
+            Pracownicy.objects.create(user=instance, kontakt=instance.email, czy_aktywowany='1', punkt=None)
