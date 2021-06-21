@@ -4,10 +4,10 @@ from ..models import *
 # Create your tests here.
 
 class PunktTest(TestCase):
-    def set_up_kategoria(self):
-        Kategoria.objects.create(nazwa_kategorii='Kategoria1')
+    def setUp(self):
+        Kategoria.objects.create(id=1,
+                                 nazwa_kategorii='Kategoria1')
 
-    def set_up_dnitygodnia(self):
         DniTygodnia.objects.create(dzień='poniedziałek')
         DniTygodnia.objects.create(dzień='wtorek')
         DniTygodnia.objects.create(dzień='środa')
@@ -16,14 +16,13 @@ class PunktTest(TestCase):
         DniTygodnia.objects.create(dzień='sobota')
         DniTygodnia.objects.create(dzień='niedziela')
 
-    def set_up_Obiekt(self):
-        Obiekt.objects.create(nazwa='Obiekt1',
+        Obiekt.objects.create(id=1,
+                              nazwa='Obiekt1',
                               adres='Adres1',
                               ułatwienia_dla_niepełnosprawnych='1',
                               długość_geograficzna=50.245,
                               szerokość_geograficzna=50.245)
 
-    def set_up_punkt(self):
         Punkt.objects.create(nazwa='Punkt1',
                              zdjęcie='www.obrazek.w.internecie.pl',
                              obiekt_id_obiektu=1,
@@ -39,17 +38,14 @@ class PunktTest(TestCase):
                              długość_geograficzna=50.245,
                              szerokość_geograficzna=50.245)
 
-    def set_up_user(self):
         User.objects.create(password='haslousera',
                             username='loginusera')
 
-    def set_up_pracownicy(self):
         Pracownicy.objects.create(user=1,
                                   kontakt='999999999',
                                   czy_aktywowany='1',
                                   punkt=1)
 
-    def set_up_godziny(self):
         GodzinyOtwarcia.objects.create(dni_tygodnia_id_dnia_tygodnia=1,
                                        punkt_id_punktu=1,
                                        godz_otw='7:00',
@@ -78,6 +74,7 @@ class PunktTest(TestCase):
                                        punkt_id_punktu=1,
                                        godz_otw='10:00',
                                        godz_zamkn='14:00')
+
 
     def test_validacja_punkt(self):
         temp = Punkt.objects.get(id=1)
