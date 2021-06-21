@@ -92,20 +92,6 @@ class Obiekt(models.Model):
         ordering = ("id", "nazwa")
 
 
-class Pracownicy(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    kontakt = models.CharField(max_length=40, blank=True, null=True, verbose_name="Telefon")
-    czy_aktywowany = models.CharField(max_length=10, choices=wybory, verbose_name="Czy aktywny")
-
-    def __str__(self):
-        return f"{self.id}, {self.user.first_name} {self.user.last_name}"
-
-    class Meta:
-        managed = True
-        db_table = 'myapp_pracownicy'
-        verbose_name_plural = "Pracownicy"
-        ordering = ("id",)
-
 
 class Punkt(models.Model):
  #   id_punktu = models.AutoField(primary_key=True)
@@ -126,6 +112,22 @@ class Punkt(models.Model):
         db_table = 'myapp_punkt'
         verbose_name_plural = "Punkty"
         ordering = ("id", "nazwa")
+
+
+class Pracownicy(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    kontakt = models.CharField(max_length=40, blank=True, null=True, verbose_name="Telefon")
+    czy_aktywowany = models.CharField(max_length=10, choices=wybory, verbose_name="Czy aktywny")
+    punkt = models.ForeignKey(Punkt,models.DO_NOTHING, null=True)
+
+    def __str__(self):
+        return f"{self.id}, {self.user.first_name} {self.user.last_name}"
+
+    class Meta:
+        managed = True
+        db_table = 'myapp_pracownicy'
+        verbose_name_plural = "Pracownicy"
+        ordering = ("id",)
 
 
 class PunktPracownicy(models.Model):
