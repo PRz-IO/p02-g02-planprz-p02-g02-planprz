@@ -1,0 +1,98 @@
+
+.topBar{
+    position: relative !important;
+}
+.kontenerPracownicy {
+    margin-top: 10vh;
+}
+
+.kontenerPracownicy h1{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 900;
+    width: 100%;
+    color: #444444;
+    text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 7px 6px 1px #CCCCCC;
+    text-transform: capitalize;
+    font-size: 10vh;
+}
+
+.kontenerPracownicy table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-shadow: 0 2px 15px rgba(64,64,64,.7);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 5%;
+}
+
+.kontenerPracownicy th,td,a,button {
+    padding: 15px 20px;
+    text-align: center;
+}
+
+.kontenerPracownicy td:first-child {
+    width: 40%;
+}
+
+.kontenerPracownicy th, a,button {
+    background-color: #003C82;
+    color: #fafafa;
+    font-weight: 900 !important;
+    text-transform: uppercase;
+}
+
+.kontenerPracownicy tr {
+    width: 100%;
+    background-color: #fafafa;
+}
+
+.kontenerPracownicy tr:nth-child(even){
+    background-color: #eeeeee;
+}
+
+.kontenerPracownicy table a#link {
+    position: relative;
+    display: inline-block;
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    border-radius: 40px;
+    background: linear-gradient(90deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
+}
+
+.kontenerPracownicy table a#link:hover {
+    background: linear-gradient(-90deg, rgba(0,60,130,1) 4%, rgba(22,15,100,1) 100%, rgba(0,212,255,1) 100%);
+}
+
+.doPrawej {
+    text-align: right;
+}
+
+.doLewej {
+    text-align: left;
+    padding-left: 15%;
+}
+
+#obrazek {
+    margin: 0;
+    padding-top: 4px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.pojemnik {
+    padding: 0;
+    height: auto;
+}
+
+#pojemnik-mapa {
+    padding: 0;
+    height: 500px;
+}
