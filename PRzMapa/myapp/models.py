@@ -118,6 +118,7 @@ class Pracownicy(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     kontakt = models.EmailField(verbose_name="Email")
     czy_aktywowany = models.CharField(max_length=10, choices=wybory, verbose_name="Czy aktywny")
+    punkt = models.ForeignKey(Punkt, models.DO_NOTHING, null=True)
 
     def __str__(self):
         return f"{self.id}, {self.user.first_name} {self.user.last_name}"
