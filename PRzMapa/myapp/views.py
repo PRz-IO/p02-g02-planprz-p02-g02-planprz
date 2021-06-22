@@ -1,7 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
+from .forms import *
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
+from .forms import *
+from django.contrib.auth import *
 
 
 # Create your views here.
@@ -17,15 +20,33 @@ def index(request):
 
 
 def logowanie(request):
-    kategorie = Kategoria.objects.all()
-    context = {'kategorie': kategorie}
-    return render(request, "logowanie.html", context)
+    if request.method == 'POST':
+        form=LoginForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect("http://127.0.0.1:8000/logowanie/")
+    else:
+        form=LoginForm()
+#    kategorie = Kategoria.objects.all()
+#    context = {'kategorie': kategorie}
+    return render(request, "logowanie.html", {"form":form})
 
+
+def logout(request, next_page=None, template_name='wylogowanie.html'):
+    auth_logout(request)
+    return render(request, "wylogowanie.html")
 
 def rejestracja(request):
-    kategorie = Kategoria.objects.all()
-    context = {'kategorie': kategorie}
-    return render(request, "rejestracja.html", context)
+    if request.method == 'POST':
+        form=RegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect("http://127.0.0.1:8000/")
+    else:
+        form=RegisterForm()
+#    kategorie = Kategoria.objects.all()
+#    context = {'kategorie': kategorie}
+    return render(request, "rejestracja.html", {"form":form})
 
 
 def punkty(request, id):
@@ -35,7 +56,7 @@ def punkty(request, id):
         kategoria = Kategoria.objects.get(pk=id)
         punkty = Punkt.objects.filter(Q(kategoria_id_kategorii=id), Q(nazwa__icontains=query))
     else:
-        kategoria = {'nazwa_kategorii': 'Wszystko', 'id_kategorii': 0}
+        kategoria = {'nazwa_kategorii': 'Wszystkie punkty', 'id_kategorii': 0}
         punkty = Punkt.objects.filter(Q(nazwa__icontains=query))
 
     context = {'kategoria': kategoria,
@@ -78,26 +99,34 @@ def punkty_b(request, id):
 
 @login_required
 def panel_pracownika(request):
-    return render(request, 'panel_pracownika.html')
+    pracownik = Pracownicy.objects.get(user=request.user.id)
+    dane = {'pracownik': pracownik}
+    return render(request, 'panel_pracownika.html', dane)
 
 
 @login_required
 def pracownik_punkty(request):
-    pracownik_id = request.user.id
-    przypisane_punkty = PunktPracownicy.objects.filter(pracownicy_id_pracownika=1)
-    punkty = []
-    for przypisany_punkt in przypisane_punkty:
-        punkty.append(Punkt.objects.get(id_punktu=przypisany_punkt.punkt_id_punktu.id_punktu))
-    dane = {'punkty': punkty}
+    user_id = request.user.id
+    pracownik: Pracownicy = Pracownicy.objects.get(user=user_id)
+    punkty = [pracownik.punkt]
+
+    form = PunktForm()
+    if request.method == "POST":
+        form = PunktForm(request.POST, instance=pracownik.punkt)
+        if form.is_valid():
+            form.save()
+
+    dane = {'punkty': punkty, "form": form}
 
     return render(request, 'pracownik_punkty.html', dane)
 
 
 @login_required
-def pracownik_zmiana_hasla(request):
-    return render(request, 'pracownik_zmiana_hasla.html')
-
-
-@login_required
 def pracownik_usun_konto(request):
     return render(request, 'pracownik_usun_konto.html')
+
+@login_required
+def pracownik_usun_konto_potwierdzone(request):
+    user_to_delete = request.user
+    user_to_delete.delete()
+    return redirect('index')

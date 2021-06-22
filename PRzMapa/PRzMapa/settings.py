@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myapp',
     'myapp.templatetags',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -120,13 +121,13 @@ TIME_INPUT_FORMATS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pl-PL'
 
 TIME_ZONE = 'Europe/Berlin'
 
 USE_I18N = True
 
-USE_L10N = True
+USE_L10N = False
 
 USE_TZ = True
 
@@ -140,3 +141,11 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+CRISPY_TEMPLATE_PACK= 'bootstrap4'
+
+LOGIN_REDIRECT_URL = ('..')
+
+LOGOUT_URL = 'logowanie.html'
+
+AUTH_PASSWORD_VALIDATORS = [
+]

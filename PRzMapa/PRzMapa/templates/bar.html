@@ -17,11 +17,11 @@
                 PUNKTY ▼
                 <ul>
                     <li>
-                        <a href="/0/?q=">Wszystko</a>
+                        <a href="/0/?q=">Wszystkie punkty</a>
                     </li>
                 {% for i in kategorie %}
                     <li>
-                        <a href="/{{i.id_kategorii}}/?q=">{{ i.nazwa_kategorii }}</a>
+                        <a href="/{{i.id}}/?q=">{{ i.nazwa_kategorii }}</a>
                     </li>
                 {% endfor %}
                 </ul>
@@ -32,7 +32,7 @@
                 LOGOWANIE ▼
                 <ul>
                     <li><a href="/admin/">Administrator</a></li>
-                    <li><a href="/logowanie/">Pracownik</a></li>
+                    <li><a href="/login/">Pracownik</a></li>
                 </ul>
             </a>
         </li>

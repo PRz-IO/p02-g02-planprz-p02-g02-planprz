@@ -21,19 +21,19 @@
                 <th></th>
             </tr>
         {% for ob in obiekty_user %}
-        <tr>
-            <td>{{ob.nazwa}}</td>
-            <td>{{ob.adres}}</td>
-            <td>
-                <a href = "{{ob.id_obiektu}}" class="link" >
-                    Szczegóły
-                </a>
-            </td>
-        </tr>
-            {% empty %}
-        <tr>
-            <td colspan="3">Brak budynków</td>
-        </tr>
+            <tr>
+                <td>{{ob.nazwa}}</td>
+                <td>{{ob.adres}}</td>
+                <td>
+                    <a href = "{{ob.id}}" class="link" >
+                        Szczegóły
+                    </a>
+                </td>
+            </tr>
+                {% empty %}
+            <tr>
+                <td colspan="3">Brak budynków</td>
+            </tr>
             {% endfor %}
         </table>
     </div>

@@ -73,7 +73,7 @@
             </tr>
             <tr>
                 <td class="doPrawej">Ułatwienia dla niepełnosprawnych:</td>
-                <td class="doLewej">{% if punkt.obiekt_id_obiektu.ułatwienia_dla_niepełnosprawnych == 1 %} Tak {% else %} Nie {% endif %}</td>
+                <td class="doLewej">{% if punkt.obiekt_id_obiektu.ułatwienia_dla_niepełnosprawnych == '1' %} Tak {% else %} Nie {% endif %}</td>
             </tr>
             <tr>
                 <td class="doPrawej">Kontakt:</td>
@@ -113,7 +113,7 @@
               async
             ></script>
             <tr>
-                <td colspan="2"> <a href="https://www.google.com/maps/dir//{{ punkt.szerokość_geograficzna }}+{{ punkt.długość_geograficzna }}/@50.0191568,21.9873604,16.95z/data=!4m7!4m6!1m0!1m3!2m2!1d40.20232!2d50.35293!3e2" target="_blank" id="link">NAWIGACJA</a> </td>
+                <td colspan="2"> <a href="https://www.google.com/maps/dir//{{ punkt.szerokość_geograficzna }}+{{ punkt.długość_geograficzna }}/@{{ punkt.szerokość_geograficzna }},{{ punkt.długość_geograficzna }},16.95z/data=!4m7!4m6!1m0!1m3!2m2!1d40.20232!2d50.35293!3e2" target="_blank" id="link">NAWIGACJA</a> </td>
             </tr>
         </table>
     </div>
