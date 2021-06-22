@@ -56,7 +56,7 @@ def punkty(request, id):
         kategoria = Kategoria.objects.get(pk=id)
         punkty = Punkt.objects.filter(Q(kategoria_id_kategorii=id), Q(nazwa__icontains=query))
     else:
-        kategoria = {'nazwa_kategorii': 'Wszystkie punkty', 'id_kategorii': 0}
+        kategoria = {'nazwa_kategorii': 'Wszystkie punkty', 'id': 0}
         punkty = Punkt.objects.filter(Q(nazwa__icontains=query))
 
     context = {'kategoria': kategoria,
